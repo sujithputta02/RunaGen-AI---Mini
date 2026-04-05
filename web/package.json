@@ -1,0 +1,12 @@
+{
+  "name": "runagen-web",
+  "version": "1.0.0",
+  "description": "RunaGen AI Resume Analytics - Web Interface",
+  "scripts": {
+    "dev": "npx live-server --port=8080 --open=/index.html --no-browser",
+    "start": "npx live-server --port=8080 --open=/index.html"
+  },
+  "keywords": ["resume", "analytics", "ai", "ml"],
+  "author": "RunaGen AI",
+  "license": "MIT"
+}

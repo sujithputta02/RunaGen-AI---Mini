@@ -1,0 +1,301 @@
+skill_id,skill_name,category,description,bronze_id
+skill_1,Python,Programming,,69a3ceed87aaf68dcf664bb7
+skill_2,Java,Programming,,69a3ceed87aaf68dcf664bb8
+skill_3,Javascript,Programming,,69a3ceed87aaf68dcf664bb9
+skill_4,Typescript,Programming,,69a3ceed87aaf68dcf664bba
+skill_5,C++,Programming,,69a3ceed87aaf68dcf664bbb
+skill_6,C#,Programming,,69a3ceed87aaf68dcf664bbc
+skill_7,Go,Programming,,69a3ceed87aaf68dcf664bbd
+skill_8,Rust,Programming,,69a3ceed87aaf68dcf664bbe
+skill_9,Ruby,Programming,,69a3ceed87aaf68dcf664bbf
+skill_10,Php,Programming,,69a3ceed87aaf68dcf664bc0
+skill_11,Swift,Programming,,69a3ceed87aaf68dcf664bc1
+skill_12,Kotlin,Programming,,69a3ceed87aaf68dcf664bc2
+skill_13,R,Programming,,69a3ceed87aaf68dcf664bc3
+skill_14,Scala,Programming,,69a3ceed87aaf68dcf664bc4
+skill_15,Sql,Database,,69a3ceed87aaf68dcf664bc5
+skill_16,Mongodb,Database,,69a3ceed87aaf68dcf664bc6
+skill_17,Postgresql,Database,,69a3ceed87aaf68dcf664bc7
+skill_18,Mysql,Database,,69a3ceed87aaf68dcf664bc8
+skill_19,Redis,Database,,69a3ceed87aaf68dcf664bc9
+skill_20,Cassandra,Database,,69a3ceed87aaf68dcf664bca
+skill_21,Dynamodb,Database,,69a3ceed87aaf68dcf664bcb
+skill_22,Neo4J,Database,,69a3ceed87aaf68dcf664bcc
+skill_23,Aws,Cloud,,69a3ceed87aaf68dcf664bcd
+skill_24,Azure,Cloud,,69a3ceed87aaf68dcf664bce
+skill_25,Gcp,Cloud,,69a3ceed87aaf68dcf664bcf
+skill_26,Docker,DevOps,,69a3ceed87aaf68dcf664bd0
+skill_27,Kubernetes,DevOps,,69a3ceed87aaf68dcf664bd1
+skill_28,Terraform,DevOps,,69a3ceed87aaf68dcf664bd2
+skill_29,Jenkins,DevOps,,69a3ceed87aaf68dcf664bd3
+skill_30,Gitlab Ci,DevOps,,69a3ceed87aaf68dcf664bd4
+skill_31,Machine Learning,AI/ML,,69a3ceed87aaf68dcf664bd5
+skill_32,Deep Learning,AI/ML,,69a3ceed87aaf68dcf664bd6
+skill_33,Tensorflow,AI/ML,,69a3ceed87aaf68dcf664bd7
+skill_34,Pytorch,AI/ML,,69a3ceed87aaf68dcf664bd8
+skill_35,Scikit-Learn,AI/ML,,69a3ceed87aaf68dcf664bd9
+skill_36,Data Analysis,Analytics,,69a3ceed87aaf68dcf664bda
+skill_37,Pandas,Analytics,,69a3ceed87aaf68dcf664bdb
+skill_38,Numpy,Analytics,,69a3ceed87aaf68dcf664bdc
+skill_39,Apache Spark,Big Data,,69a3ceed87aaf68dcf664bdd
+skill_40,Hadoop,Big Data,,69a3ceed87aaf68dcf664bde
+skill_41,Kafka,Big Data,,69a3ceed87aaf68dcf664bdf
+skill_42,React,Frontend,,69a3ceed87aaf68dcf664be0
+skill_43,Angular,Frontend,,69a3ceed87aaf68dcf664be1
+skill_44,Vue.Js,Frontend,,69a3ceed87aaf68dcf664be2
+skill_45,Node.Js,Backend,,69a3ceed87aaf68dcf664be3
+skill_46,Django,Backend,,69a3ceed87aaf68dcf664be4
+skill_47,Flask,Backend,,69a3ceed87aaf68dcf664be5
+skill_48,Fastapi,Backend,,69a3ceed87aaf68dcf664be6
+skill_49,Spring Boot,Backend,,69a3ceed87aaf68dcf664be7
+skill_50,Python 1,Programming,,69a3ceed87aaf68dcf664be8
+skill_51,Java 1,Programming,,69a3ceed87aaf68dcf664be9
+skill_52,Javascript 1,Programming,,69a3ceed87aaf68dcf664bea
+skill_53,Typescript 1,Programming,,69a3ceed87aaf68dcf664beb
+skill_54,C++ 1,Programming,,69a3ceed87aaf68dcf664bec
+skill_55,C# 1,Programming,,69a3ceed87aaf68dcf664bed
+skill_56,Go 1,Programming,,69a3ceed87aaf68dcf664bee
+skill_57,Rust 1,Programming,,69a3ceed87aaf68dcf664bef
+skill_58,Ruby 1,Programming,,69a3ceed87aaf68dcf664bf0
+skill_59,Php 1,Programming,,69a3ceed87aaf68dcf664bf1
+skill_60,Swift 1,Programming,,69a3ceed87aaf68dcf664bf2
+skill_61,Kotlin 1,Programming,,69a3ceed87aaf68dcf664bf3
+skill_62,R 1,Programming,,69a3ceed87aaf68dcf664bf4
+skill_63,Scala 1,Programming,,69a3ceed87aaf68dcf664bf5
+skill_64,Sql 1,Database,,69a3ceed87aaf68dcf664bf6
+skill_65,Mongodb 1,Database,,69a3ceed87aaf68dcf664bf7
+skill_66,Postgresql 1,Database,,69a3ceed87aaf68dcf664bf8
+skill_67,Mysql 1,Database,,69a3ceed87aaf68dcf664bf9
+skill_68,Redis 1,Database,,69a3ceed87aaf68dcf664bfa
+skill_69,Cassandra 1,Database,,69a3ceed87aaf68dcf664bfb
+skill_70,Dynamodb 1,Database,,69a3ceed87aaf68dcf664bfc
+skill_71,Neo4J 1,Database,,69a3ceed87aaf68dcf664bfd
+skill_72,Aws 1,Cloud,,69a3ceed87aaf68dcf664bfe
+skill_73,Azure 1,Cloud,,69a3ceed87aaf68dcf664bff
+skill_74,Gcp 1,Cloud,,69a3ceed87aaf68dcf664c00
+skill_75,Docker 1,DevOps,,69a3ceed87aaf68dcf664c01
+skill_76,Kubernetes 1,DevOps,,69a3ceed87aaf68dcf664c02
+skill_77,Terraform 1,DevOps,,69a3ceed87aaf68dcf664c03
+skill_78,Jenkins 1,DevOps,,69a3ceed87aaf68dcf664c04
+skill_79,Gitlab Ci 1,DevOps,,69a3ceed87aaf68dcf664c05
+skill_80,Machine Learning 1,AI/ML,,69a3ceed87aaf68dcf664c06
+skill_81,Deep Learning 1,AI/ML,,69a3ceed87aaf68dcf664c07
+skill_82,Tensorflow 1,AI/ML,,69a3ceed87aaf68dcf664c08
+skill_83,Pytorch 1,AI/ML,,69a3ceed87aaf68dcf664c09
+skill_84,Scikit-Learn 1,AI/ML,,69a3ceed87aaf68dcf664c0a
+skill_85,Data Analysis 1,Analytics,,69a3ceed87aaf68dcf664c0b
+skill_86,Pandas 1,Analytics,,69a3ceed87aaf68dcf664c0c
+skill_87,Numpy 1,Analytics,,69a3ceed87aaf68dcf664c0d
+skill_88,Apache Spark 1,Big Data,,69a3ceed87aaf68dcf664c0e
+skill_89,Hadoop 1,Big Data,,69a3ceed87aaf68dcf664c0f
+skill_90,Kafka 1,Big Data,,69a3ceed87aaf68dcf664c10
+skill_91,React 1,Frontend,,69a3ceed87aaf68dcf664c11
+skill_92,Angular 1,Frontend,,69a3ceed87aaf68dcf664c12
+skill_93,Vue.Js 1,Frontend,,69a3ceed87aaf68dcf664c13
+skill_94,Node.Js 1,Backend,,69a3ceed87aaf68dcf664c14
+skill_95,Django 1,Backend,,69a3ceed87aaf68dcf664c15
+skill_96,Flask 1,Backend,,69a3ceed87aaf68dcf664c16
+skill_97,Fastapi 1,Backend,,69a3ceed87aaf68dcf664c17
+skill_98,Spring Boot 1,Backend,,69a3ceed87aaf68dcf664c18
+skill_99,Python 2,Programming,,69a3ceed87aaf68dcf664c19
+skill_100,Java 2,Programming,,69a3ceed87aaf68dcf664c1a
+skill_1,Python,Programming,,69a3ceed87aaf68dcf664bb7
+skill_2,Java,Programming,,69a3ceed87aaf68dcf664bb8
+skill_3,Javascript,Programming,,69a3ceed87aaf68dcf664bb9
+skill_4,Typescript,Programming,,69a3ceed87aaf68dcf664bba
+skill_5,C++,Programming,,69a3ceed87aaf68dcf664bbb
+skill_6,C#,Programming,,69a3ceed87aaf68dcf664bbc
+skill_7,Go,Programming,,69a3ceed87aaf68dcf664bbd
+skill_8,Rust,Programming,,69a3ceed87aaf68dcf664bbe
+skill_9,Ruby,Programming,,69a3ceed87aaf68dcf664bbf
+skill_10,Php,Programming,,69a3ceed87aaf68dcf664bc0
+skill_11,Swift,Programming,,69a3ceed87aaf68dcf664bc1
+skill_12,Kotlin,Programming,,69a3ceed87aaf68dcf664bc2
+skill_13,R,Programming,,69a3ceed87aaf68dcf664bc3
+skill_14,Scala,Programming,,69a3ceed87aaf68dcf664bc4
+skill_15,Sql,Database,,69a3ceed87aaf68dcf664bc5
+skill_16,Mongodb,Database,,69a3ceed87aaf68dcf664bc6
+skill_17,Postgresql,Database,,69a3ceed87aaf68dcf664bc7
+skill_18,Mysql,Database,,69a3ceed87aaf68dcf664bc8
+skill_19,Redis,Database,,69a3ceed87aaf68dcf664bc9
+skill_20,Cassandra,Database,,69a3ceed87aaf68dcf664bca
+skill_21,Dynamodb,Database,,69a3ceed87aaf68dcf664bcb
+skill_22,Neo4J,Database,,69a3ceed87aaf68dcf664bcc
+skill_23,Aws,Cloud,,69a3ceed87aaf68dcf664bcd
+skill_24,Azure,Cloud,,69a3ceed87aaf68dcf664bce
+skill_25,Gcp,Cloud,,69a3ceed87aaf68dcf664bcf
+skill_26,Docker,DevOps,,69a3ceed87aaf68dcf664bd0
+skill_27,Kubernetes,DevOps,,69a3ceed87aaf68dcf664bd1
+skill_28,Terraform,DevOps,,69a3ceed87aaf68dcf664bd2
+skill_29,Jenkins,DevOps,,69a3ceed87aaf68dcf664bd3
+skill_30,Gitlab Ci,DevOps,,69a3ceed87aaf68dcf664bd4
+skill_31,Machine Learning,AI/ML,,69a3ceed87aaf68dcf664bd5
+skill_32,Deep Learning,AI/ML,,69a3ceed87aaf68dcf664bd6
+skill_33,Tensorflow,AI/ML,,69a3ceed87aaf68dcf664bd7
+skill_34,Pytorch,AI/ML,,69a3ceed87aaf68dcf664bd8
+skill_35,Scikit-Learn,AI/ML,,69a3ceed87aaf68dcf664bd9
+skill_36,Data Analysis,Analytics,,69a3ceed87aaf68dcf664bda
+skill_37,Pandas,Analytics,,69a3ceed87aaf68dcf664bdb
+skill_38,Numpy,Analytics,,69a3ceed87aaf68dcf664bdc
+skill_39,Apache Spark,Big Data,,69a3ceed87aaf68dcf664bdd
+skill_40,Hadoop,Big Data,,69a3ceed87aaf68dcf664bde
+skill_41,Kafka,Big Data,,69a3ceed87aaf68dcf664bdf
+skill_42,React,Frontend,,69a3ceed87aaf68dcf664be0
+skill_43,Angular,Frontend,,69a3ceed87aaf68dcf664be1
+skill_44,Vue.Js,Frontend,,69a3ceed87aaf68dcf664be2
+skill_45,Node.Js,Backend,,69a3ceed87aaf68dcf664be3
+skill_46,Django,Backend,,69a3ceed87aaf68dcf664be4
+skill_47,Flask,Backend,,69a3ceed87aaf68dcf664be5
+skill_48,Fastapi,Backend,,69a3ceed87aaf68dcf664be6
+skill_49,Spring Boot,Backend,,69a3ceed87aaf68dcf664be7
+skill_50,Python 1,Programming,,69a3ceed87aaf68dcf664be8
+skill_51,Java 1,Programming,,69a3ceed87aaf68dcf664be9
+skill_52,Javascript 1,Programming,,69a3ceed87aaf68dcf664bea
+skill_53,Typescript 1,Programming,,69a3ceed87aaf68dcf664beb
+skill_54,C++ 1,Programming,,69a3ceed87aaf68dcf664bec
+skill_55,C# 1,Programming,,69a3ceed87aaf68dcf664bed
+skill_56,Go 1,Programming,,69a3ceed87aaf68dcf664bee
+skill_57,Rust 1,Programming,,69a3ceed87aaf68dcf664bef
+skill_58,Ruby 1,Programming,,69a3ceed87aaf68dcf664bf0
+skill_59,Php 1,Programming,,69a3ceed87aaf68dcf664bf1
+skill_60,Swift 1,Programming,,69a3ceed87aaf68dcf664bf2
+skill_61,Kotlin 1,Programming,,69a3ceed87aaf68dcf664bf3
+skill_62,R 1,Programming,,69a3ceed87aaf68dcf664bf4
+skill_63,Scala 1,Programming,,69a3ceed87aaf68dcf664bf5
+skill_64,Sql 1,Database,,69a3ceed87aaf68dcf664bf6
+skill_65,Mongodb 1,Database,,69a3ceed87aaf68dcf664bf7
+skill_66,Postgresql 1,Database,,69a3ceed87aaf68dcf664bf8
+skill_67,Mysql 1,Database,,69a3ceed87aaf68dcf664bf9
+skill_68,Redis 1,Database,,69a3ceed87aaf68dcf664bfa
+skill_69,Cassandra 1,Database,,69a3ceed87aaf68dcf664bfb
+skill_70,Dynamodb 1,Database,,69a3ceed87aaf68dcf664bfc
+skill_71,Neo4J 1,Database,,69a3ceed87aaf68dcf664bfd
+skill_72,Aws 1,Cloud,,69a3ceed87aaf68dcf664bfe
+skill_73,Azure 1,Cloud,,69a3ceed87aaf68dcf664bff
+skill_74,Gcp 1,Cloud,,69a3ceed87aaf68dcf664c00
+skill_75,Docker 1,DevOps,,69a3ceed87aaf68dcf664c01
+skill_76,Kubernetes 1,DevOps,,69a3ceed87aaf68dcf664c02
+skill_77,Terraform 1,DevOps,,69a3ceed87aaf68dcf664c03
+skill_78,Jenkins 1,DevOps,,69a3ceed87aaf68dcf664c04
+skill_79,Gitlab Ci 1,DevOps,,69a3ceed87aaf68dcf664c05
+skill_80,Machine Learning 1,AI/ML,,69a3ceed87aaf68dcf664c06
+skill_81,Deep Learning 1,AI/ML,,69a3ceed87aaf68dcf664c07
+skill_82,Tensorflow 1,AI/ML,,69a3ceed87aaf68dcf664c08
+skill_83,Pytorch 1,AI/ML,,69a3ceed87aaf68dcf664c09
+skill_84,Scikit-Learn 1,AI/ML,,69a3ceed87aaf68dcf664c0a
+skill_85,Data Analysis 1,Analytics,,69a3ceed87aaf68dcf664c0b
+skill_86,Pandas 1,Analytics,,69a3ceed87aaf68dcf664c0c
+skill_87,Numpy 1,Analytics,,69a3ceed87aaf68dcf664c0d
+skill_88,Apache Spark 1,Big Data,,69a3ceed87aaf68dcf664c0e
+skill_89,Hadoop 1,Big Data,,69a3ceed87aaf68dcf664c0f
+skill_90,Kafka 1,Big Data,,69a3ceed87aaf68dcf664c10
+skill_91,React 1,Frontend,,69a3ceed87aaf68dcf664c11
+skill_92,Angular 1,Frontend,,69a3ceed87aaf68dcf664c12
+skill_93,Vue.Js 1,Frontend,,69a3ceed87aaf68dcf664c13
+skill_94,Node.Js 1,Backend,,69a3ceed87aaf68dcf664c14
+skill_95,Django 1,Backend,,69a3ceed87aaf68dcf664c15
+skill_96,Flask 1,Backend,,69a3ceed87aaf68dcf664c16
+skill_97,Fastapi 1,Backend,,69a3ceed87aaf68dcf664c17
+skill_98,Spring Boot 1,Backend,,69a3ceed87aaf68dcf664c18
+skill_99,Python 2,Programming,,69a3ceed87aaf68dcf664c19
+skill_100,Java 2,Programming,,69a3ceed87aaf68dcf664c1a
+skill_1,Python,Programming,,69a3cf36d203f05fea9cb28d
+skill_2,Java,Programming,,69a3cf36d203f05fea9cb28e
+skill_3,Javascript,Programming,,69a3cf36d203f05fea9cb28f
+skill_4,Typescript,Programming,,69a3cf36d203f05fea9cb290
+skill_5,C++,Programming,,69a3cf36d203f05fea9cb291
+skill_6,C#,Programming,,69a3cf36d203f05fea9cb292
+skill_7,Go,Programming,,69a3cf36d203f05fea9cb293
+skill_8,Rust,Programming,,69a3cf36d203f05fea9cb294
+skill_9,Ruby,Programming,,69a3cf36d203f05fea9cb295
+skill_10,Php,Programming,,69a3cf36d203f05fea9cb296
+skill_11,Swift,Programming,,69a3cf36d203f05fea9cb297
+skill_12,Kotlin,Programming,,69a3cf36d203f05fea9cb298
+skill_13,R,Programming,,69a3cf36d203f05fea9cb299
+skill_14,Scala,Programming,,69a3cf36d203f05fea9cb29a
+skill_15,Sql,Database,,69a3cf36d203f05fea9cb29b
+skill_16,Mongodb,Database,,69a3cf36d203f05fea9cb29c
+skill_17,Postgresql,Database,,69a3cf36d203f05fea9cb29d
+skill_18,Mysql,Database,,69a3cf36d203f05fea9cb29e
+skill_19,Redis,Database,,69a3cf36d203f05fea9cb29f
+skill_20,Cassandra,Database,,69a3cf36d203f05fea9cb2a0
+skill_21,Dynamodb,Database,,69a3cf36d203f05fea9cb2a1
+skill_22,Neo4J,Database,,69a3cf36d203f05fea9cb2a2
+skill_23,Aws,Cloud,,69a3cf36d203f05fea9cb2a3
+skill_24,Azure,Cloud,,69a3cf36d203f05fea9cb2a4
+skill_25,Gcp,Cloud,,69a3cf36d203f05fea9cb2a5
+skill_26,Docker,DevOps,,69a3cf36d203f05fea9cb2a6
+skill_27,Kubernetes,DevOps,,69a3cf36d203f05fea9cb2a7
+skill_28,Terraform,DevOps,,69a3cf36d203f05fea9cb2a8
+skill_29,Jenkins,DevOps,,69a3cf36d203f05fea9cb2a9
+skill_30,Gitlab Ci,DevOps,,69a3cf36d203f05fea9cb2aa
+skill_31,Machine Learning,AI/ML,,69a3cf36d203f05fea9cb2ab
+skill_32,Deep Learning,AI/ML,,69a3cf36d203f05fea9cb2ac
+skill_33,Tensorflow,AI/ML,,69a3cf36d203f05fea9cb2ad
+skill_34,Pytorch,AI/ML,,69a3cf36d203f05fea9cb2ae
+skill_35,Scikit-Learn,AI/ML,,69a3cf36d203f05fea9cb2af
+skill_36,Data Analysis,Analytics,,69a3cf36d203f05fea9cb2b0
+skill_37,Pandas,Analytics,,69a3cf36d203f05fea9cb2b1
+skill_38,Numpy,Analytics,,69a3cf36d203f05fea9cb2b2
+skill_39,Apache Spark,Big Data,,69a3cf36d203f05fea9cb2b3
+skill_40,Hadoop,Big Data,,69a3cf36d203f05fea9cb2b4
+skill_41,Kafka,Big Data,,69a3cf36d203f05fea9cb2b5
+skill_42,React,Frontend,,69a3cf36d203f05fea9cb2b6
+skill_43,Angular,Frontend,,69a3cf36d203f05fea9cb2b7
+skill_44,Vue.Js,Frontend,,69a3cf36d203f05fea9cb2b8
+skill_45,Node.Js,Backend,,69a3cf36d203f05fea9cb2b9
+skill_46,Django,Backend,,69a3cf36d203f05fea9cb2ba
+skill_47,Flask,Backend,,69a3cf36d203f05fea9cb2bb
+skill_48,Fastapi,Backend,,69a3cf36d203f05fea9cb2bc
+skill_49,Spring Boot,Backend,,69a3cf36d203f05fea9cb2bd
+skill_50,Python 1,Programming,,69a3cf36d203f05fea9cb2be
+skill_51,Java 1,Programming,,69a3cf36d203f05fea9cb2bf
+skill_52,Javascript 1,Programming,,69a3cf36d203f05fea9cb2c0
+skill_53,Typescript 1,Programming,,69a3cf36d203f05fea9cb2c1
+skill_54,C++ 1,Programming,,69a3cf36d203f05fea9cb2c2
+skill_55,C# 1,Programming,,69a3cf36d203f05fea9cb2c3
+skill_56,Go 1,Programming,,69a3cf36d203f05fea9cb2c4
+skill_57,Rust 1,Programming,,69a3cf36d203f05fea9cb2c5
+skill_58,Ruby 1,Programming,,69a3cf36d203f05fea9cb2c6
+skill_59,Php 1,Programming,,69a3cf36d203f05fea9cb2c7
+skill_60,Swift 1,Programming,,69a3cf36d203f05fea9cb2c8
+skill_61,Kotlin 1,Programming,,69a3cf36d203f05fea9cb2c9
+skill_62,R 1,Programming,,69a3cf36d203f05fea9cb2ca
+skill_63,Scala 1,Programming,,69a3cf36d203f05fea9cb2cb
+skill_64,Sql 1,Database,,69a3cf36d203f05fea9cb2cc
+skill_65,Mongodb 1,Database,,69a3cf36d203f05fea9cb2cd
+skill_66,Postgresql 1,Database,,69a3cf36d203f05fea9cb2ce
+skill_67,Mysql 1,Database,,69a3cf36d203f05fea9cb2cf
+skill_68,Redis 1,Database,,69a3cf36d203f05fea9cb2d0
+skill_69,Cassandra 1,Database,,69a3cf36d203f05fea9cb2d1
+skill_70,Dynamodb 1,Database,,69a3cf36d203f05fea9cb2d2
+skill_71,Neo4J 1,Database,,69a3cf36d203f05fea9cb2d3
+skill_72,Aws 1,Cloud,,69a3cf36d203f05fea9cb2d4
+skill_73,Azure 1,Cloud,,69a3cf36d203f05fea9cb2d5
+skill_74,Gcp 1,Cloud,,69a3cf36d203f05fea9cb2d6
+skill_75,Docker 1,DevOps,,69a3cf36d203f05fea9cb2d7
+skill_76,Kubernetes 1,DevOps,,69a3cf36d203f05fea9cb2d8
+skill_77,Terraform 1,DevOps,,69a3cf36d203f05fea9cb2d9
+skill_78,Jenkins 1,DevOps,,69a3cf36d203f05fea9cb2da
+skill_79,Gitlab Ci 1,DevOps,,69a3cf36d203f05fea9cb2db
+skill_80,Machine Learning 1,AI/ML,,69a3cf36d203f05fea9cb2dc
+skill_81,Deep Learning 1,AI/ML,,69a3cf36d203f05fea9cb2dd
+skill_82,Tensorflow 1,AI/ML,,69a3cf36d203f05fea9cb2de
+skill_83,Pytorch 1,AI/ML,,69a3cf36d203f05fea9cb2df
+skill_84,Scikit-Learn 1,AI/ML,,69a3cf36d203f05fea9cb2e0
+skill_85,Data Analysis 1,Analytics,,69a3cf36d203f05fea9cb2e1
+skill_86,Pandas 1,Analytics,,69a3cf36d203f05fea9cb2e2
+skill_87,Numpy 1,Analytics,,69a3cf36d203f05fea9cb2e3
+skill_88,Apache Spark 1,Big Data,,69a3cf36d203f05fea9cb2e4
+skill_89,Hadoop 1,Big Data,,69a3cf36d203f05fea9cb2e5
+skill_90,Kafka 1,Big Data,,69a3cf36d203f05fea9cb2e6
+skill_91,React 1,Frontend,,69a3cf36d203f05fea9cb2e7
+skill_92,Angular 1,Frontend,,69a3cf36d203f05fea9cb2e8
+skill_93,Vue.Js 1,Frontend,,69a3cf36d203f05fea9cb2e9
+skill_94,Node.Js 1,Backend,,69a3cf36d203f05fea9cb2ea
+skill_95,Django 1,Backend,,69a3cf36d203f05fea9cb2eb
+skill_96,Flask 1,Backend,,69a3cf36d203f05fea9cb2ec
+skill_97,Fastapi 1,Backend,,69a3cf36d203f05fea9cb2ed
+skill_98,Spring Boot 1,Backend,,69a3cf36d203f05fea9cb2ee
+skill_99,Python 2,Programming,,69a3cf36d203f05fea9cb2ef
+skill_100,Java 2,Programming,,69a3cf36d203f05fea9cb2f0

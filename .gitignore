@@ -1,0 +1,33 @@
+# Environment
+.env
+venv/
+env/
+*.pyc
+__pycache__/
+
+# Data
+data/bronze/*
+data/silver/*
+data/gold/*
+!data/.gitkeep
+
+# Models
+models/*.pkl
+models/*.joblib
+*.h5
+
+# Notebooks
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,86 @@
+skill_name,demand_frequency,salary_premium,market_growth,priority_score,category,learning_difficulty,time_to_learn_weeks
+Machine Learning,0.92,0.95,0.95,0.938,AI/ML,Advanced,16
+LLMs,0.88,0.92,0.98,0.922,AI/ML,Advanced,16
+Python,0.95,0.88,0.92,0.92,Programming,Intermediate,12
+AWS,0.9,0.9,0.92,0.906,Cloud,Intermediate,8
+Deep Learning,0.85,0.92,0.95,0.901,AI/ML,Advanced,16
+PyTorch,0.85,0.9,0.92,0.886,AI/ML,Advanced,16
+Kubernetes,0.85,0.88,0.92,0.88,DevOps,Intermediate,10
+Transformers,0.82,0.88,0.95,0.877,AI/ML,Advanced,16
+Docker,0.88,0.85,0.9,0.877,DevOps,Intermediate,10
+MLOps,0.8,0.88,0.95,0.869,AI/ML,Advanced,16
+JavaScript,0.92,0.82,0.85,0.869,Programming,Intermediate,12
+Snowflake,0.82,0.88,0.92,0.868,Big Data,Advanced,12
+Azure,0.85,0.88,0.88,0.868,Cloud,Intermediate,8
+TensorFlow,0.82,0.88,0.9,0.862,AI/ML,Advanced,16
+Terraform,0.82,0.85,0.92,0.859,DevOps,Intermediate,10
+Google Cloud,0.82,0.85,0.9,0.853,Cloud,Intermediate,8
+NLP,0.78,0.88,0.92,0.852,AI/ML,Advanced,16
+SQL,0.93,0.82,0.78,0.852,Database,Intermediate,8
+Apache Spark,0.82,0.88,0.85,0.847,Big Data,Advanced,12
+REST API,0.9,0.8,0.82,0.846,Backend,Intermediate,10
+Git,0.95,0.75,0.8,0.845,Version Control,Beginner,2
+TypeScript,0.85,0.8,0.88,0.844,Programming,Intermediate,12
+Java,0.88,0.85,0.78,0.841,Programming,Intermediate,12
+React,0.88,0.78,0.85,0.841,Frontend,Beginner,6
+Apache Kafka,0.8,0.85,0.88,0.839,Big Data,Advanced,12
+GitHub,0.92,0.75,0.82,0.839,Version Control,Beginner,2
+CI/CD,0.82,0.82,0.88,0.838,DevOps,Intermediate,10
+Next.js,0.82,0.8,0.9,0.838,Frontend,Beginner,6
+Node.js,0.85,0.8,0.85,0.835,Backend,Intermediate,10
+AWS S3,0.85,0.8,0.85,0.835,Cloud,Intermediate,8
+FastAPI,0.78,0.82,0.92,0.834,Backend,Intermediate,10
+dbt,0.78,0.82,0.9,0.828,Big Data,Advanced,12
+Go,0.78,0.82,0.9,0.828,Programming,Intermediate,12
+PostgreSQL,0.85,0.8,0.82,0.826,Database,Intermediate,8
+Databricks,0.75,0.85,0.9,0.825,Big Data,Advanced,12
+Computer Vision,0.75,0.85,0.9,0.825,AI/ML,Advanced,16
+GitHub Actions,0.8,0.78,0.9,0.824,DevOps,Intermediate,10
+Apache Airflow,0.78,0.82,0.88,0.822,Big Data,Advanced,12
+AWS Lambda,0.78,0.82,0.88,0.822,Cloud,Intermediate,8
+Scikit-learn,0.8,0.82,0.85,0.821,AI/ML,Advanced,16
+AWS EC2,0.82,0.82,0.82,0.82,Cloud,Intermediate,8
+MongoDB,0.82,0.78,0.85,0.817,Database,Intermediate,8
+Feature Engineering,0.78,0.82,0.85,0.813,AI/ML,Advanced,16
+GraphQL,0.75,0.82,0.88,0.81,Backend,Intermediate,10
+Unit Testing,0.82,0.78,0.82,0.808,Testing,Beginner,4
+Express.js,0.8,0.78,0.82,0.8,Backend,Intermediate,10
+Rust,0.65,0.85,0.95,0.8,Programming,Intermediate,12
+Spring Boot,0.78,0.82,0.8,0.798,Backend,Intermediate,10
+Integration Testing,0.78,0.8,0.82,0.798,Testing,Beginner,4
+Power BI,0.78,0.82,0.8,0.798,Visualization,Beginner,4
+Azure Functions,0.75,0.8,0.85,0.795,Cloud,Intermediate,8
+GitLab CI,0.75,0.8,0.85,0.795,DevOps,Intermediate,10
+Tailwind CSS,0.78,0.72,0.88,0.792,Frontend,Beginner,6
+Pytest,0.78,0.78,0.82,0.792,Testing,Beginner,4
+Redis,0.78,0.77,0.82,0.789,Database,Intermediate,8
+C++,0.75,0.88,0.75,0.789,Programming,Intermediate,12
+Ansible,0.75,0.8,0.82,0.786,DevOps,Intermediate,10
+Cloud Functions,0.72,0.78,0.88,0.786,Cloud,Intermediate,8
+Jenkins,0.78,0.78,0.8,0.786,DevOps,Intermediate,10
+Elasticsearch,0.75,0.8,0.82,0.786,Database,Intermediate,8
+GitLab,0.78,0.75,0.82,0.783,Version Control,Beginner,2
+Angular,0.78,0.78,0.78,0.78,Frontend,Beginner,6
+Django,0.75,0.8,0.8,0.78,Backend,Intermediate,10
+DynamoDB,0.72,0.78,0.85,0.777,Database,Intermediate,8
+Prometheus,0.72,0.78,0.85,0.777,DevOps,Intermediate,10
+HTML/CSS,0.85,0.7,0.75,0.775,Frontend,Beginner,6
+Tableau,0.75,0.8,0.78,0.774,Visualization,Beginner,4
+Vue.js,0.75,0.75,0.82,0.771,Frontend,Beginner,6
+MySQL,0.8,0.75,0.75,0.77,Database,Intermediate,8
+Apache Flink,0.68,0.8,0.85,0.767,Big Data,Advanced,12
+Jest,0.75,0.75,0.8,0.765,Testing,Beginner,4
+Flask,0.72,0.78,0.78,0.756,Backend,Intermediate,10
+Redux,0.72,0.75,0.8,0.753,Frontend,Beginner,6
+Grafana,0.7,0.75,0.82,0.751,DevOps,Intermediate,10
+Selenium,0.72,0.75,0.78,0.747,Testing,Beginner,4
+Cassandra,0.68,0.8,0.78,0.746,Database,Intermediate,8
+Plotly,0.7,0.75,0.8,0.745,Visualization,Beginner,4
+Hadoop,0.7,0.8,0.72,0.736,Big Data,Advanced,12
+Scala,0.68,0.82,0.72,0.734,Programming,Intermediate,12
+R,0.72,0.78,0.7,0.732,Programming,Intermediate,12
+Matplotlib,0.72,0.72,0.75,0.729,Visualization,Beginner,4
+D3.js,0.65,0.78,0.78,0.728,Visualization,Beginner,4
+Bitbucket,0.7,0.72,0.75,0.721,Version Control,Beginner,2
+Neo4j,0.62,0.75,0.8,0.713,Database,Intermediate,8
+Ruby,0.65,0.75,0.68,0.689,Programming,Intermediate,12

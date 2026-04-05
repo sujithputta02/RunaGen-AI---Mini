@@ -1,0 +1,301 @@
+skill_id,skill_name,category,description,transformed_at,layer
+skill_1,Python,Programming,,2026-03-01 05:30:23.084,silver
+skill_2,Java,Programming,,2026-03-01 05:30:23.084,silver
+skill_3,Javascript,Programming,,2026-03-01 05:30:23.084,silver
+skill_4,Typescript,Programming,,2026-03-01 05:30:23.084,silver
+skill_5,C++,Programming,,2026-03-01 05:30:23.084,silver
+skill_6,C#,Programming,,2026-03-01 05:30:23.084,silver
+skill_7,Go,Programming,,2026-03-01 05:30:23.084,silver
+skill_8,Rust,Programming,,2026-03-01 05:30:23.084,silver
+skill_9,Ruby,Programming,,2026-03-01 05:30:23.084,silver
+skill_10,Php,Programming,,2026-03-01 05:30:23.084,silver
+skill_11,Swift,Programming,,2026-03-01 05:30:23.084,silver
+skill_12,Kotlin,Programming,,2026-03-01 05:30:23.084,silver
+skill_13,R,Programming,,2026-03-01 05:30:23.085,silver
+skill_14,Scala,Programming,,2026-03-01 05:30:23.085,silver
+skill_15,Sql,Database,,2026-03-01 05:30:23.085,silver
+skill_16,Mongodb,Database,,2026-03-01 05:30:23.085,silver
+skill_17,Postgresql,Database,,2026-03-01 05:30:23.085,silver
+skill_18,Mysql,Database,,2026-03-01 05:30:23.085,silver
+skill_19,Redis,Database,,2026-03-01 05:30:23.085,silver
+skill_20,Cassandra,Database,,2026-03-01 05:30:23.085,silver
+skill_21,Dynamodb,Database,,2026-03-01 05:30:23.085,silver
+skill_22,Neo4J,Database,,2026-03-01 05:30:23.085,silver
+skill_23,Aws,Cloud,,2026-03-01 05:30:23.085,silver
+skill_24,Azure,Cloud,,2026-03-01 05:30:23.085,silver
+skill_25,Gcp,Cloud,,2026-03-01 05:30:23.085,silver
+skill_26,Docker,DevOps,,2026-03-01 05:30:23.085,silver
+skill_27,Kubernetes,DevOps,,2026-03-01 05:30:23.085,silver
+skill_28,Terraform,DevOps,,2026-03-01 05:30:23.085,silver
+skill_29,Jenkins,DevOps,,2026-03-01 05:30:23.085,silver
+skill_30,Gitlab Ci,DevOps,,2026-03-01 05:30:23.085,silver
+skill_31,Machine Learning,AI/ML,,2026-03-01 05:30:23.085,silver
+skill_32,Deep Learning,AI/ML,,2026-03-01 05:30:23.085,silver
+skill_33,Tensorflow,AI/ML,,2026-03-01 05:30:23.085,silver
+skill_34,Pytorch,AI/ML,,2026-03-01 05:30:23.085,silver
+skill_35,Scikit-Learn,AI/ML,,2026-03-01 05:30:23.085,silver
+skill_36,Data Analysis,Analytics,,2026-03-01 05:30:23.085,silver
+skill_37,Pandas,Analytics,,2026-03-01 05:30:23.085,silver
+skill_38,Numpy,Analytics,,2026-03-01 05:30:23.085,silver
+skill_39,Apache Spark,Big Data,,2026-03-01 05:30:23.085,silver
+skill_40,Hadoop,Big Data,,2026-03-01 05:30:23.085,silver
+skill_41,Kafka,Big Data,,2026-03-01 05:30:23.085,silver
+skill_42,React,Frontend,,2026-03-01 05:30:23.085,silver
+skill_43,Angular,Frontend,,2026-03-01 05:30:23.085,silver
+skill_44,Vue.Js,Frontend,,2026-03-01 05:30:23.085,silver
+skill_45,Node.Js,Backend,,2026-03-01 05:30:23.085,silver
+skill_46,Django,Backend,,2026-03-01 05:30:23.085,silver
+skill_47,Flask,Backend,,2026-03-01 05:30:23.085,silver
+skill_48,Fastapi,Backend,,2026-03-01 05:30:23.085,silver
+skill_49,Spring Boot,Backend,,2026-03-01 05:30:23.085,silver
+skill_50,Python 1,Programming,,2026-03-01 05:30:23.085,silver
+skill_51,Java 1,Programming,,2026-03-01 05:30:23.085,silver
+skill_52,Javascript 1,Programming,,2026-03-01 05:30:23.085,silver
+skill_53,Typescript 1,Programming,,2026-03-01 05:30:23.085,silver
+skill_54,C++ 1,Programming,,2026-03-01 05:30:23.085,silver
+skill_55,C# 1,Programming,,2026-03-01 05:30:23.085,silver
+skill_56,Go 1,Programming,,2026-03-01 05:30:23.085,silver
+skill_57,Rust 1,Programming,,2026-03-01 05:30:23.085,silver
+skill_58,Ruby 1,Programming,,2026-03-01 05:30:23.085,silver
+skill_59,Php 1,Programming,,2026-03-01 05:30:23.085,silver
+skill_60,Swift 1,Programming,,2026-03-01 05:30:23.085,silver
+skill_61,Kotlin 1,Programming,,2026-03-01 05:30:23.085,silver
+skill_62,R 1,Programming,,2026-03-01 05:30:23.085,silver
+skill_63,Scala 1,Programming,,2026-03-01 05:30:23.085,silver
+skill_64,Sql 1,Database,,2026-03-01 05:30:23.085,silver
+skill_65,Mongodb 1,Database,,2026-03-01 05:30:23.085,silver
+skill_66,Postgresql 1,Database,,2026-03-01 05:30:23.085,silver
+skill_67,Mysql 1,Database,,2026-03-01 05:30:23.085,silver
+skill_68,Redis 1,Database,,2026-03-01 05:30:23.085,silver
+skill_69,Cassandra 1,Database,,2026-03-01 05:30:23.085,silver
+skill_70,Dynamodb 1,Database,,2026-03-01 05:30:23.085,silver
+skill_71,Neo4J 1,Database,,2026-03-01 05:30:23.085,silver
+skill_72,Aws 1,Cloud,,2026-03-01 05:30:23.085,silver
+skill_73,Azure 1,Cloud,,2026-03-01 05:30:23.085,silver
+skill_74,Gcp 1,Cloud,,2026-03-01 05:30:23.085,silver
+skill_75,Docker 1,DevOps,,2026-03-01 05:30:23.085,silver
+skill_76,Kubernetes 1,DevOps,,2026-03-01 05:30:23.085,silver
+skill_77,Terraform 1,DevOps,,2026-03-01 05:30:23.085,silver
+skill_78,Jenkins 1,DevOps,,2026-03-01 05:30:23.085,silver
+skill_79,Gitlab Ci 1,DevOps,,2026-03-01 05:30:23.085,silver
+skill_80,Machine Learning 1,AI/ML,,2026-03-01 05:30:23.085,silver
+skill_81,Deep Learning 1,AI/ML,,2026-03-01 05:30:23.085,silver
+skill_82,Tensorflow 1,AI/ML,,2026-03-01 05:30:23.085,silver
+skill_83,Pytorch 1,AI/ML,,2026-03-01 05:30:23.085,silver
+skill_84,Scikit-Learn 1,AI/ML,,2026-03-01 05:30:23.085,silver
+skill_85,Data Analysis 1,Analytics,,2026-03-01 05:30:23.085,silver
+skill_86,Pandas 1,Analytics,,2026-03-01 05:30:23.085,silver
+skill_87,Numpy 1,Analytics,,2026-03-01 05:30:23.085,silver
+skill_88,Apache Spark 1,Big Data,,2026-03-01 05:30:23.085,silver
+skill_89,Hadoop 1,Big Data,,2026-03-01 05:30:23.085,silver
+skill_90,Kafka 1,Big Data,,2026-03-01 05:30:23.085,silver
+skill_91,React 1,Frontend,,2026-03-01 05:30:23.085,silver
+skill_92,Angular 1,Frontend,,2026-03-01 05:30:23.085,silver
+skill_93,Vue.Js 1,Frontend,,2026-03-01 05:30:23.085,silver
+skill_94,Node.Js 1,Backend,,2026-03-01 05:30:23.085,silver
+skill_95,Django 1,Backend,,2026-03-01 05:30:23.085,silver
+skill_96,Flask 1,Backend,,2026-03-01 05:30:23.085,silver
+skill_97,Fastapi 1,Backend,,2026-03-01 05:30:23.085,silver
+skill_98,Spring Boot 1,Backend,,2026-03-01 05:30:23.085,silver
+skill_99,Python 2,Programming,,2026-03-01 05:30:23.085,silver
+skill_100,Java 2,Programming,,2026-03-01 05:30:23.085,silver
+skill_1,Python,Programming,,2026-03-01 05:31:36.908,silver
+skill_2,Java,Programming,,2026-03-01 05:31:36.908,silver
+skill_3,Javascript,Programming,,2026-03-01 05:31:36.908,silver
+skill_4,Typescript,Programming,,2026-03-01 05:31:36.908,silver
+skill_5,C++,Programming,,2026-03-01 05:31:36.908,silver
+skill_6,C#,Programming,,2026-03-01 05:31:36.908,silver
+skill_7,Go,Programming,,2026-03-01 05:31:36.908,silver
+skill_8,Rust,Programming,,2026-03-01 05:31:36.908,silver
+skill_9,Ruby,Programming,,2026-03-01 05:31:36.908,silver
+skill_10,Php,Programming,,2026-03-01 05:31:36.908,silver
+skill_11,Swift,Programming,,2026-03-01 05:31:36.908,silver
+skill_12,Kotlin,Programming,,2026-03-01 05:31:36.908,silver
+skill_13,R,Programming,,2026-03-01 05:31:36.908,silver
+skill_14,Scala,Programming,,2026-03-01 05:31:36.908,silver
+skill_15,Sql,Database,,2026-03-01 05:31:36.908,silver
+skill_16,Mongodb,Database,,2026-03-01 05:31:36.908,silver
+skill_17,Postgresql,Database,,2026-03-01 05:31:36.908,silver
+skill_18,Mysql,Database,,2026-03-01 05:31:36.908,silver
+skill_19,Redis,Database,,2026-03-01 05:31:36.908,silver
+skill_20,Cassandra,Database,,2026-03-01 05:31:36.908,silver
+skill_21,Dynamodb,Database,,2026-03-01 05:31:36.908,silver
+skill_22,Neo4J,Database,,2026-03-01 05:31:36.908,silver
+skill_23,Aws,Cloud,,2026-03-01 05:31:36.908,silver
+skill_24,Azure,Cloud,,2026-03-01 05:31:36.908,silver
+skill_25,Gcp,Cloud,,2026-03-01 05:31:36.908,silver
+skill_26,Docker,DevOps,,2026-03-01 05:31:36.908,silver
+skill_27,Kubernetes,DevOps,,2026-03-01 05:31:36.908,silver
+skill_28,Terraform,DevOps,,2026-03-01 05:31:36.908,silver
+skill_29,Jenkins,DevOps,,2026-03-01 05:31:36.908,silver
+skill_30,Gitlab Ci,DevOps,,2026-03-01 05:31:36.908,silver
+skill_31,Machine Learning,AI/ML,,2026-03-01 05:31:36.908,silver
+skill_32,Deep Learning,AI/ML,,2026-03-01 05:31:36.908,silver
+skill_33,Tensorflow,AI/ML,,2026-03-01 05:31:36.908,silver
+skill_34,Pytorch,AI/ML,,2026-03-01 05:31:36.908,silver
+skill_35,Scikit-Learn,AI/ML,,2026-03-01 05:31:36.908,silver
+skill_36,Data Analysis,Analytics,,2026-03-01 05:31:36.908,silver
+skill_37,Pandas,Analytics,,2026-03-01 05:31:36.908,silver
+skill_38,Numpy,Analytics,,2026-03-01 05:31:36.908,silver
+skill_39,Apache Spark,Big Data,,2026-03-01 05:31:36.908,silver
+skill_40,Hadoop,Big Data,,2026-03-01 05:31:36.908,silver
+skill_41,Kafka,Big Data,,2026-03-01 05:31:36.908,silver
+skill_42,React,Frontend,,2026-03-01 05:31:36.908,silver
+skill_43,Angular,Frontend,,2026-03-01 05:31:36.908,silver
+skill_44,Vue.Js,Frontend,,2026-03-01 05:31:36.908,silver
+skill_45,Node.Js,Backend,,2026-03-01 05:31:36.908,silver
+skill_46,Django,Backend,,2026-03-01 05:31:36.908,silver
+skill_47,Flask,Backend,,2026-03-01 05:31:36.908,silver
+skill_48,Fastapi,Backend,,2026-03-01 05:31:36.908,silver
+skill_49,Spring Boot,Backend,,2026-03-01 05:31:36.908,silver
+skill_50,Python 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_51,Java 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_52,Javascript 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_53,Typescript 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_54,C++ 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_55,C# 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_56,Go 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_57,Rust 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_58,Ruby 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_59,Php 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_60,Swift 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_61,Kotlin 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_62,R 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_63,Scala 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_64,Sql 1,Database,,2026-03-01 05:31:36.908,silver
+skill_65,Mongodb 1,Database,,2026-03-01 05:31:36.908,silver
+skill_66,Postgresql 1,Database,,2026-03-01 05:31:36.908,silver
+skill_67,Mysql 1,Database,,2026-03-01 05:31:36.908,silver
+skill_68,Redis 1,Database,,2026-03-01 05:31:36.908,silver
+skill_69,Cassandra 1,Database,,2026-03-01 05:31:36.908,silver
+skill_70,Dynamodb 1,Database,,2026-03-01 05:31:36.908,silver
+skill_71,Neo4J 1,Database,,2026-03-01 05:31:36.908,silver
+skill_72,Aws 1,Cloud,,2026-03-01 05:31:36.908,silver
+skill_73,Azure 1,Cloud,,2026-03-01 05:31:36.908,silver
+skill_74,Gcp 1,Cloud,,2026-03-01 05:31:36.908,silver
+skill_75,Docker 1,DevOps,,2026-03-01 05:31:36.908,silver
+skill_76,Kubernetes 1,DevOps,,2026-03-01 05:31:36.908,silver
+skill_77,Terraform 1,DevOps,,2026-03-01 05:31:36.908,silver
+skill_78,Jenkins 1,DevOps,,2026-03-01 05:31:36.908,silver
+skill_79,Gitlab Ci 1,DevOps,,2026-03-01 05:31:36.908,silver
+skill_80,Machine Learning 1,AI/ML,,2026-03-01 05:31:36.908,silver
+skill_81,Deep Learning 1,AI/ML,,2026-03-01 05:31:36.908,silver
+skill_82,Tensorflow 1,AI/ML,,2026-03-01 05:31:36.908,silver
+skill_83,Pytorch 1,AI/ML,,2026-03-01 05:31:36.908,silver
+skill_84,Scikit-Learn 1,AI/ML,,2026-03-01 05:31:36.908,silver
+skill_85,Data Analysis 1,Analytics,,2026-03-01 05:31:36.908,silver
+skill_86,Pandas 1,Analytics,,2026-03-01 05:31:36.908,silver
+skill_87,Numpy 1,Analytics,,2026-03-01 05:31:36.908,silver
+skill_88,Apache Spark 1,Big Data,,2026-03-01 05:31:36.908,silver
+skill_89,Hadoop 1,Big Data,,2026-03-01 05:31:36.908,silver
+skill_90,Kafka 1,Big Data,,2026-03-01 05:31:36.908,silver
+skill_91,React 1,Frontend,,2026-03-01 05:31:36.908,silver
+skill_92,Angular 1,Frontend,,2026-03-01 05:31:36.908,silver
+skill_93,Vue.Js 1,Frontend,,2026-03-01 05:31:36.908,silver
+skill_94,Node.Js 1,Backend,,2026-03-01 05:31:36.908,silver
+skill_95,Django 1,Backend,,2026-03-01 05:31:36.908,silver
+skill_96,Flask 1,Backend,,2026-03-01 05:31:36.908,silver
+skill_97,Fastapi 1,Backend,,2026-03-01 05:31:36.908,silver
+skill_98,Spring Boot 1,Backend,,2026-03-01 05:31:36.908,silver
+skill_99,Python 2,Programming,,2026-03-01 05:31:36.908,silver
+skill_100,Java 2,Programming,,2026-03-01 05:31:36.908,silver
+skill_1,Python,Programming,,2026-03-01 05:31:36.908,silver
+skill_2,Java,Programming,,2026-03-01 05:31:36.908,silver
+skill_3,Javascript,Programming,,2026-03-01 05:31:36.908,silver
+skill_4,Typescript,Programming,,2026-03-01 05:31:36.908,silver
+skill_5,C++,Programming,,2026-03-01 05:31:36.908,silver
+skill_6,C#,Programming,,2026-03-01 05:31:36.908,silver
+skill_7,Go,Programming,,2026-03-01 05:31:36.908,silver
+skill_8,Rust,Programming,,2026-03-01 05:31:36.908,silver
+skill_9,Ruby,Programming,,2026-03-01 05:31:36.908,silver
+skill_10,Php,Programming,,2026-03-01 05:31:36.908,silver
+skill_11,Swift,Programming,,2026-03-01 05:31:36.908,silver
+skill_12,Kotlin,Programming,,2026-03-01 05:31:36.908,silver
+skill_13,R,Programming,,2026-03-01 05:31:36.908,silver
+skill_14,Scala,Programming,,2026-03-01 05:31:36.908,silver
+skill_15,Sql,Database,,2026-03-01 05:31:36.908,silver
+skill_16,Mongodb,Database,,2026-03-01 05:31:36.908,silver
+skill_17,Postgresql,Database,,2026-03-01 05:31:36.908,silver
+skill_18,Mysql,Database,,2026-03-01 05:31:36.908,silver
+skill_19,Redis,Database,,2026-03-01 05:31:36.908,silver
+skill_20,Cassandra,Database,,2026-03-01 05:31:36.908,silver
+skill_21,Dynamodb,Database,,2026-03-01 05:31:36.908,silver
+skill_22,Neo4J,Database,,2026-03-01 05:31:36.908,silver
+skill_23,Aws,Cloud,,2026-03-01 05:31:36.908,silver
+skill_24,Azure,Cloud,,2026-03-01 05:31:36.908,silver
+skill_25,Gcp,Cloud,,2026-03-01 05:31:36.908,silver
+skill_26,Docker,DevOps,,2026-03-01 05:31:36.908,silver
+skill_27,Kubernetes,DevOps,,2026-03-01 05:31:36.908,silver
+skill_28,Terraform,DevOps,,2026-03-01 05:31:36.908,silver
+skill_29,Jenkins,DevOps,,2026-03-01 05:31:36.908,silver
+skill_30,Gitlab Ci,DevOps,,2026-03-01 05:31:36.908,silver
+skill_31,Machine Learning,AI/ML,,2026-03-01 05:31:36.908,silver
+skill_32,Deep Learning,AI/ML,,2026-03-01 05:31:36.908,silver
+skill_33,Tensorflow,AI/ML,,2026-03-01 05:31:36.908,silver
+skill_34,Pytorch,AI/ML,,2026-03-01 05:31:36.908,silver
+skill_35,Scikit-Learn,AI/ML,,2026-03-01 05:31:36.908,silver
+skill_36,Data Analysis,Analytics,,2026-03-01 05:31:36.908,silver
+skill_37,Pandas,Analytics,,2026-03-01 05:31:36.908,silver
+skill_38,Numpy,Analytics,,2026-03-01 05:31:36.908,silver
+skill_39,Apache Spark,Big Data,,2026-03-01 05:31:36.908,silver
+skill_40,Hadoop,Big Data,,2026-03-01 05:31:36.908,silver
+skill_41,Kafka,Big Data,,2026-03-01 05:31:36.908,silver
+skill_42,React,Frontend,,2026-03-01 05:31:36.908,silver
+skill_43,Angular,Frontend,,2026-03-01 05:31:36.908,silver
+skill_44,Vue.Js,Frontend,,2026-03-01 05:31:36.908,silver
+skill_45,Node.Js,Backend,,2026-03-01 05:31:36.908,silver
+skill_46,Django,Backend,,2026-03-01 05:31:36.908,silver
+skill_47,Flask,Backend,,2026-03-01 05:31:36.908,silver
+skill_48,Fastapi,Backend,,2026-03-01 05:31:36.908,silver
+skill_49,Spring Boot,Backend,,2026-03-01 05:31:36.908,silver
+skill_50,Python 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_51,Java 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_52,Javascript 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_53,Typescript 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_54,C++ 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_55,C# 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_56,Go 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_57,Rust 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_58,Ruby 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_59,Php 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_60,Swift 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_61,Kotlin 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_62,R 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_63,Scala 1,Programming,,2026-03-01 05:31:36.908,silver
+skill_64,Sql 1,Database,,2026-03-01 05:31:36.908,silver
+skill_65,Mongodb 1,Database,,2026-03-01 05:31:36.908,silver
+skill_66,Postgresql 1,Database,,2026-03-01 05:31:36.908,silver
+skill_67,Mysql 1,Database,,2026-03-01 05:31:36.908,silver
+skill_68,Redis 1,Database,,2026-03-01 05:31:36.908,silver
+skill_69,Cassandra 1,Database,,2026-03-01 05:31:36.908,silver
+skill_70,Dynamodb 1,Database,,2026-03-01 05:31:36.908,silver
+skill_71,Neo4J 1,Database,,2026-03-01 05:31:36.908,silver
+skill_72,Aws 1,Cloud,,2026-03-01 05:31:36.908,silver
+skill_73,Azure 1,Cloud,,2026-03-01 05:31:36.908,silver
+skill_74,Gcp 1,Cloud,,2026-03-01 05:31:36.908,silver
+skill_75,Docker 1,DevOps,,2026-03-01 05:31:36.908,silver
+skill_76,Kubernetes 1,DevOps,,2026-03-01 05:31:36.908,silver
+skill_77,Terraform 1,DevOps,,2026-03-01 05:31:36.908,silver
+skill_78,Jenkins 1,DevOps,,2026-03-01 05:31:36.908,silver
+skill_79,Gitlab Ci 1,DevOps,,2026-03-01 05:31:36.908,silver
+skill_80,Machine Learning 1,AI/ML,,2026-03-01 05:31:36.908,silver
+skill_81,Deep Learning 1,AI/ML,,2026-03-01 05:31:36.908,silver
+skill_82,Tensorflow 1,AI/ML,,2026-03-01 05:31:36.908,silver
+skill_83,Pytorch 1,AI/ML,,2026-03-01 05:31:36.908,silver
+skill_84,Scikit-Learn 1,AI/ML,,2026-03-01 05:31:36.908,silver
+skill_85,Data Analysis 1,Analytics,,2026-03-01 05:31:36.908,silver
+skill_86,Pandas 1,Analytics,,2026-03-01 05:31:36.908,silver
+skill_87,Numpy 1,Analytics,,2026-03-01 05:31:36.908,silver
+skill_88,Apache Spark 1,Big Data,,2026-03-01 05:31:36.908,silver
+skill_89,Hadoop 1,Big Data,,2026-03-01 05:31:36.908,silver
+skill_90,Kafka 1,Big Data,,2026-03-01 05:31:36.908,silver
+skill_91,React 1,Frontend,,2026-03-01 05:31:36.908,silver
+skill_92,Angular 1,Frontend,,2026-03-01 05:31:36.908,silver
+skill_93,Vue.Js 1,Frontend,,2026-03-01 05:31:36.908,silver
+skill_94,Node.Js 1,Backend,,2026-03-01 05:31:36.908,silver
+skill_95,Django 1,Backend,,2026-03-01 05:31:36.908,silver
+skill_96,Flask 1,Backend,,2026-03-01 05:31:36.908,silver
+skill_97,Fastapi 1,Backend,,2026-03-01 05:31:36.908,silver
+skill_98,Spring Boot 1,Backend,,2026-03-01 05:31:36.908,silver
+skill_99,Python 2,Programming,,2026-03-01 05:31:36.908,silver
+skill_100,Java 2,Programming,,2026-03-01 05:31:36.908,silver

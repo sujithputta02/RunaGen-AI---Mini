@@ -1,0 +1,29 @@
+
+// Power BI Data Connection Script
+// Copy this into Power BI's Advanced Editor
+
+let
+    // Set the folder path where CSV files are located
+    FolderPath = "/Users/sujithputta/Projects/RunaGen-AI_Minor 1/runagen-ml-etl/powerbi_data",
+    
+    // Load Skills Data
+    Skills = Csv.Document(File.Contents(FolderPath & "\skills.csv"),[Delimiter=",", Columns=auto, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+    SkillsTable = Table.PromoteHeaders(Skills, [PromoteAllScalars=true]),
+    
+    // Load Jobs Data
+    Jobs = Csv.Document(File.Contents(FolderPath & "\jobs.csv"),[Delimiter=",", Columns=auto, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+    JobsTable = Table.PromoteHeaders(Jobs, [PromoteAllScalars=true]),
+    
+    // Load Career Transitions
+    Transitions = Csv.Document(File.Contents(FolderPath & "\career_transitions.csv"),[Delimiter=",", Columns=auto, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+    TransitionsTable = Table.PromoteHeaders(Transitions, [PromoteAllScalars=true]),
+    
+    // Load Salary Data
+    Salaries = Csv.Document(File.Contents(FolderPath & "\salaries.csv"),[Delimiter=",", Columns=auto, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+    SalariesTable = Table.PromoteHeaders(Salaries, [PromoteAllScalars=true]),
+    
+    // Load Skill Gaps
+    SkillGaps = Csv.Document(File.Contents(FolderPath & "\skill_gaps.csv"),[Delimiter=",", Columns=auto, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+    SkillGapsTable = Table.PromoteHeaders(SkillGaps, [PromoteAllScalars=true])
+in
+    SkillsTable
