@@ -1,0 +1,501 @@
+Job_ID,Role_Title,Company,Location,Salary_Min_INR,Salary_Max_INR,Average_Salary_INR,Skills_Required,Skills_Count,Experience_Level,Market_Status
+69a67b703567c12f8643c9db,Software Engineer in Test,Coforge,"Bangalore, Karnataka",1080000,1320000,1200000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643ca49,Data Scientist / Data Engineer,Insight Global,"Bangalore, Karnataka",1620000,1980000,1800000,Python,1,Senior/Lead,Niche
+69a67b703567c12f8643ca62,Data Engineer,Insight Global,"Hyderabad, Telangana",1080000,1320000,1200000,"Java, Spark",2,Entry/Mid,Niche
+69a67b703567c12f8643ca63,Data Engineer,Live Connections,"Bangalore, Karnataka",1080000,1320000,1200000,"Python, Sql, Aws, Azure, Gcp, Spark",6,Entry/Mid,High Demand
+69a67b703567c12f8643ca89,Data Engineer,"Enterprise Minds, Inc","Bangalore, Karnataka",1080000,1320000,1200000,"Sql, Spark",2,Entry/Mid,Niche
+69a67b703567c12f8643c9e0,Software Engineer in Test,Andor Tech,"Pune, Maharashtra",1080000,1320000,1200000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643c9e3,Java Software Engineer,Synechron Technologies Pvt. Ltd.,"Gurgaon, Haryana",1080000,1320000,1200000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643ca1c,Data Scientist,Brace Infotech Private Ltd,"Noida, Uttar Pradesh",1620000,1980000,1800000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643ca21,Data Scientist,airtel,"Chennai, Tamil Nadu",1620000,1980000,1800000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643ca60,Data Engineer,Raptbot Technologies Private Limited,"Bangalore, Karnataka",1080000,1320000,1200000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643ca87,Data Engineer,Brace Infotech Private Ltd,"Hyderabad, Telangana",1080000,1320000,1200000,"Python, Java, Sql, Azure",4,Entry/Mid,Niche
+69a67b703567c12f8643ca8c,Data Engineer,Bajaj Technology Services,"Hyderabad, Telangana",1080000,1320000,1200000,Spark,1,Entry/Mid,Niche
+69a67b703567c12f8643c9c1,Senior Software Engineer,ValueMomentum,"Hyderabad, Telangana",1080000,1320000,1200000,"Java, Javascript",2,Entry/Mid,Niche
+69a67b703567c12f8643c9cc,Senior Software Engineer,Definian,"Hyderabad, Telangana",1080000,1320000,1200000,Python,1,Entry/Mid,Niche
+69a67b703567c12f8643ca54,Data Engineer,UST,"Pune, Maharashtra",1080000,1320000,1200000,"Python, Gcp",2,Entry/Mid,Niche
+69a67b703567c12f8643ca71,Data Engineer,Cloud Orbit Technologies,"Gurgaon, Haryana",1080000,1320000,1200000,"Python, Sql, Aws, Azure, Spark",5,Entry/Mid,Niche
+69a67b703567c12f8643ca84,Data Engineer,CSM Technologies,"Bangalore, Karnataka",1080000,1320000,1200000,"Sql, Aws, Spark",3,Entry/Mid,Niche
+69a67b703567c12f8643ca86,Data Engineer,Neurones IT India,"Bangalore, Karnataka",1080000,1320000,1200000,Azure,1,Entry/Mid,Niche
+69a67b703567c12f8643c9a3,Software Engineer / Senior Software Engineer – Backend,Newgen Software,"Noida, Ghaziabad",1080000,1320000,1200000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643ca18,Data Scientist,Albertsons Companies India,"Bangalore, Karnataka",1620000,1980000,1800000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643ca41,Data Scientist,Grid Dynamics,"Bangalore, Karnataka",1620000,1980000,1800000,"Python, Sql, Postgresql",3,Senior/Lead,Niche
+69a67b703567c12f8643ca45,Data Scientist,PwC India,"Bangalore, Karnataka",1620000,1980000,1800000,Python,1,Senior/Lead,Niche
+69a67b703567c12f8643ca56,Data Engineer,"Enterprise Minds, Inc","Hyderabad, Telangana",1080000,1320000,1200000,Machine Learning,1,Entry/Mid,Niche
+69a67b703567c12f8643ca72,Data Engineer,C5i,"Bangalore, Karnataka",1080000,1320000,1200000,"Python, Sql",2,Entry/Mid,Niche
+69a67b703567c12f8643ca7c,Data Engineer,TEKsystems,"Bangalore, Karnataka",1080000,1320000,1200000,"Python, Aws, Spark, Hadoop",4,Entry/Mid,Niche
+69a67b703567c12f8643ca8e,Data Engineer,Bajaj Tech.AI,"Bangalore, Karnataka",1080000,1320000,1200000,Spark,1,Entry/Mid,Niche
+69a67b703567c12f8643ca20,Data Scientist,HCLTech,"Bangalore, Karnataka",1620000,1980000,1800000,Gcp,1,Senior/Lead,Niche
+69a67b703567c12f8643ca23,Data Scientist,Brace Infotech Private Ltd,"Bangalore, Karnataka",1620000,1980000,1800000,"Python, Sql, Machine Learning, Deep Learning, Tensorflow, Pytorch",6,Senior/Lead,High Demand
+69a67b703567c12f8643ca4b,Senior Data Scientist,Insight Global,"Bangalore, Karnataka",1620000,1980000,1800000,"Python, Sql, Aws, Azure, Spark, Hadoop, Tensorflow, Pytorch",8,Senior/Lead,High Demand
+69a67b703567c12f8643ca57,Data Engineer,People Tech Group Inc,"Hyderabad, Telangana",1080000,1320000,1200000,"Python, Sql, Aws",3,Entry/Mid,Niche
+69a67b703567c12f8643ca5b,Data Engineer,Meril,"Bangalore, Karnataka",1080000,1320000,1200000,Machine Learning,1,Entry/Mid,Niche
+69a67b703567c12f8643ca5c,Data Engineer,Incedo Inc.,"Chennai, Tamil Nadu",1080000,1320000,1200000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643ca77,Data Engineer,IntraEdge,"Noida, Uttar Pradesh",1080000,1320000,1200000,"Python, Aws, Spark",3,Entry/Mid,Niche
+69a67b703567c12f8643c9ac,Software Engineer I,upGrad,"Hyderabad, Telangana",1080000,1320000,1200000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643c9d1,Java Software Engineer,People Tech Group Inc,"Hyderabad, Telangana",1080000,1320000,1200000,"Java, Aws",2,Entry/Mid,Niche
+69a67b703567c12f8643c9e9,Software engineer - Infrastructure,Newmark,"Hyderabad, Telangana",1080000,1320000,1200000,Azure,1,Entry/Mid,Niche
+69a67b703567c12f8643ca28,Data Scientist,"Prudent Technologies and Consulting, Inc.","Hyderabad, Telangana",1620000,1980000,1800000,"Aws, Azure, Gcp, Spark",4,Senior/Lead,Niche
+69a67b703567c12f8643ca2a,Data Scientist,AB InBev GCC India,"Bangalore, Karnataka",1620000,1980000,1800000,"Python, Sql",2,Senior/Lead,Niche
+69a67b703567c12f8643ca30,Data Scientist,Finarb,"Kolkata, West Bengal",1620000,1980000,1800000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643ca33,Data Scientist,Verdantas,"Chennai, Tamil Nadu",1620000,1980000,1800000,"Python, Machine Learning",2,Senior/Lead,Niche
+69a67b703567c12f8643ca34,Data Scientist,VAYUZ Technologies,"Mumbai, Maharashtra",1620000,1980000,1800000,"Machine Learning, Deep Learning",2,Senior/Lead,Niche
+69a67b703567c12f8643ca7d,Data Engineer,Terra Technology Circle Consulting Private Limited,"Bangalore, Karnataka",1080000,1320000,1200000,"Python, Sql, Aws, Spark",4,Entry/Mid,Niche
+69a67b703567c12f8643ca8d,Data Engineer,Mindsprint,"Chennai, Tamil Nadu",1080000,1320000,1200000,Gcp,1,Entry/Mid,Niche
+69a67b703567c12f8643c9c9,Java Software Engineer,KnowledgeWorks Global Ltd.,"Mumbai, Maharashtra",1080000,1320000,1200000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643c9d6,Java Software Engineer,LTM,"Mumbai, Maharashtra",1080000,1320000,1200000,"Python, Angular",2,Entry/Mid,Niche
+69a67b703567c12f8643ca0c,Data Scientist,DevOn,"Bangalore, Karnataka",1620000,1980000,1800000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643ca5a,Data Engineer,People Tech Group Inc,"Hyderabad, Telangana",1080000,1320000,1200000,"Python, Aws, Spark",3,Entry/Mid,Niche
+69a67b703567c12f8643ca69,Data Engineer,AMISEQ,"Bangalore, Karnataka",1080000,1320000,1200000,Hadoop,1,Entry/Mid,Niche
+69a67b703567c12f8643c9cb,Java Software Engineer,HighRadius,"Hyderabad, Telangana",1080000,1320000,1200000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643ca1e,Data Scientist,NOBL Q,"Hyderabad, Telangana",1620000,1980000,1800000,"Machine Learning, Deep Learning, Tensorflow, Pytorch",4,Senior/Lead,Niche
+69a67b703567c12f8643ca66,Data Engineer,EXL,"Pune, Maharashtra",1080000,1320000,1200000,"Sql, Azure",2,Entry/Mid,Niche
+69a67b703567c12f8643ca6d,Data Engineer,Crescendo Global,"Gurgaon, Haryana",1080000,1320000,1200000,"Azure, Spark",2,Entry/Mid,Niche
+69a67b703567c12f8643ca6f,Data Engineer,IntraEdge,"Noida, Uttar Pradesh",1080000,1320000,1200000,"Python, Aws, Spark",3,Entry/Mid,Niche
+69a67b703567c12f8643c98f,Software Engineer,ValueMomentum,"Hyderabad, Telangana",1080000,1320000,1200000,"Sql, Aws",2,Entry/Mid,Niche
+69a67b703567c12f8643c993,Software Engineer,VBeyond Corporation,"Chennai, Tamil Nadu",1080000,1320000,1200000,"Java, Javascript, React",3,Entry/Mid,Niche
+69a67b703567c12f8643c9c0,PHP Software Engineer,Summit Consulting Services,"Kochi, Ernakulam",1080000,1320000,1200000,Sql,1,Entry/Mid,Niche
+69a67b703567c12f8643ca1b,Data Scientist,Albertsons Companies India,"Bangalore, Karnataka",1620000,1980000,1800000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643ca31,Data Scientist,Infosys Finacle,"Chennai, Tamil Nadu",1620000,1980000,1800000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643ca59,Data Engineer,Sikich India,"Bangalore, Karnataka",1080000,1320000,1200000,Azure,1,Entry/Mid,Niche
+69a67b703567c12f8643ca68,Data Engineer,InterEx Group,"Hyderabad, Telangana",1080000,1320000,1200000,Azure,1,Entry/Mid,Niche
+69a67b703567c12f8643ca78,Data Engineer,KPI Partners,"Pune, Maharashtra",1080000,1320000,1200000,"Python, Sql, Aws, Spark",4,Entry/Mid,Niche
+69a67b703567c12f8643ca8b,Data Engineer,HCLTech,"Chennai, Tamil Nadu",1080000,1320000,1200000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643ca14,Data Scientist,Somnetics,"Gurgaon, Haryana",1620000,1980000,1800000,"Python, Sql, Tensorflow, Pytorch",4,Senior/Lead,Niche
+69a67b703567c12f8643ca43,Data Scientist,Grid Dynamics,"Bangalore, Karnataka",1620000,1980000,1800000,"Java, Javascript, Sql, Docker, Kubernetes, React, Angular, Node.Js, Mongodb, Postgresql",10,Senior/Lead,High Demand
+69a67b703567c12f8643c9ce,Senior Software Engineer,Ferguson,"Bangalore, Karnataka",1080000,1320000,1200000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643ca0e,Data Scientist,"h3 Technologies, LLC","Mumbai, Maharashtra",1620000,1980000,1800000,"Python, Sql",2,Senior/Lead,Niche
+69a67b703567c12f8643ca11,Data Scientist,Intellistaff Services Pvt. Ltd,"Hyderabad, Telangana",1620000,1980000,1800000,"Python, Sql, Spark, Machine Learning",4,Senior/Lead,Niche
+69a67b703567c12f8643ca67,Data Engineer,Exult Global,"Noida, Uttar Pradesh",1080000,1320000,1200000,"Sql, Azure, Spark",3,Entry/Mid,Niche
+69a67b703567c12f8643c989,Software Engineer,Brillio,"Mumbai, Maharashtra",1080000,1320000,1200000,"Python, Angular",2,Entry/Mid,Niche
+69a67b703567c12f8643c9b2,"Manager, Software Engineering",TMUS Global Solutions,"Hyderabad, Telangana",1080000,1320000,1200000,Vue,1,Entry/Mid,Niche
+69a67b703567c12f8643ca19,Data Scientist,The Judge Group,"Chennai, Tamil Nadu",1620000,1980000,1800000,"Python, Sql, Gcp, Machine Learning",4,Senior/Lead,Niche
+69a67b703567c12f8643ca1d,Data Scientist,MNC Group,"Mumbai, Maharashtra",1620000,1980000,1800000,"Python, Machine Learning, Deep Learning",3,Senior/Lead,Niche
+69a67b703567c12f8643ca2c,Data Scientist,Perfios,"Bangalore, Karnataka",1620000,1980000,1800000,Deep Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643ca50,Data Engineer,Inspire Brands Hyderabad Support Center,"Hyderabad, Telangana",1080000,1320000,1200000,"Python, Sql, Azure",3,Entry/Mid,Niche
+69a67b703567c12f8643c98c,Software Engineer,ShimentoX Technologies,"Hyderabad, Telangana",1080000,1320000,1200000,"Python, Java",2,Entry/Mid,Niche
+69a67b703567c12f8643c9d2,Software Engineering Manager,Blue Spire Inc,"Hyderabad, Telangana",1080000,1320000,1200000,"Java, Node.Js",2,Entry/Mid,Niche
+69a67b703567c12f8643c9da,Lead Software Engineer,Sahaj Software,"Hyderabad, Telangana",1080000,1320000,1200000,"Python, Java, Node.Js",3,Entry/Mid,Niche
+69a67b703567c12f8643c9e7,Senior Software Engineer,Volante Technologies,"Hyderabad, Telangana",1080000,1320000,1200000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643ca6c,Data Engineer,IntraEdge,"Chennai, Tamil Nadu",1080000,1320000,1200000,"Python, Sql, Aws, Spark",4,Entry/Mid,Niche
+69a67b703567c12f8643ca70,Data Engineer,goML,"Bangalore, Karnataka",1080000,1320000,1200000,Azure,1,Entry/Mid,Niche
+69a67b703567c12f8643c99e,Software Engineer,Lorven Technologies Inc.,"Hyderabad, Telangana",1080000,1320000,1200000,"Java, Sql, Mongodb, Postgresql",4,Entry/Mid,Niche
+69a67b703567c12f8643ca0b,Data Scientist,v4c.ai,"Hyderabad, Telangana",1620000,1980000,1800000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643ca5e,Data Engineer,SII Group USA,"Noida, Ghaziabad",1080000,1320000,1200000,Spark,1,Entry/Mid,Niche
+69a67b703567c12f8643ca6e,Data Engineer,RandomTrees,"Hyderabad, Telangana",1080000,1320000,1200000,"Python, Sql, Aws, Azure, Gcp, Spark",6,Entry/Mid,High Demand
+69a67b703567c12f8643ca75,Data Engineer,Acuity Analytics,"Bangalore, Karnataka",1080000,1320000,1200000,"Python, Sql",2,Entry/Mid,Niche
+69a67b703567c12f8643ca7f,Data Engineer,"Aptino, Inc.","Pune, Maharashtra",1080000,1320000,1200000,Sql,1,Entry/Mid,Niche
+69a67b703567c12f8643c9ab,Sr Software Engineer,HME,"Bangalore, Karnataka",1080000,1320000,1200000,"Azure, Kubernetes",2,Entry/Mid,Niche
+69a67b703567c12f8643c9c8,Python Software Engineer,Careerfit,"Mumbai, Maharashtra",1080000,1320000,1200000,"Python, Machine Learning",2,Entry/Mid,Niche
+69a67b703567c12f8643c9d7,Java Software Engineer,Zemoso Technologies,"Hyderabad, Telangana",1080000,1320000,1200000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643ca27,Data Scientist,Schneider Electric,"Gurgaon, Haryana",1620000,1980000,1800000,Deep Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643ca53,Data Engineer,"Enterprise Minds, Inc","Hyderabad, Telangana",1080000,1320000,1200000,Sql,1,Entry/Mid,Niche
+69a67b703567c12f8643ca55,Data Engineer,ACL Digital,"Bangalore, Karnataka",1080000,1320000,1200000,"Python, Sql, Spark, Hadoop, Postgresql",5,Entry/Mid,Niche
+69a67b703567c12f8643ca5d,Data Engineer,Straive,"Bangalore, Karnataka",1080000,1320000,1200000,Azure,1,Entry/Mid,Niche
+69a67b703567c12f8643ca61,Data Engineer,Value Innovation Labs,"Hyderabad, Telangana",1080000,1320000,1200000,"Python, Sql, Aws, Azure, Gcp, Spark, Hadoop",7,Entry/Mid,High Demand
+69a67b703567c12f8643ca73,Data Engineer,MyData Insights,"Noida, Uttar Pradesh",1080000,1320000,1200000,"Sql, Azure",2,Entry/Mid,Niche
+69a67b703567c12f8643ca79,Data Engineer,EXL,"Chennai, Tamil Nadu",1080000,1320000,1200000,"Python, Sql, Aws",3,Entry/Mid,Niche
+69a67b703567c12f8643c9b7,"Manager, Software Engineering",TMUS Global Solutions,"Hyderabad, Telangana",1080000,1320000,1200000,Vue,1,Entry/Mid,Niche
+69a67b703567c12f8643c9cd,Manager - Software Engineering,Blue Spire Inc,"Hyderabad, Telangana",1080000,1320000,1200000,"Java, Sql, Aws, Angular, Postgresql",5,Entry/Mid,Niche
+69a67b703567c12f8643ca16,Data Scientist,ProcDNA,"Bangalore, Karnataka",1620000,1980000,1800000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643ca2d,Data Scientist,DevBytes,"Hyderabad, Telangana",1620000,1980000,1800000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643ca47,Data Scientist,airtel,"Pune, Maharashtra",1620000,1980000,1800000,"Machine Learning, Deep Learning, Tensorflow, Pytorch",4,Senior/Lead,Niche
+69a67b703567c12f8643ca4c,Sr Data Scientist,Reliance Industries Limited,"Navi Mumbai, Maharashtra",1620000,1980000,1800000,"Machine Learning, Deep Learning",2,Senior/Lead,Niche
+69a67b703567c12f8643ca51,Data Engineer,EXL,"Gurgaon, Haryana",1080000,1320000,1200000,"Aws, Machine Learning",2,Entry/Mid,Niche
+69a67b703567c12f8643ca74,Data Engineer,TerraGiG,"Bangalore, Karnataka",1080000,1320000,1200000,"Python, Aws, Spark",3,Entry/Mid,Niche
+69a67b703567c12f8643ca7b,Data Engineer,L&T Technology Services,"Bangalore, Karnataka",1080000,1320000,1200000,"Python, Java, Sql, Aws, Azure, Gcp, Spark, Hadoop",8,Entry/Mid,High Demand
+69a67b703567c12f8643ca9c,Data Engineer,LTM,"Noida, Uttar Pradesh",1080000,1320000,1200000,"Aws, Azure",2,Entry/Mid,Niche
+69a67b703567c12f8643caab,Data Engineer,Persistent Systems,"Chennai, Tamil Nadu",1080000,1320000,1200000,"Sql, Azure",2,Entry/Mid,Niche
+69a67b703567c12f8643cb0f,Senior Research Data Analyst,Forage AI,"Bangalore, Karnataka",720000,880000,800000,"Python, Aws, Azure, Gcp",4,Entry/Mid,Niche
+69a67b703567c12f8643cb19,Machine Learning Engineer,Circuitry.ai,"Hyderabad, Telangana",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb1f,Machine Learning Engineer,goML,"Hyderabad, Telangana",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb46,Machine Learning Engineer II- Recommendation Systems,Glance,"Bangalore, Karnataka",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb48,Machine Learning Engineer III - Recommendation Systems,Glance,"Bangalore, Karnataka",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb4e,Machine Learning Operation Engineer (long term business trip to Kuwait (6-12 months)),Luxoft India,"Pune, Maharashtra",1080000,1320000,1200000,Machine Learning,1,Entry/Mid,Niche
+69a67b703567c12f8643cb52,Senior AI/ML Engineer,Sovereign IT Solutions Pvt Ltd,"Gurgaon, Haryana",1080000,1320000,1200000,Machine Learning,1,Entry/Mid,Niche
+69a67b703567c12f8643cb62,Manager-Product Management(Developer Experiences with Agentic AI),Capital One,"Bangalore, Karnataka",2250000,2750000,2500000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb76,Machine Learning Engineer,Almighty HRD Consultants,"Coimbatore, Tamil Nadu",1440000,1760000,1600000,"Python, Machine Learning, Tensorflow, Pytorch, Pandas, Numpy",6,Senior/Lead,High Demand
+69a67b703567c12f8643cb7a,Machine Learning Engineer,Phenom People,"Hyderabad, Telangana",1000000,1800000,1400000,Machine Learning,1,Entry/Mid,Niche
+69a67b703567c12f8643ca95,Data Engineer,Penta Consulting,"Noida, Uttar Pradesh",1080000,1320000,1200000,"Sql, Azure",2,Entry/Mid,Niche
+69a67b703567c12f8643ca99,Data Engineer,ACL Digital,"Bangalore, Karnataka",1080000,1320000,1200000,"Python, Sql, Spark",3,Entry/Mid,Niche
+69a67b703567c12f8643cab4,Data Analyst,The Hiring Company,"Guwahati, Kamrup",720000,880000,800000,Python,1,Entry/Mid,Niche
+69a67b703567c12f8643cad3,Data Analyst,iConsultera,"Chennai, Tamil Nadu",720000,880000,800000,Sql,1,Entry/Mid,Niche
+69a67b703567c12f8643cad7,Data Analyst,L&T Technology Services,"Hyderabad, Telangana",720000,880000,800000,Machine Learning,1,Entry/Mid,Niche
+69a67b703567c12f8643cb1d,Machine Learning Engineer,"Lytx, Inc.","Bangalore, Karnataka",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb1e,Machine Learning Engineer,MiQ,"Bangalore, Karnataka",1440000,1760000,1600000,"Python, Machine Learning",2,Senior/Lead,Niche
+69a67b703567c12f8643cb2b,Machine Learning Engineer,VAYUZ Technologies,"Mumbai, Maharashtra",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb2c,Machine Learning Engineer,BrainWave Professionals,"Bangalore, Karnataka",1440000,1760000,1600000,Python,1,Senior/Lead,Niche
+69a67b703567c12f8643cb2e,Senior Machine Learning Engineer,Nekko Tech,"Hyderabad, Telangana",1440000,1760000,1600000,"Aws, Machine Learning",2,Senior/Lead,Niche
+69a67b703567c12f8643cb53,Senior Director - Product Management,Capital One,"Bangalore, Karnataka",1080000,1320000,1200000,Machine Learning,1,Entry/Mid,Niche
+69a67b703567c12f8643ca94,Data Engineer,Persistent Systems,"Hyderabad, Telangana",1080000,1320000,1200000,Gcp,1,Entry/Mid,Niche
+69a67b703567c12f8643cad9,Senior Data Analyst,Value Innovation Labs,"Pune, Maharashtra",720000,880000,800000,Sql,1,Entry/Mid,Niche
+69a67b703567c12f8643caf7,Senior Data Analyst,Delta Air Lines,"Bangalore, Karnataka",720000,880000,800000,Sql,1,Entry/Mid,Niche
+69a67b703567c12f8643cb2d,Machine Learning Engineer (Neo4j),Circuitry.ai,"Hyderabad, Telangana",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb3d,Machine Learning Engineer (MLOPS),Crescendo Global,"Gurgaon, Haryana",1440000,1760000,1600000,Aws,1,Senior/Lead,Niche
+69a67b703567c12f8643cb61,Manager-Product Management (AI Model Governance and Risk Management),Capital One,"Bangalore, Karnataka",2250000,2750000,2500000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb71,Machine Learning Engineer,Potentiam,"Bangalore, Karnataka",2500000,3500000,3000000,"Python, Docker, Machine Learning, Pytorch, Pandas, Numpy",6,Senior/Lead,High Demand
+69a67b703567c12f8643cb93,Senior Devops Engineer,MobiKwik,"Noida, Uttar Pradesh",1170000,1430000,1300000,"Aws, Gcp",2,Entry/Mid,Niche
+69a67b703567c12f8643caaf,Data Engineer,PwC India,"Kolkata, West Bengal",1080000,1320000,1200000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643caca,Data Analyst,I-PAC,"Hyderabad, Telangana",720000,880000,800000,Python,1,Entry/Mid,Niche
+69a67b703567c12f8643cb44,Machine Learning Engineer - H&E Staining,Micro Crispr Pvt. Ltd.,"Delhi, India",1440000,1760000,1600000,"Machine Learning, Deep Learning",2,Senior/Lead,Niche
+69a67b703567c12f8643cb5f,Senior Product Engineer,Zyoin Group,"Chennai, Tamil Nadu",1080000,1320000,1200000,Machine Learning,1,Entry/Mid,Niche
+69a67b703567c12f8643cb60,Manager - Product Management [ AI/ML Observability ],Capital One,"Bangalore, Karnataka",2250000,2750000,2500000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb67,Machine Learning Engineer,Weekday AI,"Bangalore, Karnataka",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb74,Machine Learning Engineer,Now100 Solutions Private Limited,"Hyderabad, Telangana",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb8d,AWS DevOps Engineer,Charter Global,"Hyderabad, Telangana",1170000,1430000,1300000,"Aws, Azure",2,Entry/Mid,Niche
+69a67b703567c12f8643cab3,Data Analyst,Fuzen IT Solutions,"Hyderabad, Telangana",720000,880000,800000,Machine Learning,1,Entry/Mid,Niche
+69a67b703567c12f8643cabd,Data Analyst,Adecco,"Hyderabad, Telangana",720000,880000,800000,"Python, Sql",2,Entry/Mid,Niche
+69a67b703567c12f8643cb30,Principal Machine Learning Engineer,FM India,"Bangalore, Karnataka",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb39,Machine Learning Engineer 3,Angel One,"Bangalore, Karnataka",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb6c,Machine Learning Engineer,Qrata,"Bangalore, Karnataka",1700000,4000000,2850000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb72,Machine learning engineer,Sadup Softech,"Pune, Maharashtra",400000,1500000,950000,Machine Learning,1,Entry/Mid,Niche
+69a67b703567c12f8643cb80,DevOps Engineer,Simple Logic IT Private Limited,"Mumbai, Maharashtra",1170000,1430000,1300000,"Aws, Azure",2,Entry/Mid,Niche
+69a67b703567c12f8643caad,Data Engineer,H&P,"Goa, India",1080000,1320000,1200000,"Sql, Azure",2,Entry/Mid,Niche
+69a67b703567c12f8643cb1a,Machine Learning Engineer,Meril,"Bangalore, Karnataka",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb29,Machine Learning Engineer,Eighty Days,"Mumbai, Maharashtra",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb47,Machine Learning Engineer (ML Ops & Pipelines),CurieDx,"Gurgaon, Haryana",1440000,1760000,1600000,Deep Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb68,Machine Learning Engineer,Bask Health,"Noida, Uttar Pradesh",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb69,"Sr. Manager, AI/ML Ops Support",McDonalds in India,"Hyderabad, Telangana",2250000,2750000,2500000,"Gcp, Machine Learning",2,Senior/Lead,Niche
+69a67b703567c12f8643cb6e,Machine Learning Engineer,Thena,"Bangalore, Karnataka",1500000,2400000,1950000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb8e,Senior DevOps Engineer,Fission Labs,"Hyderabad, Telangana",1170000,1430000,1300000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643caa7,Data Engineer,HCLTech,"Chennai, Tamil Nadu",1080000,1320000,1200000,"Java, Aws",2,Entry/Mid,Niche
+69a67b703567c12f8643cab6,Data Analyst,L&T Technology Services,"Bangalore, Karnataka",720000,880000,800000,"Python, Sql, Pandas, Numpy",4,Entry/Mid,Niche
+69a67b703567c12f8643cabc,Data Analyst,de facto Infotech,"Bangalore, Karnataka",720000,880000,800000,Sql,1,Entry/Mid,Niche
+69a67b703567c12f8643cb36,Machine Learning Engineer- 2,CommerceIQ,"Bangalore, Karnataka",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb40,Machine Learning Engineer / Data Scientist,MyData Insights,"Hyderabad, Telangana",1620000,1980000,1800000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb65,AI Engineer,Potpie AI,"Pune, Maharashtra",1080000,1320000,1200000,Machine Learning,1,Entry/Mid,Niche
+69a67b703567c12f8643cb66,Machine Learning Engineer,Weekday AI,"Gurgaon, Haryana",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb70,Machine Learning Engineer,Americana Restaurants International PLC,"Noida, Uttar Pradesh",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb75,Machine Learning Engineer,Tradeindia.com - Infocom Network,"Delhi, India",400000,1000000,700000,Machine Learning,1,Entry/Mid,Niche
+69a67b703567c12f8643cb90,Azure DevOps Engineer,Kanerika Inc,"Hyderabad, Telangana",1170000,1430000,1300000,"Azure, Kubernetes",2,Entry/Mid,Niche
+69a67b703567c12f8643cb96,AWS Devops Engineer,eInfochips,"Hyderabad, Telangana",1170000,1430000,1300000,"Aws, Azure",2,Entry/Mid,Niche
+69a67b703567c12f8643cadb,Senior Data Analyst,eClerx,"Mumbai, Maharashtra",720000,880000,800000,"Python, Sql",2,Entry/Mid,Niche
+69a67b703567c12f8643cb20,Machine Learning Engineer,Ajanta Pharma Ltd,"Mumbai, Maharashtra",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb4c,Machine Learning Compiler Engineer,Tsavorite Scalable Intelligence,"Chennai, Tamil Nadu",1080000,1320000,1200000,Machine Learning,1,Entry/Mid,Niche
+69a67b703567c12f8643cb8b,DevOps Engineer,BCforward,"Hyderabad, Telangana",1170000,1430000,1300000,"Python, Aws",2,Entry/Mid,Niche
+69a67b703567c12f8643caa5,Data Engineer,EliteRecruitments,"Maharashtra, India",1080000,1320000,1200000,Python,1,Entry/Mid,Niche
+69a67b703567c12f8643cb1c,Machine Learning Engineer,Kresta Softech Private Limited,"Hyderabad, Telangana",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb24,Machine Learning Engineer,KPI Partners,"Bangalore, Karnataka",1440000,1760000,1600000,Python,1,Senior/Lead,Niche
+69a67b703567c12f8643cb2a,Machine Learning Engineer,Neural Nurture,"Indore, Madhya Pradesh",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb32,Senior Machine Learning Engineer,Falabella India,"Bangalore, Karnataka",1440000,1760000,1600000,"Python, Java, Gcp, Docker, Machine Learning",5,Senior/Lead,Niche
+69a67b703567c12f8643cb37,Senior Machine Learning Engineer,Confidential,"Bangalore, Karnataka",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb3e,Machine Learning Engineer (Dataiku),RandomTrees,"Bangalore, Karnataka",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb54,Software Development Engineer II (Machine Learning),Media.net,"Bangalore, Karnataka",1080000,1320000,1200000,Machine Learning,1,Entry/Mid,Niche
+69a67b703567c12f8643cb7c,DevOps Engineer,Quadrant IT Services,"Hyderabad, Telangana",1170000,1430000,1300000,"Azure, Kubernetes",2,Entry/Mid,Niche
+69a67b703567c12f8643ca92,Data Engineer,Acuity Analytics,"Bangalore, Karnataka",1080000,1320000,1200000,"Python, Sql",2,Entry/Mid,Niche
+69a67b703567c12f8643caa8,Data Engineer,ThoughtFocus,"Bangalore, Karnataka",1080000,1320000,1200000,Sql,1,Entry/Mid,Niche
+69a67b703567c12f8643cb42,Machine Learning Engineer (AI Systems),Vistec Partners,"Noida, Ghaziabad",1440000,1760000,1600000,"Deep Learning, Tensorflow, Pytorch",3,Senior/Lead,Niche
+69a67b703567c12f8643cb6a,Machine Learning Engineer,Sharda Consultancy Services Hiring For Machine Learning Engineer,"Hyderabad, Telangana",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb79,Machine Learning Engineer,Norstella,"Pune, Maharashtra",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb82,DevOps Engineer,Unicommerce,"Gurgaon, Haryana",1170000,1430000,1300000,Kubernetes,1,Entry/Mid,Niche
+69a67b703567c12f8643cade,Data Analyst - Collections,Moneyview,"Bangalore, Karnataka",720000,880000,800000,Sql,1,Entry/Mid,Niche
+69a67b703567c12f8643caec,Operations & Data Analyst,RivetStays,"Noida, Uttar Pradesh",720000,880000,800000,Sql,1,Entry/Mid,Niche
+69a67b703567c12f8643cb18,Machine Learning Engineer,airtel,"Chennai, Tamil Nadu",1440000,1760000,1600000,"Spark, Machine Learning, Pytorch",3,Senior/Lead,Niche
+69a67b703567c12f8643cb43,Machine Learning Engineer (AWS Professional Services),Digitide,"Bangalore, Karnataka",1440000,1760000,1600000,"Aws, Machine Learning",2,Senior/Lead,Niche
+69a67b703567c12f8643cb51,Artificial Intelligence Engineer,TaskUs,"Hyderabad, Telangana",1080000,1320000,1200000,"Python, Machine Learning",2,Entry/Mid,Niche
+69a67b703567c12f8643cb77,Machine Learning Engineer,CLARITY,"Telangana, India",1440000,1760000,1600000,"Python, Machine Learning, Tensorflow, Pytorch",4,Senior/Lead,Niche
+69a67b703567c12f8643cb87,DevOps Engineer,Xebia,"Pune, Maharashtra",1170000,1430000,1300000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643cb8c,Azure DevOps Engineer,Cubical Operations LLP,"Gurgaon, Haryana",1170000,1430000,1300000,Azure,1,Entry/Mid,Niche
+69a67b703567c12f8643cafd,Data Analyst[E-Commerce],"Enterprise Minds, Inc","Bangalore, Karnataka",720000,880000,800000,"Python, Sql",2,Entry/Mid,Niche
+69a67b703567c12f8643cb4d,Machine Learning QA Engineer (Python Pandas),ACL Digital,"Noida, Uttar Pradesh",1080000,1320000,1200000,"Python, Pandas, Numpy",3,Entry/Mid,Niche
+69a67b703567c12f8643cb50,AI/ ML Engineer,Persistent Systems,"Chennai, Tamil Nadu",1080000,1320000,1200000,"Python, Machine Learning",2,Entry/Mid,Niche
+69a67b703567c12f8643cb73,Machine Learning Engineer,People First Consultants,"Bangalore, Karnataka",1000000,3500000,2250000,"Python, Sql, Docker, Kubernetes, Spark, Machine Learning, React",7,Senior/Lead,High Demand
+69a67b703567c12f8643cb78,Machine Learning Engineer,UnFound,"Mumbai, Maharashtra",500000,500000,500000,Machine Learning,1,Entry/Mid,Niche
+69a67b703567c12f8643cb85,DevOps Engineer,WhiteLotus Talent Partners,"Hyderabad, Telangana",1170000,1430000,1300000,"Aws, Azure",2,Entry/Mid,Niche
+69a67b703567c12f8643cb25,Machine Learning Engineer,Synstack Technologies,"Bangalore, Karnataka",1440000,1760000,1600000,Azure,1,Senior/Lead,Niche
+69a67b703567c12f8643cb28,Machine Learning Engineer,Impetus,"Bangalore, Karnataka",1440000,1760000,1600000,"Python, Machine Learning, Tensorflow, Pytorch",4,Senior/Lead,Niche
+69a67b703567c12f8643cb2f,Senior Machine Learning Engineer,Diligente Technologies,"Bangalore, Karnataka",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb33,Senior Machine Learning Engineer,Recro,"Hyderabad, Telangana",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb6d,Machine Learning Engineer,Innover Systems,"Pune, Maharashtra",400000,1000000,700000,Machine Learning,1,Entry/Mid,Niche
+69a67b703567c12f8643cb89,DevOps Engineer,Incedo Inc.,"Pune, Maharashtra",1170000,1430000,1300000,"Python, Java, Javascript, Azure, React",5,Entry/Mid,Niche
+69a67b703567c12f8643cb8a,DevOps Engineer,AI Crew Solutions,"Hyderabad, Telangana",1170000,1430000,1300000,"Python, Aws, Node.Js",3,Entry/Mid,Niche
+69a67b703567c12f8643ca91,Data Engineer,Quadrant IT Services,"Hyderabad, Telangana",1080000,1320000,1200000,Azure,1,Entry/Mid,Niche
+69a67b703567c12f8643ca9d,Data Engineer,Resource Algorithm,"Delhi, India",1080000,1320000,1200000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643cafa,Senior Data Analyst,QX Global Group,"Ahmedabad, Gujarat",720000,880000,800000,Sql,1,Entry/Mid,Niche
+69a67b703567c12f8643cb10,Data Analyst – Financial Risk,Indium,"Hyderabad, Telangana",720000,880000,800000,"Python, Sql",2,Entry/Mid,Niche
+69a67b703567c12f8643cb27,Machine Learning Engineer,DecentralCode,"Salem, Tamil Nadu",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb3b,Senior Machine Learning Engineer,Dr. Martens plc,"Bangalore, Karnataka",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb3f,Senior Machine Learning Engineering Manager,FM India,"Bangalore, Karnataka",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb5d,Data Science Specialist,LTIMindtree,"Gurgaon, Haryana",1080000,1320000,1200000,"Python, Sql, Spark, Machine Learning, Deep Learning",5,Entry/Mid,Niche
+69a67b703567c12f8643cb7b,DevOps Engineer,Quadrant IT Services,"Hyderabad, Telangana",1170000,1430000,1300000,"Azure, Docker, Kubernetes",3,Entry/Mid,Niche
+69a67b703567c12f8643cb8f,Devops Engineer II,McDonalds in India,"Hyderabad, Telangana",1170000,1430000,1300000,"Python, Sql, Aws, Gcp",4,Entry/Mid,Niche
+69a67b703567c12f8643caa0,Data Engineer,L&T Technology Services,"Bangalore, Karnataka",1080000,1320000,1200000,Azure,1,Entry/Mid,Niche
+69a67b703567c12f8643caac,Data Engineer,EcoRatings,"Noida, Ghaziabad",1080000,1320000,1200000,Sql,1,Entry/Mid,Niche
+69a67b703567c12f8643cb31,Machine Learning Engineer III,LatentForce,"Noida, Uttar Pradesh",1440000,1760000,1600000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cb63,Python Software Engineer,Careerfit,"Mumbai, Maharashtra",1080000,1320000,1200000,"Python, Machine Learning",2,Entry/Mid,Niche
+69a67b703567c12f8643cb64,Data Engineer,Meril,"Bangalore, Karnataka",1080000,1320000,1200000,Machine Learning,1,Entry/Mid,Niche
+69a67b703567c12f8643cb6b,Machine Learning Engineer,Marj Technologies,"Noida, Ghaziabad",700000,1000000,850000,"Aws, Machine Learning, Deep Learning, Tensorflow",4,Entry/Mid,Niche
+69a67b703567c12f8643cb6f,Machine Learning Engineer,LMES Academy,"Chennai, Tamil Nadu",700000,1500000,1100000,Machine Learning,1,Entry/Mid,Niche
+69a67b703567c12f8643cb7e,DevOps Engineer,Eltropy,"Hyderabad, Telangana",1170000,1430000,1300000,"Aws, Gcp, Kubernetes",3,Entry/Mid,Niche
+69a67b703567c12f8643cad0,Data Analyst,Vensure Employer Solutions,"Noida, Ghaziabad",720000,880000,800000,Sql,1,Entry/Mid,Niche
+69a67b703567c12f8643caf8,Lead Data Analyst,Delta Air Lines,"Bangalore, Karnataka",720000,880000,800000,"Python, Sql, Aws",3,Entry/Mid,Niche
+69a67b703567c12f8643cb4f,Senior Software Development Engineer ( Machine Learning),Media.net,"Bangalore, Karnataka",1080000,1320000,1200000,Machine Learning,1,Entry/Mid,Niche
+69a67b703567c12f8643cb81,DevOps Engineer,Intellistaff Services Pvt. Ltd,"Mumbai, Maharashtra",1170000,1430000,1300000,"Java, Docker, Kubernetes",3,Entry/Mid,Niche
+69a67b703567c12f8643cba5,"Senior DevOps Engineer (Kubernetes, GitHub Actions , ArgoCD)",Capgemini Engineering,"Bangalore, Karnataka",1170000,1430000,1300000,Kubernetes,1,Entry/Mid,Niche
+69a67b703567c12f8643cbb6,Cloud Engineer,ACL Digital,"Bangalore, Karnataka",1080000,1320000,1200000,"Python, Azure, Kubernetes",3,Entry/Mid,Niche
+69a67b703567c12f8643cbc5,Machine Learning Operation Engineer (long term business trip to Kuwait (6-12 months)),Luxoft India,"Chennai, Tamil Nadu",1080000,1320000,1200000,Machine Learning,1,Entry/Mid,Niche
+69a67b703567c12f8643cbc6,Senior MLops Engineer with Airamatrix(Software Product Company) - Work From Office - 5 Days a Week,AIRA Matrix,"Thane, Maharashtra",1080000,1320000,1200000,Machine Learning,1,Entry/Mid,Niche
+69a67b703567c12f8643cbd5,DevOps Architect - Kubernetes Admin,Intellect Design Arena Ltd,"Chennai, Tamil Nadu",1080000,1320000,1200000,"Aws, Kubernetes",2,Entry/Mid,Niche
+69a67b703567c12f8643cbf1,Frontend Developer,etelligens Technologies,"Bangalore, Karnataka",810000,990000,900000,"Aws, React",2,Entry/Mid,Niche
+69a67b703567c12f8643cc05,Frontend Developer,Recro,"Bangalore, Karnataka",810000,990000,900000,"Java, Javascript, Azure, React",4,Entry/Mid,Niche
+69a67b703567c12f8643cc2c,Frontend Developer [React.js and HTML],Talent500 INC,"Hyderabad, Telangana",810000,990000,900000,React,1,Entry/Mid,Niche
+69a67b703567c12f8643cc3f,AI/ML Technical Lead,APPIT Software Inc,"Hyderabad, Telangana",1980000,2420000,2200000,"Python, Azure, Angular",3,Senior/Lead,Niche
+69a67b703567c12f8643cc4d,Backend Developer (Python),More Retail Private Limited,"Mumbai, Maharashtra",990000,1210000,1100000,Python,1,Entry/Mid,Niche
+69a67b703567c12f8643cc55,AEM Backend Developer,Bajaj Technology Services,"Hyderabad, Telangana",990000,1210000,1100000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643cc5f,Backend Developer – Senior,Neuriyam,"Pune, Maharashtra",990000,1210000,1100000,"Python, Sql, Node.Js",3,Entry/Mid,Niche
+69a67b703567c12f8643cc83,Senior Database & Backend Developer – ERP Systems (.NET Core & SQL Server),Deltek,"Bangalore, Karnataka",990000,1210000,1100000,Sql,1,Entry/Mid,Niche
+69a67b703567c12f8643cc90,Back End Developer,UST,"Bangalore, Karnataka",1080000,1320000,1200000,Node.Js,1,Entry/Mid,Niche
+69a67b703567c12f8643cd53,AWS Cloud Security Engineer,Objectways,"Bangalore, Karnataka",1080000,1320000,1200000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643cbd7,Senior Technical Lead,HCLTech,"Hyderabad, Telangana",1980000,2420000,2200000,Azure,1,Senior/Lead,Niche
+69a67b703567c12f8643cc1f,Senior Frontend Developer,Arcana,"Gurgaon, Haryana",810000,990000,900000,"Java, Javascript, React",3,Entry/Mid,Niche
+69a67b703567c12f8643cc62,Wordpress Backend Developer,Esferasoft Solutions Pvt Ltd.,"Noida, Uttar Pradesh",990000,1210000,1100000,"Java, Javascript",2,Entry/Mid,Niche
+69a67b703567c12f8643cc86,Senior/Junior Software Backend C++ Developers (possible relocation to Germany),DRIMCO GmbH,"Chennai, Tamil Nadu",1080000,1320000,1200000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643cc98,Python Developer,K&K Global Talent Solutions INC.,"Hyderabad, Telangana",1080000,1320000,1200000,Python,1,Entry/Mid,Niche
+69a67b703567c12f8643cc9f,Lead Dotnet Developer - C#,Talentgigs,"Hyderabad, Telangana",1980000,2420000,2200000,Angular,1,Senior/Lead,Niche
+69a67b703567c12f8643ccb4,Java Full Stack Developer,Stackko.com,"Bangalore, Karnataka",1260000,1540000,1400000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643ccf2,Full-Stack PHP Laravel Developer,Elevondata,"Hyderabad, Telangana",1080000,1320000,1200000,"Sql, React, Angular, Node.Js",4,Entry/Mid,Niche
+69a67b703567c12f8643ccff,Full Stack Engineer,Best Infosystems Ltd.,"Hyderabad, Telangana",1080000,1320000,1200000,"Java, React",2,Entry/Mid,Niche
+69a67b703567c12f8643cd03,Asp.Net Developer(Angular0,LTIMindtree,"Mumbai, Maharashtra",1080000,1320000,1200000,"Sql, Azure, Angular",3,Entry/Mid,Niche
+69a67b703567c12f8643cd1f,Cloud Engineer,Birlasoft,"Pune, Maharashtra",1080000,1320000,1200000,"Sql, Aws, Postgresql",3,Entry/Mid,Niche
+69a67b703567c12f8643cd2c,Lead Cloud Engineer,Shell Recharge Solutions,"Bangalore, Karnataka",1980000,2420000,2200000,Aws,1,Senior/Lead,Niche
+69a67b703567c12f8643cd3a,Senior Manager - GPS Cloud Engineering,Bristol Myers Squibb,"Hyderabad, Telangana",2250000,2750000,2500000,Aws,1,Senior/Lead,Niche
+69a67b703567c12f8643cd5c,DevOps / Cloud Platform Engineer,Brace Infotech Private Ltd,"Hyderabad, Telangana",1080000,1320000,1200000,"Aws, Azure, Gcp, Kubernetes",4,Entry/Mid,Niche
+69a67b703567c12f8643cba6,DevOps ML Engineer,Mindsprint,"Chennai, Tamil Nadu",1080000,1320000,1200000,"Kubernetes, Machine Learning",2,Entry/Mid,Niche
+69a67b703567c12f8643cbc2,Azure Cloud Platform Engineer,Nityo Infotech,"Bangalore, Karnataka",1080000,1320000,1200000,Azure,1,Entry/Mid,Niche
+69a67b703567c12f8643cbc4,Site Reliability Engineering Lead,Dextara Datamatics,"Chennai, Tamil Nadu",1980000,2420000,2200000,Aws,1,Senior/Lead,Niche
+69a67b703567c12f8643cc15,UI frontend developer,JRD Systems,"Bangalore, Karnataka",810000,990000,900000,"React, Node.Js",2,Entry/Mid,Niche
+69a67b703567c12f8643cc16,Senior Frontend Developer,SkillRecruit,"Gurgaon, Haryana",810000,990000,900000,"Java, Javascript",2,Entry/Mid,Niche
+69a67b703567c12f8643cc65,Python & Backend Developer Trainer,Sierra Learning Academy Private Limited,"Noida, Uttar Pradesh",990000,1210000,1100000,"Python, Sql",2,Entry/Mid,Niche
+69a67b703567c12f8643cc8d,Java Software Engineer,Brace Infotech Private Ltd,"Hyderabad, Telangana",1080000,1320000,1200000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643cc8e,Back End Developer (Node js),DBiz.ai,"Kochi, Ernakulam",1080000,1320000,1200000,"Java, Javascript, Sql, Azure, Node.Js",5,Entry/Mid,Niche
+69a67b703567c12f8643cc9b,Python Django Lead,InfoBeans,"Chennai, Tamil Nadu",1980000,2420000,2200000,Python,1,Senior/Lead,Niche
+69a67b703567c12f8643ccca,Full Stack Developer (Node.js),Dr Reddy's Foundation,"Hyderabad, Telangana",1260000,1540000,1400000,Node.Js,1,Entry/Mid,Niche
+69a67b703567c12f8643ccdb,JAVA Full stack Developers (Immediate Joiners),L&T Technology Services,"Chennai, Tamil Nadu",1260000,1540000,1400000,"Java, React, Angular",3,Entry/Mid,Niche
+69a67b703567c12f8643cd0f,Cloud Engineer,Mindsprint,"Bangalore, Karnataka",1080000,1320000,1200000,"Aws, Azure",2,Entry/Mid,Niche
+69a67b703567c12f8643cd1e,Cloud Engineer,Birlasoft,"Hyderabad, Telangana",1080000,1320000,1200000,"Sql, Aws, Postgresql",3,Entry/Mid,Niche
+69a67b703567c12f8643cd37,"Senior, Cloud Engineer (Kubernetes)",SecLogic.ai,"Noida, Ghaziabad",1080000,1320000,1200000,"Kubernetes, React",2,Entry/Mid,Niche
+69a67b703567c12f8643cd54,L2 Cloud Support Engineer,Platform9,"Bangalore, Karnataka",1080000,1320000,1200000,Kubernetes,1,Entry/Mid,Niche
+69a67b703567c12f8643cd61,Cloud and AI Engineer,GlobalXperts,"Hyderabad, Telangana",1080000,1320000,1200000,"Aws, Azure, Gcp",3,Entry/Mid,Niche
+69a67b703567c12f8643cd76,Product Manager,Solytics Partners,"Pune, Maharashtra",2250000,2750000,2500000,Machine Learning,1,Senior/Lead,Niche
+69a67b703567c12f8643cd92,Product Manager,Prozo,"Gurgaon, Haryana",2250000,2750000,2500000,Aws,1,Senior/Lead,Niche
+69a67b703567c12f8643cba9,DevOps Engineer (Platform | Azure | CI/CD | Kubernetes | Operations & Maintenance),Quadrant IT Services,"Hyderabad, Telangana",1170000,1430000,1300000,"Azure, Kubernetes",2,Entry/Mid,Niche
+69a67b703567c12f8643cbb4,"Sr Engineer, DevOps [T500-22432]",TMUS Global Solutions,"Hyderabad, Telangana",1080000,1320000,1200000,Vue,1,Entry/Mid,Niche
+69a67b703567c12f8643cbc0,Cloud Architect,Covetus,"Hyderabad, Telangana",1080000,1320000,1200000,Azure,1,Entry/Mid,Niche
+69a67b703567c12f8643cbd9,Technical Recruiter,Charter Global,"Hyderabad, Telangana",1080000,1320000,1200000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643cbe3,Frontend Developer,Gamemano,"Noida, Ghaziabad",810000,990000,900000,React,1,Entry/Mid,Niche
+69a67b703567c12f8643cbf9,Frontend Developer,Peoplefy,"Chennai, Tamil Nadu",810000,990000,900000,"Java, Javascript, Gcp, React",4,Entry/Mid,Niche
+69a67b703567c12f8643cc32,Frontend Developer (Next.js & React.js are mandatory! ),Luxoft India,"Noida, Ghaziabad",810000,990000,900000,React,1,Entry/Mid,Niche
+69a67b703567c12f8643cc4b,Senior Backend Developer,IDFC FIRST Bank,"Noida, Uttar Pradesh",990000,1210000,1100000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643cc67,Senior Java Backend Developer,OTU India,"Ahmedabad, Gujarat",990000,1210000,1100000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643cc70,Senior Java Backend Developer,Infosys Finacle,"Bangalore, Karnataka",990000,1210000,1100000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643cc96,Senior Java Software Engineer,IGT Solutions,"Chennai, Tamil Nadu",1080000,1320000,1200000,"Java, Aws",2,Entry/Mid,Niche
+69a67b703567c12f8643ccaa,Full Stack Developer,"Trundl, Inc","Hyderabad, Telangana",1260000,1540000,1400000,Node.Js,1,Entry/Mid,Niche
+69a67b703567c12f8643cd10,Cloud Engineer,EVENTEXPO - ETS,"Chennai, Tamil Nadu",1080000,1320000,1200000,Gcp,1,Entry/Mid,Niche
+69a67b703567c12f8643cd14,Cloud Engineer,YASH Technologies,"Bangalore, Karnataka",1080000,1320000,1200000,"Python, Sql, Aws, Spark, React",5,Entry/Mid,Niche
+69a67b703567c12f8643cd39,Infrastructure Networking and Cloud Engineer,MHP – A Porsche Company,"Bangalore, Karnataka",1080000,1320000,1200000,Azure,1,Entry/Mid,Niche
+69a67b703567c12f8643cd3d,"Senior Cloud Engineer (Pyhton, AWS)",Credera,"Hyderabad, Telangana",1080000,1320000,1200000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643cd67,Software Engineer - Cloud Security,Telecommunications,"Hyderabad, Telangana",1080000,1320000,1200000,"Python, Aws, Azure, Gcp",4,Entry/Mid,Niche
+69a67b703567c12f8643cb98,AWS Devops Engineer,Programmers.io,"Hyderabad, Telangana",1170000,1430000,1300000,"Sql, Aws, Docker, Kubernetes, Postgresql",5,Entry/Mid,Niche
+69a67b703567c12f8643cbb8,DevOps Consultant,Recro,"Hyderabad, Telangana",1080000,1320000,1200000,"Python, Azure",2,Entry/Mid,Niche
+69a67b703567c12f8643cbd8,Azure Devops Lead,Sonata Software,"Chennai, Tamil Nadu",1980000,2420000,2200000,"Azure, Kubernetes",2,Senior/Lead,Niche
+69a67b703567c12f8643cc03,Frontend Developer,7-Eleven Global Solution Center – India,"Bangalore, Karnataka",810000,990000,900000,React,1,Entry/Mid,Niche
+69a67b703567c12f8643cc29,Senior Frontend Developer (Gurugram),Arcana,"Hyderabad, Telangana",810000,990000,900000,"Java, Javascript, React",3,Entry/Mid,Niche
+69a67b703567c12f8643cc2a,Senior Angular Frontend Developer,Novaya Software Pvt Ltd,"Andhra Pradesh, India",810000,990000,900000,"Java, Javascript, Angular",3,Entry/Mid,Niche
+69a67b703567c12f8643cc43,Backend Developer,Wipro,"Hyderabad, Telangana",990000,1210000,1100000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643cc50,Senior Backend Developer,EXL,"Pune, Maharashtra",990000,1210000,1100000,"Python, Aws",2,Entry/Mid,Niche
+69a67b703567c12f8643cc69,Senior BigCommerce Backend Developer,TechDoQuest,"Hyderabad, Telangana",990000,1210000,1100000,Node.Js,1,Entry/Mid,Niche
+69a67b703567c12f8643cc6a,Backend Developer (Node.js),BIG Language Solutions,"Noida, Ghaziabad",990000,1210000,1100000,Node.Js,1,Entry/Mid,Niche
+69a67b703567c12f8643cc7e,Backend Development Lead - Java Springboot Microservices AWS,Infogain,"Bangalore, Karnataka",1980000,2420000,2200000,"Java, Sql, Aws",3,Senior/Lead,Niche
+69a67b703567c12f8643ccb1,Full Stack Developer,Insight Global,"Hyderabad, Telangana",1260000,1540000,1400000,React,1,Entry/Mid,Niche
+69a67b703567c12f8643ccbc,Full Stack Developer - Java,ValueMomentum,"Hyderabad, Telangana",1260000,1540000,1400000,"Java, Aws",2,Entry/Mid,Niche
+69a67b703567c12f8643cd11,Cloud Engineer,YourTribe,"Chennai, Tamil Nadu",1080000,1320000,1200000,"Aws, Azure, Gcp",3,Entry/Mid,Niche
+69a67b703567c12f8643cd5b,GCP Cloud/DevOps Engineer,Nemetschek Group,"Hyderabad, Telangana",1170000,1430000,1300000,"Python, Azure, Gcp",3,Entry/Mid,Niche
+69a67b703567c12f8643cbf6,Frontend Developer,GoML,"Gurgaon, Haryana",810000,990000,900000,React,1,Entry/Mid,Niche
+69a67b703567c12f8643cc17,Senior Frontend Developer,Teradata,"Hyderabad, Telangana",810000,990000,900000,"React, Angular",2,Entry/Mid,Niche
+69a67b703567c12f8643cc63,Java Backend Developer,ValueMomentum,"Hyderabad, Telangana",990000,1210000,1100000,"Java, Kubernetes",2,Entry/Mid,Niche
+69a67b703567c12f8643cc92,Java Application Developer,TEKsystems Global Services in India,"Hyderabad, Telangana",1080000,1320000,1200000,"Java, Aws",2,Entry/Mid,Niche
+69a67b703567c12f8643ccc6,SAP BTP Full Stack Developer,HGS,"Hyderabad, Telangana",1260000,1540000,1400000,Node.Js,1,Entry/Mid,Niche
+69a67b703567c12f8643ccdc,Full Stack Developer (React.js Node.js),BeamX TechLabs,"Hyderabad, Telangana",1260000,1540000,1400000,"React, Node.Js",2,Entry/Mid,Niche
+69a67b703567c12f8643cd1d,Cloud Engineer,Birlasoft,"Noida, Ghaziabad",1080000,1320000,1200000,"Sql, Aws, Postgresql",3,Entry/Mid,Niche
+69a67b703567c12f8643cd31,Senior Azure Cloud Engineer,Computacenter,"Bangalore, Karnataka",1080000,1320000,1200000,Azure,1,Entry/Mid,Niche
+69a67b703567c12f8643cd3e,Lead Full-Stack Cloud Engineer,LogFix SCM Solutions Pvt Ltd,"Chennai, Tamil Nadu",1980000,2420000,2200000,"Sql, Gcp, React, Angular, Vue",5,Senior/Lead,Niche
+69a67b703567c12f8643cd5a,Senior Cloud Infrastructure Engineer,BETSOL,"Bangalore, Karnataka",1080000,1320000,1200000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643cbcb,"Data Engineer -II, AWS DevOps",Bristol Myers Squibb,"Hyderabad, Telangana",1080000,1320000,1200000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643cc21,Senior Frontend Developer,ACL Digital,"Noida, Uttar Pradesh",810000,990000,900000,React,1,Entry/Mid,Niche
+69a67b703567c12f8643cc23,Frontend Developer - React.js,Talent500 INC,"Hyderabad, Telangana",810000,990000,900000,React,1,Entry/Mid,Niche
+69a67b703567c12f8643cc3a,Digital Implementation Engineer (UI – Frontend / QA Automation – Angular),UST,"Bangalore, Karnataka",1080000,1320000,1200000,Angular,1,Entry/Mid,Niche
+69a67b703567c12f8643cc46,Java Backend Developer,Best Infosystems Ltd.,"Chennai, Tamil Nadu",990000,1210000,1100000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643cc4a,Junior Backend Developer,SBNRI,"Chennai, Tamil Nadu",990000,1210000,1100000,"Python, Sql",2,Entry/Mid,Niche
+69a67b703567c12f8643cc54,Java Backend Developer,Andor Tech,"Bangalore, Karnataka",990000,1210000,1100000,"Java, Sql",2,Entry/Mid,Niche
+69a67b703567c12f8643cc56,Python Backend Developer,Publicis Sapient,"Bangalore, Karnataka",990000,1210000,1100000,"Python, Sql",2,Entry/Mid,Niche
+69a67b703567c12f8643cc68,Backend Developer (Java & Microservices),NorthStar HR Consultants,"Navi Mumbai, Maharashtra",990000,1210000,1100000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643cc87,Back End Developer,Aditi Consulting,"Bangalore, Karnataka",1080000,1320000,1200000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643cca6,"Technical Lead – Full Stack (Python, AI-Enabled Platforms)",iNube,"Bangalore, Karnataka",1980000,2420000,2200000,Python,1,Senior/Lead,Niche
+69a67b703567c12f8643ccc7,Java Full stack Developer - AVP,MUFG Global Service,"Bangalore, Karnataka",1260000,1540000,1400000,"Java, Aws, Docker, Kubernetes",4,Entry/Mid,Niche
+69a67b703567c12f8643ccfc,Full Stack Engineer,L&T Technology Services,"Maharashtra, India",1080000,1320000,1200000,"Sql, React, Angular",3,Entry/Mid,Niche
+69a67b703567c12f8643cd01,Java Fullstack,Aspire Spectrum,"Hyderabad, Telangana",1080000,1320000,1200000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643cd23,Azure Cloud Engineer,GBIT,"Hyderabad, Telangana",1080000,1320000,1200000,Azure,1,Entry/Mid,Niche
+69a67b703567c12f8643cd2b,AWS Cloud Engineer,D.P. Jewellers,"Hyderabad, Telangana",1080000,1320000,1200000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643cbc7,"Senior Engineer, Software (Devops) [T500-22482]",TMUS Global Solutions,"Hyderabad, Telangana",1080000,1320000,1200000,Vue,1,Entry/Mid,Niche
+69a67b703567c12f8643cbdf,Frontend Developer,Graystone Capital MENA,"Bangalore, Karnataka",810000,990000,900000,"React, Vue",2,Entry/Mid,Niche
+69a67b703567c12f8643cbe1,Frontend Developer,Graystone Capital MENA,"Pune, Maharashtra",810000,990000,900000,"React, Vue",2,Entry/Mid,Niche
+69a67b703567c12f8643cc00,Frontend Developer,Risebird,"Gurgaon, Haryana",810000,990000,900000,"Java, Javascript, Angular",3,Entry/Mid,Niche
+69a67b703567c12f8643cc06,Senior Frontend Developer,SII Group India,"Noida, Ghaziabad",810000,990000,900000,React,1,Entry/Mid,Niche
+69a67b703567c12f8643cc07,Senior Frontend Developer,Idox plc,"Noida, Uttar Pradesh",810000,990000,900000,React,1,Entry/Mid,Niche
+69a67b703567c12f8643cc14,Senior Frontend Developer,Closeloop Technologies,"Chennai, Tamil Nadu",810000,990000,900000,React,1,Entry/Mid,Niche
+69a67b703567c12f8643cc5e,Java Backend Developer,Persistent Systems,"Bangalore, Karnataka",990000,1210000,1100000,"Java, Docker, Kubernetes",3,Entry/Mid,Niche
+69a67b703567c12f8643cc7d,Java Backend Developer – Spring Boot & AWS,Innova ESI,"Hyderabad, Telangana",990000,1210000,1100000,"Java, Aws",2,Entry/Mid,Niche
+69a67b703567c12f8643ccb0,Full Stack Developer,AVD Inovex Private Limited,"Mumbai, Maharashtra",1260000,1540000,1400000,"Java, Javascript, React, Node.Js, Mongodb",5,Entry/Mid,Niche
+69a67b703567c12f8643cce3,Senior Java Full Stack Developer (with VM Administration Experience),L&T Technology Services,"Hyderabad, Telangana",1260000,1540000,1400000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643ccec,Senior Full Stack Java Developer,Seaionl Inc,"Hyderabad, Telangana",1080000,1320000,1200000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643cd20,Cloud Engineer,LTIMindtree,"Indore, Madhya Pradesh",1080000,1320000,1200000,"Aws, Azure",2,Entry/Mid,Niche
+69a67b703567c12f8643cd25,AWS Cloud Engineer,Programmers.io,"Hyderabad, Telangana",1080000,1320000,1200000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643cd2d,Cloud Engineer - FinOps,LeadSquared,"Bangalore, Karnataka",1080000,1320000,1200000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643cd36,QA Networking Cloud Engineer,Persistent Systems,"Hyderabad, Telangana",1080000,1320000,1200000,"Python, Aws, Azure, Gcp",4,Entry/Mid,Niche
+69a67b703567c12f8643cc2b,Frontend Developer [React.js & HTML],Talent500 INC,"Hyderabad, Telangana",810000,990000,900000,React,1,Entry/Mid,Niche
+69a67b703567c12f8643cc2d,Frontend Developer (Reactjs) - 6 years,DBiz.ai,"Kochi, Ernakulam",810000,990000,900000,"Java, Javascript, React",3,Entry/Mid,Niche
+69a67b703567c12f8643cc42,Wordpress Developer,Madgeek®,"Pune, Maharashtra",1080000,1320000,1200000,"React, Vue",2,Entry/Mid,Niche
+69a67b703567c12f8643cc58,Java Backend Developer,Innspark,"Kollam, Kerala",990000,1210000,1100000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643cc9d,Java Developer,Insight Global,"Hyderabad, Telangana",1080000,1320000,1200000,"Java, Sql, Azure",3,Entry/Mid,Niche
+69a67b703567c12f8643cca3,Azure Back End Developer,HISH IT SERVICES,"Gurgaon, Haryana",1080000,1320000,1200000,"Python, Azure",2,Entry/Mid,Niche
+69a67b703567c12f8643cca8,Full stack developer,Wipro,"Hyderabad, Telangana",1260000,1540000,1400000,"Java, Angular",2,Entry/Mid,Niche
+69a67b703567c12f8643ccc5,Full Stack Development Engineer,SynapOne,"Bangalore, Karnataka",1080000,1320000,1200000,React,1,Entry/Mid,Niche
+69a67b703567c12f8643ccea,Full Stack Java Developer,JRD Systems,"Hyderabad, Telangana",1080000,1320000,1200000,"Java, Aws, React",3,Entry/Mid,Niche
+69a67b703567c12f8643cd0b,Cloud Engineer,mthree,"Bangalore, Karnataka",1080000,1320000,1200000,"Python, Java, Aws",3,Entry/Mid,Niche
+69a67b703567c12f8643cd12,Cloud Engineer,KPI Partners,"Bangalore, Karnataka",1080000,1320000,1200000,"Azure, Kubernetes",2,Entry/Mid,Niche
+69a67b703567c12f8643cd1c,Cloud Engineer,TerraGiG,"Tamil Nadu, India",1080000,1320000,1200000,Azure,1,Entry/Mid,Niche
+69a67b703567c12f8643cd26,GCP Cloud Engineer,Ascentt,"Indore, Madhya Pradesh",1080000,1320000,1200000,Gcp,1,Entry/Mid,Niche
+69a67b703567c12f8643cd48,Cloud Data Engineer,Persistent Systems,"Bangalore, Karnataka",1080000,1320000,1200000,"Python, Sql, Aws",3,Entry/Mid,Niche
+69a67b703567c12f8643cb9d,Senior DevOps Engineer (AWS),Blend,"Hyderabad, Telangana",1170000,1430000,1300000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643cbe9,Frontend Developer,Grid Dynamics,"Bangalore, Karnataka",810000,990000,900000,"React, Angular",2,Entry/Mid,Niche
+69a67b703567c12f8643cbee,Frontend Developer,JuiceLabs AI,"Bangalore, Karnataka",810000,990000,900000,React,1,Entry/Mid,Niche
+69a67b703567c12f8643cc34,HCL Tech || AEM Frontend Developer || Chennai/ Bangalore/Hyderabad,HCLTech,"Noida, Uttar Pradesh",810000,990000,900000,"Java, Javascript",2,Entry/Mid,Niche
+69a67b703567c12f8643cc7b,Senior Java Backend Developer (with React),Luxoft,"Chennai, Tamil Nadu",990000,1210000,1100000,"Java, React",2,Entry/Mid,Niche
+69a67b703567c12f8643cc91,Java Software Engineer,TEKsystems Global Services in India,"Hyderabad, Telangana",1080000,1320000,1200000,"Java, Aws",2,Entry/Mid,Niche
+69a67b703567c12f8643cc99,Python Developer,Gemini Solutions Pvt Ltd,"Bangalore, Karnataka",1080000,1320000,1200000,"Python, Aws",2,Entry/Mid,Niche
+69a67b703567c12f8643cce4,AWS Full Stack Developer (Node.js React/Angular),Innova ESI,"Hyderabad, Telangana",1260000,1540000,1400000,"Aws, React, Angular, Node.Js",4,Entry/Mid,Niche
+69a67b703567c12f8643cceb,Hiring Full Stack Developer (.Net React) || 4-7 yrs || Onsite Gurugram,IGT Solutions,"Hyderabad, Telangana",1260000,1540000,1400000,"Sql, React, Mongodb",3,Entry/Mid,Niche
+69a67b703567c12f8643ccfb,Full-Stack Mobile Application Developer (React Native),Ajanta Pharma Ltd,"Mumbai, Maharashtra",1080000,1320000,1200000,"React, Node.Js",2,Entry/Mid,Niche
+69a67b703567c12f8643cd17,Cloud Engineer,Obrimo Technologies,"Pune, Maharashtra",1080000,1320000,1200000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643cd44,Cloud & Infrastructure Engineer,C5i,"Mumbai, Maharashtra",1080000,1320000,1200000,Azure,1,Entry/Mid,Niche
+69a67b703567c12f8643cba4,Remote - Senior Azure DevOps Engineer with Databricks,"Resource Informatics Group, Inc","Hyderabad, Telangana",1170000,1430000,1300000,"Azure, Spark",2,Entry/Mid,Niche
+69a67b703567c12f8643cbbd,Senior Linux Administrator,SHI Solutions India Pvt. Ltd.,"Hyderabad, Telangana",1080000,1320000,1200000,"Docker, Kubernetes",2,Entry/Mid,Niche
+69a67b703567c12f8643cbcc,Cloud Engineer - FinOps,LeadSquared,"Bangalore, Karnataka",1080000,1320000,1200000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643cbdd,Security Engineer Team Lead,AppSquadz,"Noida, Ghaziabad",1980000,2420000,2200000,Aws,1,Senior/Lead,Niche
+69a67b703567c12f8643cbe0,Frontend Developer,Graystone Capital MENA,"Hyderabad, Telangana",810000,990000,900000,"React, Vue",2,Entry/Mid,Niche
+69a67b703567c12f8643cbe6,Frontend Developer,"Mantra Digital, LLC","Ahmedabad, Gujarat",810000,990000,900000,"Java, Javascript",2,Entry/Mid,Niche
+69a67b703567c12f8643cbea,Frontend Developer,MacroHire,"Delhi, India",810000,990000,900000,"Java, Javascript, React",3,Entry/Mid,Niche
+69a67b703567c12f8643cbf4,Frontend Developer,Yatnam Technologies,"Kochi, Ernakulam",810000,990000,900000,"Java, Javascript, React",3,Entry/Mid,Niche
+69a67b703567c12f8643cc11,SAP Frontend Developer,GreatHR Solutions,"Gurgaon, Haryana",810000,990000,900000,"Java, Javascript",2,Entry/Mid,Niche
+69a67b703567c12f8643cc19,Senior Frontend Developer,Questhiring,"Noida, Uttar Pradesh",810000,990000,900000,Vue,1,Entry/Mid,Niche
+69a67b703567c12f8643cc3d,"Full Stack Engineer(Python, React) (Hyderabad or Gurugram)",PROSEARCH RPO SERVICES PRIV LIMITED,"Hyderabad, Telangana",1080000,1320000,1200000,"Python, Java, Javascript, Sql, Aws, Azure, Kubernetes, React, Postgresql",9,Entry/Mid,High Demand
+69a67b703567c12f8643cc76,Backend developer (.Net core and SQL),HDFC Bank,"Thane, Maharashtra",990000,1210000,1100000,"Sql, Angular",2,Entry/Mid,Niche
+69a67b703567c12f8643cca2,Frontend Developer (Reactjs) - 6 years,DBiz.ai,"Kochi, Ernakulam",810000,990000,900000,"Java, Javascript, React",3,Entry/Mid,Niche
+69a67b703567c12f8643ccdf,Full Stack Developer – Healthcare Technology & AI Integration,Lux hospitals,"Hyderabad, Telangana",1260000,1540000,1400000,Python,1,Entry/Mid,Niche
+69a67b703567c12f8643cd05,PHP Developer with strong Symfony,Saxon AI,"Hyderabad, Telangana",1080000,1320000,1200000,"Java, Javascript",2,Entry/Mid,Niche
+69a67b703567c12f8643cd07,Java Fullstack/Backend,Metasys Technologies,"Hyderabad, Telangana",1080000,1320000,1200000,"Java, Aws, Angular",3,Entry/Mid,Niche
+69a67b703567c12f8643cd1b,Cloud Engineer,Birlasoft,"Bangalore, Karnataka",1080000,1320000,1200000,"Sql, Aws, Postgresql",3,Entry/Mid,Niche
+69a67b703567c12f8643cbb2,DevOps / Cloud Platform Engineer,Brace Infotech Private Ltd,"Hyderabad, Telangana",1080000,1320000,1200000,"Aws, Azure, Gcp, Kubernetes",4,Entry/Mid,Niche
+69a67b703567c12f8643cbb5,"Lead AWS Devops (Must have AWS,EKS,Github Action,CDK .Net)10yrs-Hyderabad location only",Zelis,"Hyderabad, Telangana",1980000,2420000,2200000,"Aws, Azure",2,Senior/Lead,Niche
+69a67b703567c12f8643cbf8,Frontend Developer,AIRA Matrix,"Thane, Maharashtra",810000,990000,900000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643cbfe,Frontend Developer,Lorven Technologies Inc.,"Hyderabad, Telangana",810000,990000,900000,React,1,Entry/Mid,Niche
+69a67b703567c12f8643cc0f,Senior Frontend Developer,Thriwe,"Delhi, India",810000,990000,900000,React,1,Entry/Mid,Niche
+69a67b703567c12f8643cc1a,Senior Frontend Developer,eInfochips,"Ahmedabad, Gujarat",810000,990000,900000,"Java, Javascript, React",3,Entry/Mid,Niche
+69a67b703567c12f8643cc1c,Senior Frontend Developer,Recro,"Chennai, Tamil Nadu",810000,990000,900000,"Java, Javascript, React",3,Entry/Mid,Niche
+69a67b703567c12f8643cc3b,Frontend Engineer,Diligente Technologies,"Bangalore, Karnataka",1080000,1320000,1200000,"Java, Javascript, React",3,Entry/Mid,Niche
+69a67b703567c12f8643cc40,Back End Developer,THESUNDAYGAMES,"Hyderabad, Telangana",1080000,1320000,1200000,"Java, Javascript, Node.Js",3,Entry/Mid,Niche
+69a67b703567c12f8643cc6b,Dot Net Backend Developer,Andor Tech,"Bangalore, Karnataka",990000,1210000,1100000,Sql,1,Entry/Mid,Niche
+69a67b703567c12f8643cc88,Back End Developer,Insight Global,"Hyderabad, Telangana",1080000,1320000,1200000,Python,1,Entry/Mid,Niche
+69a67b703567c12f8643cc8f,Java Full Stack Developer,Innova ESI,"Hyderabad, Telangana",1260000,1540000,1400000,"Java, Sql, Aws, Azure, Mongodb",5,Entry/Mid,Niche
+69a67b703567c12f8643cca7,Full Stack Developers & Senior Full Stack Developers,Digile,"Hyderabad, Telangana",1260000,1540000,1400000,"Azure, Angular",2,Entry/Mid,Niche
+69a67b703567c12f8643ccb7,Java Full Stack Developer,Innova ESI,"Hyderabad, Telangana",1260000,1540000,1400000,"Java, Sql, Aws, Azure, Mongodb",5,Entry/Mid,Niche
+69a67b703567c12f8643cce9,Full Stack .NET Developer,Infosys,"Hyderabad, Telangana",1080000,1320000,1200000,"Sql, Angular",2,Entry/Mid,Niche
+69a67b703567c12f8643cced,Full Stack .NET Developer (Angular ),ValueLabs,"Hyderabad, Telangana",1080000,1320000,1200000,"Gcp, Angular",2,Entry/Mid,Niche
+69a67b703567c12f8643ccf0,Sr. Full stack .NET Developer/ Tech Lead,ValueMomentum,"Hyderabad, Telangana",1980000,2420000,2200000,"Aws, React, Node.Js",3,Senior/Lead,Niche
+69a67b703567c12f8643cd09,Full Stack Engineer,Deloitte,"Mumbai, Maharashtra",1080000,1320000,1200000,"Java, Sql, React",3,Entry/Mid,Niche
+69a67b703567c12f8643cd0a,Full Stack Engineer,METRIX IT SOLUTIONS INC,"Hyderabad, Telangana",1080000,1320000,1200000,"Java, Sql, Angular",3,Entry/Mid,Niche
+69a67b703567c12f8643cd19,Cloud Engineer,ACL Digital,"Bangalore, Karnataka",1080000,1320000,1200000,"Python, Azure, Kubernetes",3,Entry/Mid,Niche
+69a67b703567c12f8643cd32,"Cloud Engineer - C#, Azure",L&T Technology Services,"Bangalore, Karnataka",1080000,1320000,1200000,"Sql, Azure",2,Entry/Mid,Niche
+69a67b703567c12f8643cd38,Tech & Digital-Cloud Engineer,HDFC Bank,"Navi Mumbai, Maharashtra",1080000,1320000,1200000,"Aws, Azure, Gcp",3,Entry/Mid,Niche
+69a67b703567c12f8643cd56,Cloud Data Engineer (India),Thakral One,"Pune, Maharashtra",1080000,1320000,1200000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643cd6b,Cloud Infra Support Engineer,Abacus.AI,"Gurgaon, Haryana",1080000,1320000,1200000,Deep Learning,1,Entry/Mid,Niche
+69a67b703567c12f8643cc35,Lead Frontend UI Developer,OmniReach,"Noida, Uttar Pradesh",1980000,2420000,2200000,"Java, Javascript, React, Angular",4,Senior/Lead,Niche
+69a67b703567c12f8643cc3c,Frontend / UI-UX Developer (Vue.js),BIG Language Solutions,"Noida, Ghaziabad",1080000,1320000,1200000,Vue,1,Entry/Mid,Niche
+69a67b703567c12f8643cc47,Senior Backend Developer,Idea Elan India,"Chennai, Tamil Nadu",990000,1210000,1100000,"Sql, Mongodb",2,Entry/Mid,Niche
+69a67b703567c12f8643cc48,Junior Backend Developer,Zfunds,"Bangalore, Karnataka",990000,1210000,1100000,Node.Js,1,Entry/Mid,Niche
+69a67b703567c12f8643cc59,Senior Backend Developer,Sourcebae,"Bangalore, Karnataka",990000,1210000,1100000,"Python, Aws, Mongodb",3,Entry/Mid,Niche
+69a67b703567c12f8643cc79,Senior Java Backend Developer - Microservices,Luxoft India,"Hyderabad, Telangana",990000,1210000,1100000,"Java, React",2,Entry/Mid,Niche
+69a67b703567c12f8643cc9a,Back End Developer,Dot & Key Skincare,"Kolkata, West Bengal",1080000,1320000,1200000,"Aws, Node.Js",2,Entry/Mid,Niche
+69a67b703567c12f8643cc9e,Back End Developer,Verify360,"Mumbai, Maharashtra",1080000,1320000,1200000,"Python, Sql",2,Entry/Mid,Niche
+69a67b703567c12f8643cca5,Backend Engineer (Python) | Django / FastAPI | 1–4 Years | Hyderabad,Codesis Technologies Private Limited,"Hyderabad, Telangana",1080000,1320000,1200000,Python,1,Entry/Mid,Niche
+69a67b703567c12f8643ccb2,Full Stack Developer (.NET),Charter Global,"Hyderabad, Telangana",1260000,1540000,1400000,"Sql, Aws, Docker, Kubernetes, React, Angular, Mongodb",7,Entry/Mid,High Demand
+69a67b703567c12f8643ccb8,Full Stack Developer - Python,Pixeldust Technologies,"Mumbai, Maharashtra",1260000,1540000,1400000,Python,1,Entry/Mid,Niche
+69a67b703567c12f8643cd1a,Cloud Engineer,SHI Solutions India Pvt. Ltd.,"Hyderabad, Telangana",1080000,1320000,1200000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643cd2e,GMP Cloud Engineer,Assembly Global,"Bangalore, Karnataka",1080000,1320000,1200000,Gcp,1,Entry/Mid,Niche
+69a67b703567c12f8643cd47,Cloud Security Engineer,ValueMomentum,"Hyderabad, Telangana",1080000,1320000,1200000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643cd4c,Cloud Security Engineer,Photon,"Bangalore, Karnataka",1080000,1320000,1200000,"Python, Aws",2,Entry/Mid,Niche
+69a67b703567c12f8643cd52,AWS Cloud Infrastructure Engineer,Programmers.io,"Hyderabad, Telangana",1080000,1320000,1200000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643cd68,Cloud Platform Network Engineer,ValueMomentum,"Hyderabad, Telangana",1080000,1320000,1200000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643cba8,Engineer Devops,Albertsons Companies India,"Bangalore, Karnataka",1080000,1320000,1200000,"Azure, Kubernetes",2,Entry/Mid,Niche
+69a67b703567c12f8643cbac,Advanced Engineer DevOps,Albertsons Companies India,"Bangalore, Karnataka",1080000,1320000,1200000,Kubernetes,1,Entry/Mid,Niche
+69a67b703567c12f8643cbc1,Java Software Engineer,KnowledgeWorks Global Ltd.,"Mumbai, Maharashtra",1080000,1320000,1200000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643cbd0,Platform Engineer,Sonata Software,"Pune, Maharashtra",1080000,1320000,1200000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643cbef,Frontend Developer,EaseMyTrip.com,"Gurgaon, Haryana",810000,990000,900000,"Java, Javascript, Angular",3,Entry/Mid,Niche
+69a67b703567c12f8643cbf0,Frontend Developer,Aditi Consulting,"Bangalore, Karnataka",810000,990000,900000,"Java, Javascript, Docker, React, Node.Js",5,Entry/Mid,Niche
+69a67b703567c12f8643cbfb,Frontend Developer,RAY AND MARTIN,"Noida, Uttar Pradesh",810000,990000,900000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643cc9c,AEM Developer,Bajaj Technology Services,"Chennai, Tamil Nadu",1080000,1320000,1200000,"Java, Javascript",2,Entry/Mid,Niche
+69a67b703567c12f8643ccae,Full Stack Developer,Arth,"Hyderabad, Telangana",1260000,1540000,1400000,"Python, Sql, React, Node.Js, Postgresql",5,Entry/Mid,Niche
+69a67b703567c12f8643ccc1,Java Full Stack Developer,TIGI HR,"Bangalore, Karnataka",1260000,1540000,1400000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643cccb,Full Stack Developer (React and PHP),Karma Group Global,"Bangalore, Karnataka",1260000,1540000,1400000,"Sql, React",2,Entry/Mid,Niche
+69a67b703567c12f8643cd34,Cloud Engineer – SCG India,SCG,"New Delhi, Delhi",1080000,1320000,1200000,"Aws, Azure, Gcp",3,Entry/Mid,Niche
+69a67b703567c12f8643cd6c,Lead Cloud and AI Engineer,Insight Global,"Hyderabad, Telangana",1980000,2420000,2200000,Azure,1,Senior/Lead,Niche
+69a67b703567c12f8643cb9e,GCP Cloud/DevOps Engineer,Nemetschek Group,"Hyderabad, Telangana",1170000,1430000,1300000,"Python, Azure, Gcp",3,Entry/Mid,Niche
+69a67b703567c12f8643cbd4,AWS Cloud Security Engineer,Objectways,"Bangalore, Karnataka",1080000,1320000,1200000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643cc09,Senior Frontend Developer,Recro,"Pune, Maharashtra",810000,990000,900000,"Java, Javascript",2,Entry/Mid,Niche
+69a67b703567c12f8643cc0b,Senior Frontend Developer,EvoluteIQ,"Bangalore, Karnataka",810000,990000,900000,"Java, Javascript",2,Entry/Mid,Niche
+69a67b703567c12f8643cc95,Back End Developer,THESUNDAYGAMES,"Hyderabad, Telangana",1080000,1320000,1200000,"Java, Javascript, Node.Js",3,Entry/Mid,Niche
+69a67b703567c12f8643ccb5,Senior Full Stack Developer,IntraEdge,"Hyderabad, Telangana",1260000,1540000,1400000,"Python, Java, Sql, React, Angular, Node.Js",6,Entry/Mid,High Demand
+69a67b703567c12f8643ccda,Java Full Stack Developer (Angular or React),IntraEdge,"Hyderabad, Telangana",1260000,1540000,1400000,"Java, React, Angular",3,Entry/Mid,Niche
+69a67b703567c12f8643ccf1,"Full Stack Web Developer (Angular, .NET Core, SQL)",TeamsWork.In,"Gurgaon, Haryana",1080000,1320000,1200000,"Sql, Angular",2,Entry/Mid,Niche
+69a67b703567c12f8643cd00,Team Lead-Full Stack Software Development (.NET/Java/Front end-8 years),Accelya,"Noida, Uttar Pradesh",1980000,2420000,2200000,Aws,1,Senior/Lead,Niche
+69a67b703567c12f8643cd13,Cloud Engineer,ITR | part of Ascent International Group,"Chennai, Tamil Nadu",1080000,1320000,1200000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643cd15,Cloud Engineer,Zywave,"Chennai, Tamil Nadu",1080000,1320000,1200000,"Aws, Kubernetes",2,Entry/Mid,Niche
+69a67b703567c12f8643cd21,Cloud Engineer,METRIX IT SOLUTIONS INC,"Hyderabad, Telangana",1080000,1320000,1200000,"Python, Java, Javascript, Aws",4,Entry/Mid,Niche
+69a67b703567c12f8643cd41,Azure Cloud Engineer (L2 / L3 – Operations & Support),Atomic North,"Bangalore, Karnataka",1080000,1320000,1200000,Azure,1,Entry/Mid,Niche
+69a67b703567c12f8643cd45,Cloud Infrastructure Engineer,ALIANDO,"Hyderabad, Telangana",1080000,1320000,1200000,Azure,1,Entry/Mid,Niche
+69a67b703567c12f8643cd5d,Azure Cloud Platform Engineer,Nityo Infotech,"Bangalore, Karnataka",1080000,1320000,1200000,Azure,1,Entry/Mid,Niche
+69a67b703567c12f8643cd64,Cloud Data Engineer (AWS-Big Data),InfoCepts,"Pune, Maharashtra",1080000,1320000,1200000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643cbd6,Platform Engineer,Persistent Systems,"Gurgaon, Haryana",1080000,1320000,1200000,Azure,1,Entry/Mid,Niche
+69a67b703567c12f8643cbf3,Frontend Developer,DigiFocal IT Solutions Pvt Ltd,"Noida, Uttar Pradesh",810000,990000,900000,React,1,Entry/Mid,Niche
+69a67b703567c12f8643cc01,Frontend Developer,Recro,"Hyderabad, Telangana",810000,990000,900000,"Java, Javascript, Docker, React",4,Entry/Mid,Niche
+69a67b703567c12f8643cc10,Senior Frontend Developer,Aditi Consulting,"Bangalore, Karnataka",810000,990000,900000,"Java, Javascript, Docker, React, Node.Js",5,Entry/Mid,Niche
+69a67b703567c12f8643cc45,Java Backend Developer,People Prime Worldwide,"Hyderabad, Telangana",990000,1210000,1100000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643cc4c,Java Backend Developer,TEKsystems Global Services in India,"Hyderabad, Telangana",990000,1210000,1100000,"Java, Sql, Aws, Docker, Kubernetes",5,Entry/Mid,Niche
+69a67b703567c12f8643cc4e,Java Backend Developer,JRD Systems,"Bangalore, Karnataka",990000,1210000,1100000,Java,1,Entry/Mid,Niche
+69a67b703567c12f8643cc57,java backend Developer,Brace Infotech Private Ltd,"Bangalore, Karnataka",990000,1210000,1100000,"Java, Aws",2,Entry/Mid,Niche
+69a67b703567c12f8643cc85,Software Developer (Backend),Monk Commerce,"Chennai, Tamil Nadu",1080000,1320000,1200000,"Java, Sql, Mongodb",3,Entry/Mid,Niche
+69a67b703567c12f8643cc97,Python Developer,Mavenir,"Bangalore, Karnataka",1080000,1320000,1200000,Python,1,Entry/Mid,Niche
+69a67b703567c12f8643ccb3,Java Full stack Developer,MUFG Global Service,"Bangalore, Karnataka",1260000,1540000,1400000,"Java, Aws, Docker, Kubernetes",4,Entry/Mid,Niche
+69a67b703567c12f8643ccc9,Java Full Stack Developer (Angular),IntraEdge,"Hyderabad, Telangana",1260000,1540000,1400000,"Java, Angular",2,Entry/Mid,Niche
+69a67b703567c12f8643cd02,Java Fullstack Developer,GC Technologies Pvt Ltd,"Hyderabad, Telangana",1080000,1320000,1200000,"Java, React",2,Entry/Mid,Niche
+69a67b703567c12f8643cd33,Azure Cloud Engineer III,CBTS,"Chennai, Tamil Nadu",1080000,1320000,1200000,"Aws, Azure",2,Entry/Mid,Niche
+69a67b703567c12f8643cd42,Cloud Platform Engineer,Mastech Digital,"Hyderabad, Telangana",1080000,1320000,1200000,Gcp,1,Entry/Mid,Niche
+69a67b703567c12f8643cdb4,Product Manager,Nexthink,"Bangalore, Karnataka",2250000,2750000,2500000,React,1,Senior/Lead,Niche
+69a67b703567c12f8643cdfb,Business Analyst,HealthifyMe,"Bangalore, Karnataka",1080000,1320000,1200000,Sql,1,Entry/Mid,Niche
+69a67b703567c12f8643ce25,Senior Business Analyst,Pandita AI Inc,"Mysore, Karnataka",1080000,1320000,1200000,Machine Learning,1,Entry/Mid,Niche
+69a67b703567c12f8643ce2c,Senior Business Analyst,Stolt-Nielsen Digital Innovation Centre,"Hyderabad, Telangana",1080000,1320000,1200000,Azure,1,Entry/Mid,Niche
+69a67b703567c12f8643cf9d,Data Analyst – Financial Risk,Indium,"Hyderabad, Telangana",720000,880000,800000,"Python, Sql",2,Entry/Mid,Niche
+69a67b703567c12f8643ce43,Project Manager,Coforge,"Hyderabad, Telangana",2250000,2750000,2500000,Aws,1,Senior/Lead,Niche
+69a67b703567c12f8643ce62,Project Manager,Persistent Systems,"Pune, Maharashtra",2250000,2750000,2500000,Java,1,Senior/Lead,Niche
+69a67b703567c12f8643ce2b,Senior Business Analyst,Etenico Technologies,"Hyderabad, Telangana",1080000,1320000,1200000,Azure,1,Entry/Mid,Niche
+69a67b703567c12f8643cdd5,Business Analyst,Mount Talent Consulting Pvt Ltd.,"Noida, Ghaziabad",1080000,1320000,1200000,Azure,1,Entry/Mid,Niche
+69a67b703567c12f8643ce0f,Business Analyst,Live Connections,"Chennai, Tamil Nadu",1080000,1320000,1200000,Sql,1,Entry/Mid,Niche
+69a67b703567c12f8643d0c8,Human Resources Manager,TP,"Chennai, Tamil Nadu",2250000,2750000,2500000,Aws,1,Senior/Lead,Niche
+69a67b703567c12f8643cdf7,Business Analyst,Genisys Group,"Bangalore, Karnataka",1080000,1320000,1200000,"Aws, Azure, Gcp",3,Entry/Mid,Niche
+69a67b703567c12f8643ceba,Account Manager,Sonata Software,"Gurgaon, Haryana",2250000,2750000,2500000,Aws,1,Senior/Lead,Niche
+69a67b703567c12f8643d010,Accounting Manager,Alkami,"Gurgaon, Haryana",2250000,2750000,2500000,Kubernetes,1,Senior/Lead,Niche
+69a67b703567c12f8643ced0,Key Account Manager,Sonata Software,"Noida, Uttar Pradesh",2250000,2750000,2500000,"Aws, Azure",2,Senior/Lead,Niche
+69a67b703567c12f8643cf6a,Financial Analyst,Graviton Research Capital LLP,"Chennai, Tamil Nadu",1080000,1320000,1200000,Machine Learning,1,Entry/Mid,Niche
+69a67b703567c12f8643ceed,Strategic Account Manager,SHI Solutions India Pvt. Ltd.,"Bangalore, Karnataka",2250000,2750000,2500000,Aws,1,Senior/Lead,Niche
+69a67b703567c12f8643cfc7,US Accounting – Accountant/ Senior Accountant,Rastogi Narain & Co. Chartered Accountants,"Noida, Ghaziabad",1080000,1320000,1200000,Aws,1,Entry/Mid,Niche
+69a67b703567c12f8643d0bb,Assistant Manager Human Resources,Intellectual Capital HR Consulting Pvt. Ltd.,"Mumbai, Maharashtra",2250000,2750000,2500000,Aws,1,Senior/Lead,Niche

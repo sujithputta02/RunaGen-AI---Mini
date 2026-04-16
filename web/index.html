@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RunaGen AI - Career Intelligence</title>
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Chart.js for Visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.js"></script>
+</head>
+<body>
+    <div class="background-texture"></div>
+    
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo">
+                    <span class="logo-icon">🎯</span>
+                    <span class="logo-text">RunaGen AI</span>
+                </div>
+                <p class="tagline">Career Intelligence</p>
+                
+                <div class="badge-container">
+                    <div class="badge">
+                        <span class="badge-icon">📊</span>
+                        <span class="badge-text">Adzuna Data</span>
+                    </div>
+                    <div class="badge">
+                        <span class="badge-icon">🇮🇳</span>
+                        <span class="badge-text">INR Salaries</span>
+                    </div>
+                    <div class="badge accuracy-badge">
+                        <span class="badge-icon">✨</span>
+                        <span class="badge-text">85%+ Accuracy</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Upload Section -->
+        <section class="upload-card">
+            <div class="card-header">
+                <h2>Analyze Your Resume</h2>
+                <p>Unlock AI-powered career insights and salary predictions</p>
+            </div>
+            
+            <div class="upload-zone" id="uploadZone">
+                <div class="upload-icon-wrapper">
+                    <div class="upload-icon">📄</div>
+                </div>
+                <h3 class="upload-title">Drop your resume here</h3>
+                <p class="upload-subtitle">Supported Format: PDF</p>
+                <div class="file-types">Secure & Private Analysis</div>
+                <input type="file" id="fileInput" accept=".pdf" hidden />
+            </div>
+            
+            <div class="file-info" id="fileInfo" style="display: none;">
+                <div class="file-icon">📎</div>
+                <div class="file-details">
+                    <div class="file-name" id="fileName"></div>
+                    <div class="file-size" id="fileSize"></div>
+                </div>
+                <button class="remove-btn" id="removeBtn">✕</button>
+            </div>
+            
+            <button class="analyze-btn" id="analyzeBtn" disabled>
+                <span class="btn-icon">🚀</span>
+                <span class="btn-text">Start Analysis</span>
+            </button>
+        </section>
+
+        <!-- Loading State -->
+        <div class="loading-card" id="loadingCard" style="display: none;">
+            <div class="loading-spinner"></div>
+            <h3>Intelligent Processing</h3>
+            <p>Our AI models are analyzing your professional profile...</p>
+            <div class="loading-steps">
+                <div class="step">Extracting skills</div>
+                <div class="step">Predicting careers</div>
+                <div class="step">Calculating salary</div>
+            </div>
+        </div>
+
+        <!-- Error Message -->
+        <div class="error-card" id="errorCard" style="display: none;">
+            <div class="error-icon">⚠️</div>
+            <div class="error-message" id="errorMessage"></div>
+        </div>
+
+        <!-- Results Section -->
+        <div class="results-container" id="resultsContainer" style="display: none;"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

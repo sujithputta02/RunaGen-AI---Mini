@@ -1,0 +1,501 @@
+job_id,title,company,location,salary_min,salary_max,currency,posted_date,employment_type,remote_option,experience_required
+IND-JOB-0001,Cloud Engineer,HCL,Bangalore,1012000,1644500,INR,2024-12-09,Full-time,No,0-2 years
+IND-JOB-0002,Cloud Engineer,Zoho,Hyderabad,968000,1573000,INR,2024-10-14,Full-time,No,2-5 years
+IND-JOB-0003,Software Engineer,Freshworks,Gurgaon,720000,1170000,INR,2024-01-18,Full-time,Yes,8+ years
+IND-JOB-0004,Software Engineer,CRED,Gurgaon,720000,1170000,INR,2024-05-26,Full-time,Yes,2-5 years
+IND-JOB-0005,AI Engineer,PhonePe,Chennai,1120000,1820000,INR,2024-05-05,Full-time,Yes,5-8 years
+IND-JOB-0006,Data Scientist,Wipro,Kolkata,960000,1560000,INR,2024-02-12,Full-time,No,0-2 years
+IND-JOB-0007,AI Engineer,CRED,Noida,1120000,1820000,INR,2024-02-13,Full-time,No,5-8 years
+IND-JOB-0008,DevOps Engineer,Amazon India,Hyderabad,880000,1430000,INR,2024-01-22,Full-time,Yes,0-2 years
+IND-JOB-0009,Software Engineer,HCL,Kolkata,720000,1170000,INR,2024-05-15,Full-time,No,5-8 years
+IND-JOB-0010,Software Engineer,Meesho,Delhi NCR,720000,1170000,INR,2024-12-22,Full-time,No,2-5 years
+IND-JOB-0011,Full Stack Developer,Microsoft India,Pune,836000,1358500,INR,2024-08-13,Full-time,Yes,2-5 years
+IND-JOB-0012,Cloud Engineer,Paytm,Bangalore,1012000,1644500,INR,2024-04-27,Full-time,Yes,8+ years
+IND-JOB-0013,Senior Data Engineer,Wipro,Mumbai,1520000,2470000,INR,2024-10-23,Full-time,No,8+ years
+IND-JOB-0014,Data Analyst,Unacademy,Ahmedabad,480000,780000,INR,2024-03-09,Full-time,No,5-8 years
+IND-JOB-0015,AI Engineer,Ola,Kolkata,1120000,1820000,INR,2024-10-13,Full-time,No,2-5 years
+IND-JOB-0016,Full Stack Developer,Razorpay,Hyderabad,836000,1358500,INR,2024-01-28,Full-time,No,2-5 years
+IND-JOB-0017,Research Scientist,Meesho,Kolkata,1440000,2340000,INR,2024-10-03,Contract,No,8+ years
+IND-JOB-0018,Full Stack Developer,Google India,Noida,760000,1235000,INR,2024-01-22,Full-time,No,5-8 years
+IND-JOB-0019,Research Scientist,Unacademy,Chennai,1440000,2340000,INR,2024-02-10,Contract,No,0-2 years
+IND-JOB-0020,AI Engineer,Google India,Noida,1120000,1820000,INR,2024-03-17,Full-time,Yes,5-8 years
+IND-JOB-0021,Cloud Engineer,Freshworks,Gurgaon,880000,1430000,INR,2024-04-05,Full-time,Yes,0-2 years
+IND-JOB-0022,DevOps Engineer,Paytm,Ahmedabad,800000,1300000,INR,2024-01-04,Full-time,Yes,5-8 years
+IND-JOB-0023,Software Engineer,Infosys,Mumbai,720000,1170000,INR,2024-10-03,Full-time,Yes,0-2 years
+IND-JOB-0024,Research Scientist,Zoho,Pune,1584000,2574000,INR,2024-03-22,Contract,Yes,2-5 years
+IND-JOB-0025,Senior Data Engineer,Freshworks,Gurgaon,1520000,2470000,INR,2024-07-07,Full-time,Yes,8+ years
+IND-JOB-0026,Cloud Engineer,Unacademy,Chennai,880000,1430000,INR,2024-08-17,Contract,No,2-5 years
+IND-JOB-0027,Data Scientist,Paytm,Bangalore,1104000,1794000,INR,2024-10-18,Full-time,No,0-2 years
+IND-JOB-0028,Data Scientist,ShareChat,Remote,960000,1560000,INR,2024-01-08,Full-time,Yes,0-2 years
+IND-JOB-0029,Senior Data Scientist,Wipro,Noida,1760000,2860000,INR,2024-04-09,Contract,No,2-5 years
+IND-JOB-0030,AI Engineer,Ola,Gurgaon,1120000,1820000,INR,2024-08-08,Contract,Yes,2-5 years
+IND-JOB-0031,Data Scientist,HCL,Remote,960000,1560000,INR,2024-07-12,Contract,Yes,8+ years
+IND-JOB-0032,Backend Developer,Infosys,Remote,720000,1170000,INR,2024-11-21,Full-time,Yes,0-2 years
+IND-JOB-0033,Data Analyst,Paytm,Hyderabad,528000,858000,INR,2024-04-07,Full-time,No,2-5 years
+IND-JOB-0034,Data Analyst,Accenture India,Delhi NCR,480000,780000,INR,2024-08-08,Full-time,No,0-2 years
+IND-JOB-0035,Data Engineer,Unacademy,Noida,800000,1300000,INR,2024-01-03,Full-time,No,8+ years
+IND-JOB-0036,Backend Developer,Amazon India,Kolkata,720000,1170000,INR,2024-01-06,Contract,No,8+ years
+IND-JOB-0037,Senior Data Engineer,CRED,Delhi NCR,1520000,2470000,INR,2024-07-23,Contract,No,5-8 years
+IND-JOB-0038,Software Engineer,Infosys,Gurgaon,720000,1170000,INR,2024-12-18,Full-time,Yes,0-2 years
+IND-JOB-0039,Data Engineer,Ola,Ahmedabad,800000,1300000,INR,2024-09-28,Full-time,No,0-2 years
+IND-JOB-0040,ML Engineer,Wipro,Gurgaon,1040000,1690000,INR,2024-02-22,Full-time,No,2-5 years
+IND-JOB-0041,DevOps Engineer,Byju's,Bangalore,920000,1495000,INR,2024-10-03,Contract,No,5-8 years
+IND-JOB-0042,Senior Data Engineer,Amazon India,Remote,1520000,2470000,INR,2024-12-11,Full-time,Yes,5-8 years
+IND-JOB-0043,Data Analyst,Tech Mahindra,Remote,480000,780000,INR,2024-11-10,Contract,Yes,5-8 years
+IND-JOB-0044,Research Scientist,Wipro,Bangalore,1656000,2691000,INR,2024-08-20,Full-time,No,2-5 years
+IND-JOB-0045,Full Stack Developer,Google India,Pune,836000,1358500,INR,2024-06-03,Full-time,No,2-5 years
+IND-JOB-0046,Backend Developer,Zoho,Delhi NCR,720000,1170000,INR,2024-10-26,Full-time,No,5-8 years
+IND-JOB-0047,Cloud Engineer,HCL,Pune,968000,1573000,INR,2024-05-04,Full-time,Yes,2-5 years
+IND-JOB-0048,Senior Data Engineer,Flipkart,Gurgaon,1520000,2470000,INR,2024-04-23,Full-time,No,5-8 years
+IND-JOB-0049,Full Stack Developer,Razorpay,Delhi NCR,760000,1235000,INR,2024-01-03,Contract,Yes,0-2 years
+IND-JOB-0050,Data Engineer,Paytm,Pune,880000,1430000,INR,2024-11-09,Full-time,Yes,8+ years
+IND-JOB-0051,Full Stack Developer,TCS,Hyderabad,836000,1358500,INR,2024-02-23,Full-time,No,5-8 years
+IND-JOB-0052,DevOps Engineer,Zoho,Pune,880000,1430000,INR,2024-07-05,Full-time,No,0-2 years
+IND-JOB-0053,Senior Data Scientist,Amazon India,Remote,1760000,2860000,INR,2024-04-22,Full-time,Yes,5-8 years
+IND-JOB-0054,Research Scientist,Zoho,Kolkata,1440000,2340000,INR,2024-10-24,Full-time,Yes,2-5 years
+IND-JOB-0055,ML Engineer,Accenture India,Kolkata,1040000,1690000,INR,2024-01-06,Full-time,Yes,8+ years
+IND-JOB-0056,Research Scientist,Meesho,Mumbai,1440000,2340000,INR,2024-05-06,Full-time,No,0-2 years
+IND-JOB-0057,Backend Developer,Microsoft India,Mumbai,720000,1170000,INR,2024-08-12,Full-time,Yes,2-5 years
+IND-JOB-0058,Software Engineer,TCS,Remote,720000,1170000,INR,2024-04-13,Full-time,Yes,5-8 years
+IND-JOB-0059,Data Scientist,Google India,Chennai,960000,1560000,INR,2024-11-17,Contract,No,5-8 years
+IND-JOB-0060,Data Engineer,HCL,Delhi NCR,800000,1300000,INR,2024-03-19,Full-time,No,8+ years
+IND-JOB-0061,Senior Data Scientist,Paytm,Kolkata,1760000,2860000,INR,2024-10-17,Full-time,No,2-5 years
+IND-JOB-0062,Senior Data Engineer,Infosys,Kolkata,1520000,2470000,INR,2024-01-17,Full-time,No,0-2 years
+IND-JOB-0063,Cloud Engineer,Paytm,Gurgaon,880000,1430000,INR,2024-06-22,Full-time,Yes,5-8 years
+IND-JOB-0064,Full Stack Developer,Flipkart,Remote,760000,1235000,INR,2024-07-11,Contract,Yes,5-8 years
+IND-JOB-0065,Full Stack Developer,Tech Mahindra,Mumbai,760000,1235000,INR,2024-07-22,Contract,No,2-5 years
+IND-JOB-0066,DevOps Engineer,Ola,Delhi NCR,800000,1300000,INR,2024-07-18,Full-time,No,2-5 years
+IND-JOB-0067,Data Analyst,Ola,Gurgaon,480000,780000,INR,2024-11-11,Contract,No,2-5 years
+IND-JOB-0068,Full Stack Developer,Razorpay,Pune,836000,1358500,INR,2024-11-03,Full-time,No,5-8 years
+IND-JOB-0069,Data Scientist,Microsoft India,Remote,960000,1560000,INR,2024-05-08,Full-time,Yes,2-5 years
+IND-JOB-0070,Data Engineer,Infosys,Mumbai,800000,1300000,INR,2024-08-20,Full-time,No,2-5 years
+IND-JOB-0071,AI Engineer,ShareChat,Kolkata,1120000,1820000,INR,2024-08-13,Full-time,No,0-2 years
+IND-JOB-0072,Research Scientist,HCL,Kolkata,1440000,2340000,INR,2024-04-06,Contract,No,2-5 years
+IND-JOB-0073,Data Scientist,CRED,Pune,1056000,1716000,INR,2024-08-22,Full-time,Yes,8+ years
+IND-JOB-0074,DevOps Engineer,Freshworks,Kolkata,800000,1300000,INR,2024-09-15,Full-time,Yes,8+ years
+IND-JOB-0075,Backend Developer,Google India,Mumbai,720000,1170000,INR,2024-11-09,Contract,No,5-8 years
+IND-JOB-0076,Backend Developer,Wipro,Delhi NCR,720000,1170000,INR,2024-04-09,Full-time,No,0-2 years
+IND-JOB-0077,ML Engineer,Tech Mahindra,Mumbai,1040000,1690000,INR,2024-07-23,Full-time,Yes,0-2 years
+IND-JOB-0078,Data Analyst,PhonePe,Chennai,480000,780000,INR,2024-09-15,Contract,No,8+ years
+IND-JOB-0079,Data Analyst,Ola,Bangalore,552000,897000,INR,2024-10-13,Contract,No,5-8 years
+IND-JOB-0080,Senior Data Engineer,Zomato,Kolkata,1520000,2470000,INR,2024-09-24,Full-time,No,5-8 years
+IND-JOB-0081,Data Analyst,Razorpay,Bangalore,552000,897000,INR,2024-07-11,Contract,Yes,8+ years
+IND-JOB-0082,ML Engineer,Byju's,Noida,1040000,1690000,INR,2024-01-13,Full-time,No,8+ years
+IND-JOB-0083,ML Engineer,CRED,Pune,1144000,1859000,INR,2024-01-09,Contract,No,8+ years
+IND-JOB-0084,Senior Data Scientist,Paytm,Kolkata,1760000,2860000,INR,2024-05-25,Contract,No,0-2 years
+IND-JOB-0085,Backend Developer,TCS,Noida,720000,1170000,INR,2024-01-12,Full-time,No,0-2 years
+IND-JOB-0086,Research Scientist,TCS,Mumbai,1440000,2340000,INR,2024-04-27,Full-time,No,2-5 years
+IND-JOB-0087,ML Engineer,Razorpay,Remote,1040000,1690000,INR,2024-02-19,Full-time,Yes,8+ years
+IND-JOB-0088,AI Engineer,Google India,Chennai,1120000,1820000,INR,2024-03-20,Full-time,Yes,2-5 years
+IND-JOB-0089,Senior Data Engineer,HCL,Gurgaon,1520000,2470000,INR,2024-01-10,Contract,No,2-5 years
+IND-JOB-0090,Data Scientist,Ola,Remote,960000,1560000,INR,2024-04-04,Full-time,Yes,0-2 years
+IND-JOB-0091,Research Scientist,Ola,Bangalore,1656000,2691000,INR,2024-06-18,Contract,No,0-2 years
+IND-JOB-0092,Full Stack Developer,Unacademy,Chennai,760000,1235000,INR,2024-01-28,Contract,Yes,0-2 years
+IND-JOB-0093,Data Analyst,Swiggy,Remote,480000,780000,INR,2024-08-23,Full-time,Yes,8+ years
+IND-JOB-0094,ML Engineer,Freshworks,Remote,1040000,1690000,INR,2024-05-20,Contract,Yes,8+ years
+IND-JOB-0095,Data Analyst,Ola,Delhi NCR,480000,780000,INR,2024-06-28,Full-time,Yes,0-2 years
+IND-JOB-0096,Senior Data Engineer,CRED,Mumbai,1520000,2470000,INR,2024-08-19,Contract,No,8+ years
+IND-JOB-0097,Senior Data Scientist,Accenture India,Ahmedabad,1760000,2860000,INR,2024-04-12,Full-time,No,5-8 years
+IND-JOB-0098,Full Stack Developer,TCS,Noida,760000,1235000,INR,2024-04-03,Full-time,Yes,8+ years
+IND-JOB-0099,Full Stack Developer,Microsoft India,Ahmedabad,760000,1235000,INR,2024-11-23,Contract,No,0-2 years
+IND-JOB-0100,Data Scientist,Flipkart,Mumbai,960000,1560000,INR,2024-07-23,Full-time,No,5-8 years
+IND-JOB-0101,Backend Developer,Zoho,Noida,720000,1170000,INR,2024-06-14,Full-time,No,8+ years
+IND-JOB-0102,Senior Data Engineer,Flipkart,Delhi NCR,1520000,2470000,INR,2024-04-04,Full-time,No,2-5 years
+IND-JOB-0103,Software Engineer,Amazon India,Ahmedabad,720000,1170000,INR,2024-05-24,Full-time,Yes,2-5 years
+IND-JOB-0104,Senior Data Engineer,Microsoft India,Chennai,1520000,2470000,INR,2024-03-10,Full-time,Yes,2-5 years
+IND-JOB-0105,Senior Data Engineer,Infosys,Bangalore,1748000,2840500,INR,2024-09-10,Full-time,No,8+ years
+IND-JOB-0106,Data Scientist,TCS,Gurgaon,960000,1560000,INR,2024-05-16,Contract,No,2-5 years
+IND-JOB-0107,Data Engineer,Google India,Ahmedabad,800000,1300000,INR,2024-02-27,Full-time,No,0-2 years
+IND-JOB-0108,DevOps Engineer,Unacademy,Remote,800000,1300000,INR,2024-01-05,Full-time,Yes,5-8 years
+IND-JOB-0109,Data Scientist,Microsoft India,Hyderabad,1056000,1716000,INR,2024-09-25,Contract,No,2-5 years
+IND-JOB-0110,Research Scientist,Freshworks,Kolkata,1440000,2340000,INR,2024-08-15,Full-time,Yes,8+ years
+IND-JOB-0111,Senior Data Engineer,Ola,Gurgaon,1520000,2470000,INR,2024-01-20,Full-time,Yes,2-5 years
+IND-JOB-0112,Cloud Engineer,Amazon India,Delhi NCR,880000,1430000,INR,2024-11-03,Full-time,No,0-2 years
+IND-JOB-0113,ML Engineer,TCS,Kolkata,1040000,1690000,INR,2024-08-23,Contract,No,2-5 years
+IND-JOB-0114,Senior Data Engineer,ShareChat,Delhi NCR,1520000,2470000,INR,2024-12-28,Contract,No,2-5 years
+IND-JOB-0115,Senior Data Engineer,Unacademy,Gurgaon,1520000,2470000,INR,2024-11-26,Full-time,No,2-5 years
+IND-JOB-0116,Cloud Engineer,Tech Mahindra,Delhi NCR,880000,1430000,INR,2024-03-03,Full-time,No,5-8 years
+IND-JOB-0117,DevOps Engineer,Ola,Delhi NCR,800000,1300000,INR,2024-08-04,Contract,No,8+ years
+IND-JOB-0118,Senior Data Engineer,Freshworks,Noida,1520000,2470000,INR,2024-08-15,Full-time,No,8+ years
+IND-JOB-0119,AI Engineer,Paytm,Gurgaon,1120000,1820000,INR,2024-05-01,Full-time,No,0-2 years
+IND-JOB-0120,Research Scientist,Meesho,Delhi NCR,1440000,2340000,INR,2024-10-02,Full-time,No,8+ years
+IND-JOB-0121,Senior Data Engineer,Accenture India,Gurgaon,1520000,2470000,INR,2024-07-21,Contract,Yes,8+ years
+IND-JOB-0122,Senior Data Scientist,PhonePe,Chennai,1760000,2860000,INR,2024-06-22,Full-time,Yes,5-8 years
+IND-JOB-0123,Data Analyst,ShareChat,Ahmedabad,480000,780000,INR,2024-05-22,Contract,Yes,0-2 years
+IND-JOB-0124,Backend Developer,Wipro,Chennai,720000,1170000,INR,2024-05-11,Full-time,Yes,8+ years
+IND-JOB-0125,Full Stack Developer,TCS,Remote,760000,1235000,INR,2024-09-15,Contract,Yes,0-2 years
+IND-JOB-0126,Software Engineer,Freshworks,Chennai,720000,1170000,INR,2024-10-25,Contract,No,0-2 years
+IND-JOB-0127,Software Engineer,Google India,Noida,720000,1170000,INR,2024-03-10,Contract,Yes,8+ years
+IND-JOB-0128,Data Scientist,TCS,Remote,960000,1560000,INR,2024-10-26,Full-time,Yes,2-5 years
+IND-JOB-0129,Senior Data Engineer,Zoho,Bangalore,1748000,2840500,INR,2024-09-14,Full-time,No,0-2 years
+IND-JOB-0130,Backend Developer,HCL,Remote,720000,1170000,INR,2024-03-16,Full-time,Yes,5-8 years
+IND-JOB-0131,Data Analyst,Razorpay,Ahmedabad,480000,780000,INR,2024-04-15,Full-time,No,2-5 years
+IND-JOB-0132,Data Scientist,Google India,Kolkata,960000,1560000,INR,2024-06-26,Full-time,Yes,5-8 years
+IND-JOB-0133,AI Engineer,Flipkart,Gurgaon,1120000,1820000,INR,2024-10-22,Contract,Yes,8+ years
+IND-JOB-0134,Full Stack Developer,Razorpay,Chennai,760000,1235000,INR,2024-06-18,Contract,No,5-8 years
+IND-JOB-0135,Software Engineer,ShareChat,Mumbai,720000,1170000,INR,2024-10-13,Full-time,Yes,8+ years
+IND-JOB-0136,Data Engineer,Paytm,Ahmedabad,800000,1300000,INR,2024-12-26,Contract,No,2-5 years
+IND-JOB-0137,Backend Developer,Infosys,Pune,792000,1287000,INR,2024-09-19,Full-time,Yes,8+ years
+IND-JOB-0138,Data Scientist,Freshworks,Ahmedabad,960000,1560000,INR,2024-01-24,Full-time,No,2-5 years
+IND-JOB-0139,Data Scientist,Razorpay,Delhi NCR,960000,1560000,INR,2024-06-20,Contract,No,5-8 years
+IND-JOB-0140,Cloud Engineer,Zoho,Kolkata,880000,1430000,INR,2024-06-21,Contract,Yes,0-2 years
+IND-JOB-0141,DevOps Engineer,Wipro,Mumbai,800000,1300000,INR,2024-11-22,Full-time,Yes,0-2 years
+IND-JOB-0142,Data Analyst,HCL,Remote,480000,780000,INR,2024-12-28,Full-time,Yes,8+ years
+IND-JOB-0143,ML Engineer,ShareChat,Delhi NCR,1040000,1690000,INR,2024-01-02,Full-time,Yes,5-8 years
+IND-JOB-0144,Senior Data Scientist,Swiggy,Kolkata,1760000,2860000,INR,2024-03-08,Contract,No,2-5 years
+IND-JOB-0145,ML Engineer,Accenture India,Hyderabad,1144000,1859000,INR,2024-10-28,Contract,No,2-5 years
+IND-JOB-0146,Backend Developer,Ola,Pune,792000,1287000,INR,2024-04-15,Full-time,No,0-2 years
+IND-JOB-0147,Research Scientist,CRED,Delhi NCR,1440000,2340000,INR,2024-11-18,Full-time,No,5-8 years
+IND-JOB-0148,DevOps Engineer,Flipkart,Remote,800000,1300000,INR,2024-07-23,Full-time,Yes,8+ years
+IND-JOB-0149,Senior Data Engineer,Amazon India,Kolkata,1520000,2470000,INR,2024-08-04,Full-time,No,5-8 years
+IND-JOB-0150,DevOps Engineer,Flipkart,Delhi NCR,800000,1300000,INR,2024-01-27,Contract,No,0-2 years
+IND-JOB-0151,DevOps Engineer,Razorpay,Delhi NCR,800000,1300000,INR,2024-04-20,Full-time,No,2-5 years
+IND-JOB-0152,DevOps Engineer,Google India,Remote,800000,1300000,INR,2024-12-25,Full-time,Yes,0-2 years
+IND-JOB-0153,Cloud Engineer,Unacademy,Bangalore,1012000,1644500,INR,2024-05-26,Contract,No,5-8 years
+IND-JOB-0154,AI Engineer,Tech Mahindra,Hyderabad,1232000,2002000,INR,2024-05-11,Contract,No,2-5 years
+IND-JOB-0155,Research Scientist,Zoho,Chennai,1440000,2340000,INR,2024-09-17,Full-time,Yes,5-8 years
+IND-JOB-0156,Backend Developer,Flipkart,Chennai,720000,1170000,INR,2024-02-15,Full-time,No,2-5 years
+IND-JOB-0157,Cloud Engineer,Meesho,Kolkata,880000,1430000,INR,2024-09-12,Full-time,Yes,0-2 years
+IND-JOB-0158,Senior Data Engineer,Zoho,Hyderabad,1672000,2717000,INR,2024-08-12,Full-time,No,5-8 years
+IND-JOB-0159,Data Scientist,Meesho,Mumbai,960000,1560000,INR,2024-08-01,Full-time,Yes,2-5 years
+IND-JOB-0160,Cloud Engineer,Wipro,Remote,880000,1430000,INR,2024-08-23,Full-time,Yes,8+ years
+IND-JOB-0161,Data Scientist,Tech Mahindra,Bangalore,1104000,1794000,INR,2024-01-10,Contract,No,2-5 years
+IND-JOB-0162,Full Stack Developer,Tech Mahindra,Kolkata,760000,1235000,INR,2024-08-12,Contract,No,2-5 years
+IND-JOB-0163,Data Analyst,Unacademy,Hyderabad,528000,858000,INR,2024-08-20,Contract,Yes,5-8 years
+IND-JOB-0164,Data Engineer,ShareChat,Chennai,800000,1300000,INR,2024-04-15,Contract,Yes,5-8 years
+IND-JOB-0165,Data Scientist,Meesho,Chennai,960000,1560000,INR,2024-09-21,Full-time,No,5-8 years
+IND-JOB-0166,Software Engineer,HCL,Ahmedabad,720000,1170000,INR,2024-02-22,Full-time,No,0-2 years
+IND-JOB-0167,Data Engineer,Paytm,Mumbai,800000,1300000,INR,2024-03-26,Full-time,No,2-5 years
+IND-JOB-0168,DevOps Engineer,Amazon India,Mumbai,800000,1300000,INR,2024-06-25,Full-time,Yes,0-2 years
+IND-JOB-0169,Senior Data Engineer,Tech Mahindra,Pune,1672000,2717000,INR,2024-09-09,Full-time,No,0-2 years
+IND-JOB-0170,ML Engineer,TCS,Chennai,1040000,1690000,INR,2024-04-19,Full-time,No,5-8 years
+IND-JOB-0171,Data Engineer,Tech Mahindra,Kolkata,800000,1300000,INR,2024-09-04,Full-time,No,5-8 years
+IND-JOB-0172,Full Stack Developer,Ola,Hyderabad,836000,1358500,INR,2024-08-17,Full-time,Yes,0-2 years
+IND-JOB-0173,AI Engineer,Meesho,Noida,1120000,1820000,INR,2024-05-15,Full-time,No,8+ years
+IND-JOB-0174,Data Analyst,PhonePe,Remote,480000,780000,INR,2024-02-16,Contract,Yes,0-2 years
+IND-JOB-0175,Data Scientist,Paytm,Gurgaon,960000,1560000,INR,2024-03-03,Full-time,No,5-8 years
+IND-JOB-0176,Data Analyst,Byju's,Noida,480000,780000,INR,2024-05-15,Contract,No,0-2 years
+IND-JOB-0177,Cloud Engineer,Unacademy,Noida,880000,1430000,INR,2024-12-28,Full-time,No,2-5 years
+IND-JOB-0178,Data Analyst,Paytm,Ahmedabad,480000,780000,INR,2024-07-14,Full-time,No,5-8 years
+IND-JOB-0179,Cloud Engineer,Google India,Chennai,880000,1430000,INR,2024-03-22,Contract,No,0-2 years
+IND-JOB-0180,Data Scientist,PhonePe,Hyderabad,1056000,1716000,INR,2024-12-24,Full-time,Yes,0-2 years
+IND-JOB-0181,DevOps Engineer,Zoho,Noida,800000,1300000,INR,2024-06-22,Full-time,No,8+ years
+IND-JOB-0182,AI Engineer,Infosys,Delhi NCR,1120000,1820000,INR,2024-10-10,Full-time,No,2-5 years
+IND-JOB-0183,ML Engineer,Meesho,Ahmedabad,1040000,1690000,INR,2024-04-28,Full-time,No,5-8 years
+IND-JOB-0184,Data Scientist,Google India,Gurgaon,960000,1560000,INR,2024-04-26,Contract,Yes,0-2 years
+IND-JOB-0185,DevOps Engineer,Meesho,Delhi NCR,800000,1300000,INR,2024-01-06,Full-time,Yes,5-8 years
+IND-JOB-0186,Senior Data Scientist,Swiggy,Bangalore,2024000,3289000,INR,2024-03-28,Full-time,No,8+ years
+IND-JOB-0187,Data Scientist,Tech Mahindra,Remote,960000,1560000,INR,2024-01-03,Full-time,Yes,8+ years
+IND-JOB-0188,Data Analyst,CRED,Chennai,480000,780000,INR,2024-03-12,Full-time,Yes,0-2 years
+IND-JOB-0189,Data Engineer,Tech Mahindra,Pune,880000,1430000,INR,2024-10-02,Full-time,No,8+ years
+IND-JOB-0190,Backend Developer,Byju's,Ahmedabad,720000,1170000,INR,2024-07-09,Full-time,Yes,0-2 years
+IND-JOB-0191,Senior Data Scientist,PhonePe,Hyderabad,1936000,3146000,INR,2024-05-22,Contract,No,5-8 years
+IND-JOB-0192,Data Engineer,Microsoft India,Kolkata,800000,1300000,INR,2024-10-02,Full-time,No,2-5 years
+IND-JOB-0193,Research Scientist,Tech Mahindra,Delhi NCR,1440000,2340000,INR,2024-05-11,Full-time,No,8+ years
+IND-JOB-0194,ML Engineer,Tech Mahindra,Kolkata,1040000,1690000,INR,2024-09-23,Full-time,No,5-8 years
+IND-JOB-0195,Data Scientist,Zomato,Bangalore,1104000,1794000,INR,2024-07-01,Contract,Yes,5-8 years
+IND-JOB-0196,DevOps Engineer,PhonePe,Gurgaon,800000,1300000,INR,2024-07-23,Contract,No,8+ years
+IND-JOB-0197,Data Engineer,Paytm,Pune,880000,1430000,INR,2024-10-15,Full-time,No,0-2 years
+IND-JOB-0198,Software Engineer,PhonePe,Gurgaon,720000,1170000,INR,2024-07-17,Full-time,No,5-8 years
+IND-JOB-0199,AI Engineer,Paytm,Mumbai,1120000,1820000,INR,2024-06-25,Full-time,No,0-2 years
+IND-JOB-0200,Full Stack Developer,Freshworks,Mumbai,760000,1235000,INR,2024-06-12,Full-time,No,2-5 years
+IND-JOB-0201,Senior Data Engineer,Amazon India,Pune,1672000,2717000,INR,2024-10-05,Full-time,No,8+ years
+IND-JOB-0202,Backend Developer,Ola,Gurgaon,720000,1170000,INR,2024-08-22,Full-time,Yes,5-8 years
+IND-JOB-0203,ML Engineer,CRED,Hyderabad,1144000,1859000,INR,2024-08-15,Full-time,Yes,0-2 years
+IND-JOB-0204,Senior Data Scientist,Freshworks,Hyderabad,1936000,3146000,INR,2024-05-15,Contract,No,5-8 years
+IND-JOB-0205,Senior Data Engineer,Wipro,Remote,1520000,2470000,INR,2024-02-20,Contract,Yes,8+ years
+IND-JOB-0206,DevOps Engineer,Zoho,Bangalore,920000,1495000,INR,2024-08-26,Full-time,No,8+ years
+IND-JOB-0207,Full Stack Developer,Tech Mahindra,Bangalore,874000,1420250,INR,2024-08-04,Full-time,Yes,0-2 years
+IND-JOB-0208,Full Stack Developer,Unacademy,Pune,836000,1358500,INR,2024-01-08,Contract,Yes,2-5 years
+IND-JOB-0209,Senior Data Scientist,Swiggy,Delhi NCR,1760000,2860000,INR,2024-07-14,Full-time,No,0-2 years
+IND-JOB-0210,Research Scientist,Unacademy,Remote,1440000,2340000,INR,2024-06-03,Full-time,Yes,0-2 years
+IND-JOB-0211,Full Stack Developer,Meesho,Kolkata,760000,1235000,INR,2024-05-09,Full-time,No,2-5 years
+IND-JOB-0212,Senior Data Scientist,Flipkart,Remote,1760000,2860000,INR,2024-12-22,Contract,Yes,2-5 years
+IND-JOB-0213,DevOps Engineer,ShareChat,Hyderabad,880000,1430000,INR,2024-05-18,Contract,No,5-8 years
+IND-JOB-0214,ML Engineer,Meesho,Remote,1040000,1690000,INR,2024-09-03,Contract,Yes,5-8 years
+IND-JOB-0215,Data Engineer,Swiggy,Delhi NCR,800000,1300000,INR,2024-03-07,Full-time,Yes,8+ years
+IND-JOB-0216,Software Engineer,Microsoft India,Pune,792000,1287000,INR,2024-03-03,Full-time,Yes,0-2 years
+IND-JOB-0217,Full Stack Developer,Zoho,Noida,760000,1235000,INR,2024-01-22,Full-time,Yes,2-5 years
+IND-JOB-0218,DevOps Engineer,Zomato,Pune,880000,1430000,INR,2024-03-06,Full-time,Yes,0-2 years
+IND-JOB-0219,Data Analyst,Swiggy,Remote,480000,780000,INR,2024-12-08,Contract,Yes,5-8 years
+IND-JOB-0220,Research Scientist,CRED,Mumbai,1440000,2340000,INR,2024-09-08,Full-time,Yes,8+ years
+IND-JOB-0221,Software Engineer,Swiggy,Remote,720000,1170000,INR,2024-10-15,Contract,Yes,5-8 years
+IND-JOB-0222,Research Scientist,Zomato,Noida,1440000,2340000,INR,2024-09-14,Full-time,Yes,2-5 years
+IND-JOB-0223,Senior Data Engineer,Infosys,Remote,1520000,2470000,INR,2024-08-28,Full-time,Yes,0-2 years
+IND-JOB-0224,AI Engineer,Freshworks,Hyderabad,1232000,2002000,INR,2024-05-03,Full-time,No,2-5 years
+IND-JOB-0225,Data Analyst,Wipro,Mumbai,480000,780000,INR,2024-08-12,Full-time,No,8+ years
+IND-JOB-0226,Full Stack Developer,Swiggy,Mumbai,760000,1235000,INR,2024-07-03,Full-time,No,5-8 years
+IND-JOB-0227,Data Scientist,ShareChat,Remote,960000,1560000,INR,2024-06-26,Full-time,Yes,2-5 years
+IND-JOB-0228,Data Engineer,Flipkart,Ahmedabad,800000,1300000,INR,2024-12-27,Full-time,Yes,8+ years
+IND-JOB-0229,Backend Developer,Byju's,Bangalore,828000,1345500,INR,2024-02-01,Full-time,No,2-5 years
+IND-JOB-0230,Full Stack Developer,Byju's,Noida,760000,1235000,INR,2024-07-04,Full-time,No,0-2 years
+IND-JOB-0231,Data Engineer,Microsoft India,Kolkata,800000,1300000,INR,2024-11-26,Contract,No,8+ years
+IND-JOB-0232,DevOps Engineer,Zoho,Bangalore,920000,1495000,INR,2024-11-17,Full-time,Yes,5-8 years
+IND-JOB-0233,Data Analyst,TCS,Gurgaon,480000,780000,INR,2024-06-08,Contract,No,0-2 years
+IND-JOB-0234,Full Stack Developer,Swiggy,Hyderabad,836000,1358500,INR,2024-09-18,Full-time,No,8+ years
+IND-JOB-0235,Data Engineer,Unacademy,Kolkata,800000,1300000,INR,2024-06-09,Full-time,No,0-2 years
+IND-JOB-0236,Senior Data Scientist,Microsoft India,Remote,1760000,2860000,INR,2024-11-04,Full-time,Yes,2-5 years
+IND-JOB-0237,Data Engineer,Swiggy,Noida,800000,1300000,INR,2024-06-27,Full-time,Yes,8+ years
+IND-JOB-0238,AI Engineer,Razorpay,Remote,1120000,1820000,INR,2024-03-26,Full-time,Yes,0-2 years
+IND-JOB-0239,AI Engineer,CRED,Bangalore,1288000,2092999,INR,2024-05-07,Full-time,Yes,0-2 years
+IND-JOB-0240,Senior Data Scientist,Flipkart,Noida,1760000,2860000,INR,2024-07-27,Contract,No,2-5 years
+IND-JOB-0241,Senior Data Engineer,Swiggy,Bangalore,1748000,2840500,INR,2024-11-11,Full-time,No,5-8 years
+IND-JOB-0242,Data Analyst,Zomato,Ahmedabad,480000,780000,INR,2024-07-11,Full-time,No,8+ years
+IND-JOB-0243,Senior Data Scientist,Freshworks,Delhi NCR,1760000,2860000,INR,2024-02-24,Contract,No,2-5 years
+IND-JOB-0244,Full Stack Developer,Flipkart,Chennai,760000,1235000,INR,2024-02-03,Full-time,No,5-8 years
+IND-JOB-0245,Backend Developer,Byju's,Kolkata,720000,1170000,INR,2024-03-23,Contract,No,0-2 years
+IND-JOB-0246,AI Engineer,Swiggy,Gurgaon,1120000,1820000,INR,2024-07-09,Full-time,No,8+ years
+IND-JOB-0247,Senior Data Scientist,Freshworks,Remote,1760000,2860000,INR,2024-03-01,Full-time,Yes,8+ years
+IND-JOB-0248,Data Engineer,Tech Mahindra,Hyderabad,880000,1430000,INR,2024-04-25,Full-time,No,0-2 years
+IND-JOB-0249,DevOps Engineer,Tech Mahindra,Remote,800000,1300000,INR,2024-08-12,Full-time,Yes,8+ years
+IND-JOB-0250,Research Scientist,Wipro,Gurgaon,1440000,2340000,INR,2024-03-17,Full-time,No,5-8 years
+IND-JOB-0251,Software Engineer,HCL,Bangalore,828000,1345500,INR,2024-12-06,Contract,No,0-2 years
+IND-JOB-0252,Senior Data Engineer,Google India,Ahmedabad,1520000,2470000,INR,2024-04-20,Full-time,No,8+ years
+IND-JOB-0253,Software Engineer,HCL,Pune,792000,1287000,INR,2024-02-15,Full-time,Yes,8+ years
+IND-JOB-0254,Data Scientist,Meesho,Chennai,960000,1560000,INR,2024-11-12,Full-time,No,5-8 years
+IND-JOB-0255,Senior Data Engineer,Accenture India,Remote,1520000,2470000,INR,2024-03-26,Full-time,Yes,2-5 years
+IND-JOB-0256,Data Scientist,Amazon India,Pune,1056000,1716000,INR,2024-04-26,Contract,No,5-8 years
+IND-JOB-0257,Backend Developer,Zoho,Pune,792000,1287000,INR,2024-10-03,Full-time,No,8+ years
+IND-JOB-0258,Full Stack Developer,PhonePe,Kolkata,760000,1235000,INR,2024-10-03,Full-time,Yes,0-2 years
+IND-JOB-0259,Backend Developer,CRED,Remote,720000,1170000,INR,2024-09-12,Full-time,Yes,2-5 years
+IND-JOB-0260,Research Scientist,Tech Mahindra,Kolkata,1440000,2340000,INR,2024-09-28,Full-time,Yes,2-5 years
+IND-JOB-0261,Senior Data Engineer,Accenture India,Pune,1672000,2717000,INR,2024-06-23,Full-time,No,5-8 years
+IND-JOB-0262,Data Scientist,Google India,Mumbai,960000,1560000,INR,2024-11-18,Full-time,No,5-8 years
+IND-JOB-0263,DevOps Engineer,Zoho,Hyderabad,880000,1430000,INR,2024-09-21,Full-time,No,2-5 years
+IND-JOB-0264,ML Engineer,Meesho,Gurgaon,1040000,1690000,INR,2024-12-20,Full-time,Yes,0-2 years
+IND-JOB-0265,Data Engineer,Wipro,Bangalore,920000,1495000,INR,2024-11-25,Full-time,No,8+ years
+IND-JOB-0266,DevOps Engineer,Unacademy,Bangalore,920000,1495000,INR,2024-08-21,Full-time,No,5-8 years
+IND-JOB-0267,Backend Developer,Microsoft India,Remote,720000,1170000,INR,2024-07-10,Contract,Yes,0-2 years
+IND-JOB-0268,AI Engineer,Infosys,Pune,1232000,2002000,INR,2024-08-14,Contract,No,5-8 years
+IND-JOB-0269,DevOps Engineer,Tech Mahindra,Chennai,800000,1300000,INR,2024-12-11,Full-time,Yes,2-5 years
+IND-JOB-0270,Research Scientist,Swiggy,Noida,1440000,2340000,INR,2024-09-04,Full-time,No,0-2 years
+IND-JOB-0271,Senior Data Engineer,CRED,Mumbai,1520000,2470000,INR,2024-03-04,Full-time,No,8+ years
+IND-JOB-0272,DevOps Engineer,PhonePe,Mumbai,800000,1300000,INR,2024-03-27,Full-time,Yes,5-8 years
+IND-JOB-0273,Software Engineer,Accenture India,Ahmedabad,720000,1170000,INR,2024-09-15,Contract,Yes,8+ years
+IND-JOB-0274,Data Engineer,Wipro,Kolkata,800000,1300000,INR,2024-09-15,Full-time,No,5-8 years
+IND-JOB-0275,Data Engineer,Infosys,Delhi NCR,800000,1300000,INR,2024-08-20,Contract,No,0-2 years
+IND-JOB-0276,Data Scientist,PhonePe,Pune,1056000,1716000,INR,2024-05-24,Full-time,Yes,5-8 years
+IND-JOB-0277,Data Engineer,Zomato,Bangalore,920000,1495000,INR,2024-10-18,Full-time,No,5-8 years
+IND-JOB-0278,Data Scientist,Zomato,Noida,960000,1560000,INR,2024-08-25,Full-time,Yes,0-2 years
+IND-JOB-0279,ML Engineer,HCL,Kolkata,1040000,1690000,INR,2024-06-26,Full-time,No,5-8 years
+IND-JOB-0280,Research Scientist,Tech Mahindra,Mumbai,1440000,2340000,INR,2024-10-17,Contract,No,0-2 years
+IND-JOB-0281,Data Engineer,Tech Mahindra,Chennai,800000,1300000,INR,2024-08-17,Contract,No,2-5 years
+IND-JOB-0282,Senior Data Scientist,Byju's,Chennai,1760000,2860000,INR,2024-03-13,Full-time,No,8+ years
+IND-JOB-0283,AI Engineer,Ola,Delhi NCR,1120000,1820000,INR,2024-08-27,Full-time,No,0-2 years
+IND-JOB-0284,Data Analyst,Ola,Delhi NCR,480000,780000,INR,2024-12-28,Full-time,No,5-8 years
+IND-JOB-0285,Cloud Engineer,Ola,Gurgaon,880000,1430000,INR,2024-04-24,Full-time,No,2-5 years
+IND-JOB-0286,Full Stack Developer,Unacademy,Gurgaon,760000,1235000,INR,2024-07-05,Full-time,No,0-2 years
+IND-JOB-0287,Software Engineer,TCS,Ahmedabad,720000,1170000,INR,2024-06-14,Full-time,No,2-5 years
+IND-JOB-0288,Data Analyst,Freshworks,Gurgaon,480000,780000,INR,2024-08-28,Full-time,Yes,2-5 years
+IND-JOB-0289,Full Stack Developer,Paytm,Remote,760000,1235000,INR,2024-08-17,Contract,Yes,5-8 years
+IND-JOB-0290,ML Engineer,CRED,Noida,1040000,1690000,INR,2024-06-18,Full-time,No,5-8 years
+IND-JOB-0291,DevOps Engineer,Razorpay,Mumbai,800000,1300000,INR,2024-04-09,Full-time,No,5-8 years
+IND-JOB-0292,Research Scientist,Flipkart,Mumbai,1440000,2340000,INR,2024-12-23,Contract,No,5-8 years
+IND-JOB-0293,Full Stack Developer,Google India,Delhi NCR,760000,1235000,INR,2024-02-19,Contract,Yes,8+ years
+IND-JOB-0294,Senior Data Scientist,Tech Mahindra,Delhi NCR,1760000,2860000,INR,2024-01-10,Full-time,No,8+ years
+IND-JOB-0295,Cloud Engineer,Google India,Ahmedabad,880000,1430000,INR,2024-04-07,Full-time,Yes,5-8 years
+IND-JOB-0296,ML Engineer,HCL,Gurgaon,1040000,1690000,INR,2024-12-19,Full-time,No,2-5 years
+IND-JOB-0297,Cloud Engineer,Microsoft India,Bangalore,1012000,1644500,INR,2024-02-14,Full-time,Yes,0-2 years
+IND-JOB-0298,Cloud Engineer,Tech Mahindra,Bangalore,1012000,1644500,INR,2024-09-06,Contract,No,8+ years
+IND-JOB-0299,Backend Developer,Unacademy,Mumbai,720000,1170000,INR,2024-05-11,Full-time,No,0-2 years
+IND-JOB-0300,Cloud Engineer,Ola,Mumbai,880000,1430000,INR,2024-09-24,Full-time,Yes,2-5 years
+IND-JOB-0301,Data Analyst,Accenture India,Bangalore,552000,897000,INR,2024-07-26,Contract,No,5-8 years
+IND-JOB-0302,Data Engineer,TCS,Delhi NCR,800000,1300000,INR,2024-10-20,Full-time,Yes,5-8 years
+IND-JOB-0303,Senior Data Engineer,CRED,Remote,1520000,2470000,INR,2024-09-17,Contract,Yes,2-5 years
+IND-JOB-0304,Full Stack Developer,CRED,Delhi NCR,760000,1235000,INR,2024-04-26,Full-time,No,8+ years
+IND-JOB-0305,Cloud Engineer,Google India,Pune,968000,1573000,INR,2024-01-24,Full-time,Yes,2-5 years
+IND-JOB-0306,ML Engineer,Byju's,Remote,1040000,1690000,INR,2024-07-27,Contract,Yes,5-8 years
+IND-JOB-0307,Data Scientist,Zomato,Remote,960000,1560000,INR,2024-02-06,Full-time,Yes,8+ years
+IND-JOB-0308,Senior Data Scientist,Microsoft India,Bangalore,2024000,3289000,INR,2024-05-13,Full-time,No,5-8 years
+IND-JOB-0309,Senior Data Scientist,Flipkart,Gurgaon,1760000,2860000,INR,2024-12-19,Full-time,No,5-8 years
+IND-JOB-0310,AI Engineer,Microsoft India,Bangalore,1288000,2092999,INR,2024-11-04,Contract,No,8+ years
+IND-JOB-0311,Cloud Engineer,Freshworks,Delhi NCR,880000,1430000,INR,2024-12-04,Full-time,No,2-5 years
+IND-JOB-0312,Software Engineer,Tech Mahindra,Ahmedabad,720000,1170000,INR,2024-03-15,Full-time,No,8+ years
+IND-JOB-0313,Research Scientist,Zoho,Remote,1440000,2340000,INR,2024-04-25,Full-time,Yes,0-2 years
+IND-JOB-0314,Full Stack Developer,CRED,Noida,760000,1235000,INR,2024-12-12,Full-time,Yes,0-2 years
+IND-JOB-0315,Data Engineer,Zoho,Noida,800000,1300000,INR,2024-04-19,Full-time,No,8+ years
+IND-JOB-0316,Data Scientist,Meesho,Mumbai,960000,1560000,INR,2024-12-19,Contract,No,8+ years
+IND-JOB-0317,Research Scientist,Infosys,Ahmedabad,1440000,2340000,INR,2024-03-17,Contract,No,0-2 years
+IND-JOB-0318,Full Stack Developer,CRED,Remote,760000,1235000,INR,2024-05-24,Full-time,Yes,8+ years
+IND-JOB-0319,Senior Data Engineer,TCS,Mumbai,1520000,2470000,INR,2024-10-03,Full-time,No,0-2 years
+IND-JOB-0320,Full Stack Developer,Infosys,Hyderabad,836000,1358500,INR,2024-08-02,Full-time,No,2-5 years
+IND-JOB-0321,Research Scientist,Unacademy,Remote,1440000,2340000,INR,2024-07-12,Contract,Yes,8+ years
+IND-JOB-0322,Data Analyst,Zomato,Hyderabad,528000,858000,INR,2024-11-22,Full-time,No,5-8 years
+IND-JOB-0323,Data Scientist,Accenture India,Noida,960000,1560000,INR,2024-07-17,Full-time,Yes,2-5 years
+IND-JOB-0324,Data Engineer,TCS,Delhi NCR,800000,1300000,INR,2024-08-22,Contract,No,2-5 years
+IND-JOB-0325,Software Engineer,CRED,Chennai,720000,1170000,INR,2024-03-09,Full-time,Yes,0-2 years
+IND-JOB-0326,Data Engineer,Meesho,Kolkata,800000,1300000,INR,2024-10-25,Full-time,No,0-2 years
+IND-JOB-0327,Data Scientist,Byju's,Bangalore,1104000,1794000,INR,2024-08-20,Full-time,No,0-2 years
+IND-JOB-0328,Data Analyst,CRED,Mumbai,480000,780000,INR,2024-09-07,Full-time,No,5-8 years
+IND-JOB-0329,Software Engineer,Ola,Chennai,720000,1170000,INR,2024-10-20,Full-time,No,2-5 years
+IND-JOB-0330,Cloud Engineer,Freshworks,Mumbai,880000,1430000,INR,2024-07-10,Full-time,No,2-5 years
+IND-JOB-0331,Cloud Engineer,Meesho,Kolkata,880000,1430000,INR,2024-09-16,Full-time,Yes,8+ years
+IND-JOB-0332,Research Scientist,Freshworks,Chennai,1440000,2340000,INR,2024-12-14,Contract,No,8+ years
+IND-JOB-0333,ML Engineer,Zoho,Ahmedabad,1040000,1690000,INR,2024-04-28,Full-time,No,2-5 years
+IND-JOB-0334,Research Scientist,CRED,Bangalore,1656000,2691000,INR,2024-09-14,Contract,No,2-5 years
+IND-JOB-0335,Data Analyst,Microsoft India,Delhi NCR,480000,780000,INR,2024-04-11,Full-time,Yes,5-8 years
+IND-JOB-0336,Data Scientist,Zoho,Mumbai,960000,1560000,INR,2024-01-09,Contract,No,0-2 years
+IND-JOB-0337,Data Scientist,Amazon India,Gurgaon,960000,1560000,INR,2024-12-22,Full-time,No,5-8 years
+IND-JOB-0338,Senior Data Engineer,TCS,Mumbai,1520000,2470000,INR,2024-04-24,Full-time,Yes,8+ years
+IND-JOB-0339,Software Engineer,ShareChat,Gurgaon,720000,1170000,INR,2024-12-07,Contract,Yes,5-8 years
+IND-JOB-0340,Research Scientist,Flipkart,Kolkata,1440000,2340000,INR,2024-08-18,Full-time,No,5-8 years
+IND-JOB-0341,Full Stack Developer,Razorpay,Ahmedabad,760000,1235000,INR,2024-02-26,Contract,Yes,5-8 years
+IND-JOB-0342,Software Engineer,Swiggy,Chennai,720000,1170000,INR,2024-07-02,Full-time,Yes,0-2 years
+IND-JOB-0343,Senior Data Engineer,Zoho,Gurgaon,1520000,2470000,INR,2024-10-24,Contract,No,2-5 years
+IND-JOB-0344,Senior Data Scientist,Microsoft India,Kolkata,1760000,2860000,INR,2024-10-27,Full-time,No,5-8 years
+IND-JOB-0345,Senior Data Engineer,Razorpay,Remote,1520000,2470000,INR,2024-12-16,Contract,Yes,2-5 years
+IND-JOB-0346,AI Engineer,Swiggy,Pune,1232000,2002000,INR,2024-03-24,Contract,No,0-2 years
+IND-JOB-0347,Full Stack Developer,Infosys,Hyderabad,836000,1358500,INR,2024-11-02,Full-time,No,2-5 years
+IND-JOB-0348,Data Scientist,ShareChat,Pune,1056000,1716000,INR,2024-01-07,Contract,No,8+ years
+IND-JOB-0349,Cloud Engineer,Razorpay,Bangalore,1012000,1644500,INR,2024-01-18,Contract,No,5-8 years
+IND-JOB-0350,Full Stack Developer,Flipkart,Bangalore,874000,1420250,INR,2024-09-27,Contract,Yes,2-5 years
+IND-JOB-0351,Data Scientist,HCL,Noida,960000,1560000,INR,2024-03-08,Full-time,No,5-8 years
+IND-JOB-0352,Senior Data Scientist,Google India,Kolkata,1760000,2860000,INR,2024-02-12,Contract,No,2-5 years
+IND-JOB-0353,AI Engineer,Microsoft India,Delhi NCR,1120000,1820000,INR,2024-11-27,Full-time,No,0-2 years
+IND-JOB-0354,Data Scientist,Zomato,Kolkata,960000,1560000,INR,2024-07-18,Contract,No,0-2 years
+IND-JOB-0355,AI Engineer,Accenture India,Hyderabad,1232000,2002000,INR,2024-08-28,Contract,No,5-8 years
+IND-JOB-0356,DevOps Engineer,HCL,Noida,800000,1300000,INR,2024-01-08,Full-time,Yes,8+ years
+IND-JOB-0357,Senior Data Engineer,Infosys,Hyderabad,1672000,2717000,INR,2024-11-09,Full-time,No,5-8 years
+IND-JOB-0358,Data Engineer,Amazon India,Gurgaon,800000,1300000,INR,2024-03-25,Contract,Yes,5-8 years
+IND-JOB-0359,ML Engineer,Ola,Mumbai,1040000,1690000,INR,2024-10-27,Contract,No,5-8 years
+IND-JOB-0360,Data Analyst,Tech Mahindra,Hyderabad,528000,858000,INR,2024-09-24,Full-time,No,8+ years
+IND-JOB-0361,Software Engineer,Wipro,Chennai,720000,1170000,INR,2024-10-25,Contract,Yes,5-8 years
+IND-JOB-0362,Data Engineer,Unacademy,Delhi NCR,800000,1300000,INR,2024-08-16,Full-time,No,8+ years
+IND-JOB-0363,Data Analyst,Accenture India,Remote,480000,780000,INR,2024-10-22,Contract,Yes,0-2 years
+IND-JOB-0364,Research Scientist,Byju's,Delhi NCR,1440000,2340000,INR,2024-04-23,Full-time,No,2-5 years
+IND-JOB-0365,Data Analyst,ShareChat,Remote,480000,780000,INR,2024-03-24,Contract,Yes,5-8 years
+IND-JOB-0366,Senior Data Scientist,HCL,Hyderabad,1936000,3146000,INR,2024-01-10,Contract,No,5-8 years
+IND-JOB-0367,Data Scientist,Tech Mahindra,Hyderabad,1056000,1716000,INR,2024-03-14,Contract,No,8+ years
+IND-JOB-0368,Data Scientist,TCS,Hyderabad,1056000,1716000,INR,2024-06-18,Full-time,No,5-8 years
+IND-JOB-0369,Data Analyst,TCS,Delhi NCR,480000,780000,INR,2024-07-13,Full-time,Yes,2-5 years
+IND-JOB-0370,DevOps Engineer,Freshworks,Pune,880000,1430000,INR,2024-11-13,Full-time,No,5-8 years
+IND-JOB-0371,Senior Data Engineer,Razorpay,Pune,1672000,2717000,INR,2024-02-06,Contract,No,5-8 years
+IND-JOB-0372,Backend Developer,Wipro,Chennai,720000,1170000,INR,2024-05-08,Contract,No,2-5 years
+IND-JOB-0373,Backend Developer,HCL,Pune,792000,1287000,INR,2024-05-01,Contract,No,8+ years
+IND-JOB-0374,Research Scientist,Paytm,Ahmedabad,1440000,2340000,INR,2024-06-14,Full-time,No,2-5 years
+IND-JOB-0375,Backend Developer,Paytm,Pune,792000,1287000,INR,2024-07-11,Full-time,Yes,8+ years
+IND-JOB-0376,DevOps Engineer,Microsoft India,Chennai,800000,1300000,INR,2024-07-09,Contract,No,2-5 years
+IND-JOB-0377,DevOps Engineer,Zoho,Pune,880000,1430000,INR,2024-11-25,Full-time,Yes,8+ years
+IND-JOB-0378,AI Engineer,Amazon India,Ahmedabad,1120000,1820000,INR,2024-05-27,Full-time,Yes,8+ years
+IND-JOB-0379,Cloud Engineer,Razorpay,Pune,968000,1573000,INR,2024-11-10,Full-time,No,2-5 years
+IND-JOB-0380,AI Engineer,PhonePe,Kolkata,1120000,1820000,INR,2024-02-15,Contract,No,8+ years
+IND-JOB-0381,Full Stack Developer,Infosys,Chennai,760000,1235000,INR,2024-12-26,Full-time,No,2-5 years
+IND-JOB-0382,Cloud Engineer,Meesho,Chennai,880000,1430000,INR,2024-03-21,Full-time,No,8+ years
+IND-JOB-0383,Research Scientist,Paytm,Kolkata,1440000,2340000,INR,2024-02-01,Full-time,No,2-5 years
+IND-JOB-0384,Backend Developer,Swiggy,Kolkata,720000,1170000,INR,2024-08-25,Full-time,No,0-2 years
+IND-JOB-0385,Backend Developer,HCL,Delhi NCR,720000,1170000,INR,2024-07-03,Full-time,Yes,2-5 years
+IND-JOB-0386,Senior Data Scientist,Flipkart,Chennai,1760000,2860000,INR,2024-08-26,Full-time,No,5-8 years
+IND-JOB-0387,Backend Developer,HCL,Ahmedabad,720000,1170000,INR,2024-12-23,Contract,No,5-8 years
+IND-JOB-0388,Data Engineer,ShareChat,Hyderabad,880000,1430000,INR,2024-01-28,Full-time,No,2-5 years
+IND-JOB-0389,AI Engineer,Microsoft India,Noida,1120000,1820000,INR,2024-03-18,Full-time,No,8+ years
+IND-JOB-0390,Backend Developer,Microsoft India,Kolkata,720000,1170000,INR,2024-11-06,Full-time,No,8+ years
+IND-JOB-0391,Data Analyst,TCS,Gurgaon,480000,780000,INR,2024-04-15,Contract,No,2-5 years
+IND-JOB-0392,Software Engineer,Google India,Hyderabad,792000,1287000,INR,2024-10-04,Full-time,No,2-5 years
+IND-JOB-0393,Backend Developer,HCL,Delhi NCR,720000,1170000,INR,2024-11-28,Contract,No,5-8 years
+IND-JOB-0394,DevOps Engineer,Zomato,Gurgaon,800000,1300000,INR,2024-07-19,Full-time,No,8+ years
+IND-JOB-0395,DevOps Engineer,Accenture India,Remote,800000,1300000,INR,2024-12-26,Full-time,Yes,0-2 years
+IND-JOB-0396,Cloud Engineer,Tech Mahindra,Chennai,880000,1430000,INR,2024-02-08,Full-time,No,5-8 years
+IND-JOB-0397,AI Engineer,Tech Mahindra,Noida,1120000,1820000,INR,2024-07-14,Full-time,No,8+ years
+IND-JOB-0398,ML Engineer,Razorpay,Remote,1040000,1690000,INR,2024-09-23,Full-time,Yes,2-5 years
+IND-JOB-0399,Backend Developer,Flipkart,Pune,792000,1287000,INR,2024-03-11,Contract,No,5-8 years
+IND-JOB-0400,Data Engineer,Razorpay,Pune,880000,1430000,INR,2024-04-27,Contract,Yes,8+ years
+IND-JOB-0401,Data Analyst,Meesho,Ahmedabad,480000,780000,INR,2024-07-23,Contract,No,0-2 years
+IND-JOB-0402,DevOps Engineer,TCS,Mumbai,800000,1300000,INR,2024-05-02,Full-time,No,5-8 years
+IND-JOB-0403,ML Engineer,CRED,Gurgaon,1040000,1690000,INR,2024-12-25,Contract,No,0-2 years
+IND-JOB-0404,DevOps Engineer,HCL,Delhi NCR,800000,1300000,INR,2024-09-27,Full-time,No,0-2 years
+IND-JOB-0405,Research Scientist,CRED,Noida,1440000,2340000,INR,2024-04-14,Full-time,Yes,2-5 years
+IND-JOB-0406,Senior Data Engineer,Infosys,Ahmedabad,1520000,2470000,INR,2024-05-12,Full-time,No,0-2 years
+IND-JOB-0407,Research Scientist,Microsoft India,Mumbai,1440000,2340000,INR,2024-12-19,Full-time,Yes,8+ years
+IND-JOB-0408,ML Engineer,Byju's,Pune,1144000,1859000,INR,2024-04-27,Full-time,Yes,5-8 years
+IND-JOB-0409,Full Stack Developer,Google India,Gurgaon,760000,1235000,INR,2024-09-06,Full-time,Yes,5-8 years
+IND-JOB-0410,Senior Data Engineer,Ola,Delhi NCR,1520000,2470000,INR,2024-09-22,Full-time,No,8+ years
+IND-JOB-0411,Data Engineer,Google India,Remote,800000,1300000,INR,2024-03-23,Full-time,Yes,2-5 years
+IND-JOB-0412,ML Engineer,ShareChat,Chennai,1040000,1690000,INR,2024-04-25,Contract,No,5-8 years
+IND-JOB-0413,Cloud Engineer,PhonePe,Kolkata,880000,1430000,INR,2024-08-03,Full-time,No,5-8 years
+IND-JOB-0414,AI Engineer,Swiggy,Ahmedabad,1120000,1820000,INR,2024-08-11,Full-time,Yes,0-2 years
+IND-JOB-0415,AI Engineer,CRED,Remote,1120000,1820000,INR,2024-11-23,Full-time,Yes,0-2 years
+IND-JOB-0416,Research Scientist,Zoho,Kolkata,1440000,2340000,INR,2024-04-14,Full-time,No,5-8 years
+IND-JOB-0417,Senior Data Engineer,Paytm,Noida,1520000,2470000,INR,2024-10-05,Contract,Yes,0-2 years
+IND-JOB-0418,Data Engineer,HCL,Remote,800000,1300000,INR,2024-08-01,Full-time,Yes,2-5 years
+IND-JOB-0419,Backend Developer,CRED,Bangalore,828000,1345500,INR,2024-07-07,Full-time,Yes,5-8 years
+IND-JOB-0420,ML Engineer,Google India,Hyderabad,1144000,1859000,INR,2024-11-12,Full-time,No,2-5 years
+IND-JOB-0421,Data Engineer,Zomato,Remote,800000,1300000,INR,2024-05-24,Full-time,Yes,8+ years
+IND-JOB-0422,Cloud Engineer,Wipro,Hyderabad,968000,1573000,INR,2024-01-07,Contract,No,2-5 years
+IND-JOB-0423,Full Stack Developer,Meesho,Ahmedabad,760000,1235000,INR,2024-01-01,Full-time,Yes,8+ years
+IND-JOB-0424,AI Engineer,Tech Mahindra,Ahmedabad,1120000,1820000,INR,2024-02-08,Contract,No,0-2 years
+IND-JOB-0425,Data Scientist,Paytm,Chennai,960000,1560000,INR,2024-05-05,Contract,Yes,2-5 years
+IND-JOB-0426,Cloud Engineer,Meesho,Pune,968000,1573000,INR,2024-02-17,Full-time,No,2-5 years
+IND-JOB-0427,Backend Developer,Swiggy,Mumbai,720000,1170000,INR,2024-11-24,Full-time,Yes,8+ years
+IND-JOB-0428,Software Engineer,Wipro,Hyderabad,792000,1287000,INR,2024-03-25,Full-time,No,8+ years
+IND-JOB-0429,Senior Data Scientist,PhonePe,Chennai,1760000,2860000,INR,2024-03-08,Full-time,No,2-5 years
+IND-JOB-0430,Full Stack Developer,Byju's,Gurgaon,760000,1235000,INR,2024-12-20,Full-time,Yes,0-2 years
+IND-JOB-0431,Cloud Engineer,Flipkart,Mumbai,880000,1430000,INR,2024-09-20,Full-time,Yes,5-8 years
+IND-JOB-0432,Cloud Engineer,Infosys,Mumbai,880000,1430000,INR,2024-08-13,Full-time,No,0-2 years
+IND-JOB-0433,Full Stack Developer,TCS,Chennai,760000,1235000,INR,2024-06-05,Contract,Yes,8+ years
+IND-JOB-0434,Senior Data Scientist,Zoho,Remote,1760000,2860000,INR,2024-03-25,Contract,Yes,0-2 years
+IND-JOB-0435,Data Engineer,Ola,Hyderabad,880000,1430000,INR,2024-01-09,Full-time,No,0-2 years
+IND-JOB-0436,Research Scientist,Zomato,Noida,1440000,2340000,INR,2024-05-21,Contract,No,8+ years
+IND-JOB-0437,Data Scientist,Unacademy,Noida,960000,1560000,INR,2024-09-20,Full-time,No,5-8 years
+IND-JOB-0438,Data Scientist,Freshworks,Mumbai,960000,1560000,INR,2024-03-18,Full-time,No,0-2 years
+IND-JOB-0439,Senior Data Engineer,ShareChat,Kolkata,1520000,2470000,INR,2024-12-28,Full-time,No,0-2 years
+IND-JOB-0440,Data Analyst,HCL,Ahmedabad,480000,780000,INR,2024-10-20,Full-time,No,2-5 years
+IND-JOB-0441,Data Scientist,TCS,Pune,1056000,1716000,INR,2024-12-01,Full-time,No,5-8 years
+IND-JOB-0442,Full Stack Developer,Freshworks,Delhi NCR,760000,1235000,INR,2024-03-12,Full-time,Yes,5-8 years
+IND-JOB-0443,AI Engineer,HCL,Bangalore,1288000,2092999,INR,2024-06-26,Contract,No,0-2 years
+IND-JOB-0444,Senior Data Engineer,ShareChat,Gurgaon,1520000,2470000,INR,2024-11-03,Contract,No,5-8 years
+IND-JOB-0445,Data Engineer,Razorpay,Gurgaon,800000,1300000,INR,2024-03-12,Full-time,No,0-2 years
+IND-JOB-0446,DevOps Engineer,Meesho,Hyderabad,880000,1430000,INR,2024-04-24,Full-time,No,0-2 years
+IND-JOB-0447,Software Engineer,Infosys,Ahmedabad,720000,1170000,INR,2024-06-13,Full-time,No,0-2 years
+IND-JOB-0448,Full Stack Developer,ShareChat,Remote,760000,1235000,INR,2024-07-08,Full-time,Yes,2-5 years
+IND-JOB-0449,Data Analyst,Paytm,Delhi NCR,480000,780000,INR,2024-02-19,Full-time,No,0-2 years
+IND-JOB-0450,ML Engineer,Microsoft India,Noida,1040000,1690000,INR,2024-01-13,Full-time,Yes,5-8 years
+IND-JOB-0451,Research Scientist,Flipkart,Chennai,1440000,2340000,INR,2024-02-18,Contract,No,2-5 years
+IND-JOB-0452,Senior Data Engineer,Ola,Delhi NCR,1520000,2470000,INR,2024-12-20,Full-time,No,8+ years
+IND-JOB-0453,Research Scientist,Amazon India,Noida,1440000,2340000,INR,2024-04-05,Full-time,Yes,0-2 years
+IND-JOB-0454,Software Engineer,Zoho,Chennai,720000,1170000,INR,2024-11-27,Full-time,Yes,0-2 years
+IND-JOB-0455,Research Scientist,Meesho,Kolkata,1440000,2340000,INR,2024-12-24,Full-time,No,2-5 years
+IND-JOB-0456,Data Analyst,Razorpay,Bangalore,552000,897000,INR,2024-03-23,Full-time,No,2-5 years
+IND-JOB-0457,Full Stack Developer,PhonePe,Chennai,760000,1235000,INR,2024-08-24,Full-time,No,2-5 years
+IND-JOB-0458,Cloud Engineer,Zomato,Hyderabad,968000,1573000,INR,2024-10-19,Full-time,No,2-5 years
+IND-JOB-0459,Software Engineer,Flipkart,Delhi NCR,720000,1170000,INR,2024-06-26,Contract,Yes,5-8 years
+IND-JOB-0460,Senior Data Scientist,CRED,Delhi NCR,1760000,2860000,INR,2024-04-03,Full-time,No,0-2 years
+IND-JOB-0461,ML Engineer,HCL,Pune,1144000,1859000,INR,2024-08-15,Full-time,No,5-8 years
+IND-JOB-0462,Research Scientist,Amazon India,Ahmedabad,1440000,2340000,INR,2024-05-15,Full-time,Yes,0-2 years
+IND-JOB-0463,ML Engineer,Meesho,Delhi NCR,1040000,1690000,INR,2024-12-23,Full-time,No,5-8 years
+IND-JOB-0464,ML Engineer,Wipro,Mumbai,1040000,1690000,INR,2024-06-13,Full-time,No,5-8 years
+IND-JOB-0465,ML Engineer,TCS,Kolkata,1040000,1690000,INR,2024-08-18,Full-time,No,0-2 years
+IND-JOB-0466,Research Scientist,Tech Mahindra,Hyderabad,1584000,2574000,INR,2024-01-02,Full-time,No,8+ years
+IND-JOB-0467,Senior Data Scientist,Meesho,Remote,1760000,2860000,INR,2024-11-03,Full-time,Yes,0-2 years
+IND-JOB-0468,Data Engineer,Wipro,Mumbai,800000,1300000,INR,2024-11-15,Full-time,No,5-8 years
+IND-JOB-0469,Data Scientist,Infosys,Ahmedabad,960000,1560000,INR,2024-01-06,Contract,Yes,8+ years
+IND-JOB-0470,Backend Developer,TCS,Kolkata,720000,1170000,INR,2024-11-14,Full-time,No,2-5 years
+IND-JOB-0471,Senior Data Engineer,Google India,Ahmedabad,1520000,2470000,INR,2024-03-02,Full-time,No,8+ years
+IND-JOB-0472,Data Analyst,Zoho,Ahmedabad,480000,780000,INR,2024-01-03,Full-time,No,8+ years
+IND-JOB-0473,Software Engineer,Unacademy,Noida,720000,1170000,INR,2024-04-21,Full-time,Yes,5-8 years
+IND-JOB-0474,Backend Developer,Zoho,Ahmedabad,720000,1170000,INR,2024-06-19,Full-time,No,2-5 years
+IND-JOB-0475,Data Engineer,Paytm,Gurgaon,800000,1300000,INR,2024-04-01,Full-time,No,8+ years
+IND-JOB-0476,Full Stack Developer,Swiggy,Gurgaon,760000,1235000,INR,2024-04-06,Full-time,No,2-5 years
+IND-JOB-0477,Senior Data Engineer,Zoho,Bangalore,1748000,2840500,INR,2024-04-19,Contract,No,2-5 years
+IND-JOB-0478,ML Engineer,Microsoft India,Gurgaon,1040000,1690000,INR,2024-06-26,Full-time,Yes,0-2 years
+IND-JOB-0479,AI Engineer,ShareChat,Chennai,1120000,1820000,INR,2024-10-19,Full-time,No,2-5 years
+IND-JOB-0480,Research Scientist,Razorpay,Noida,1440000,2340000,INR,2024-05-06,Contract,No,0-2 years
+IND-JOB-0481,Software Engineer,Byju's,Mumbai,720000,1170000,INR,2024-01-17,Contract,No,2-5 years
+IND-JOB-0482,Research Scientist,Tech Mahindra,Chennai,1440000,2340000,INR,2024-12-06,Full-time,No,2-5 years
+IND-JOB-0483,DevOps Engineer,ShareChat,Pune,880000,1430000,INR,2024-02-28,Full-time,Yes,5-8 years
+IND-JOB-0484,AI Engineer,Meesho,Kolkata,1120000,1820000,INR,2024-10-04,Full-time,No,2-5 years
+IND-JOB-0485,ML Engineer,PhonePe,Remote,1040000,1690000,INR,2024-08-21,Full-time,Yes,2-5 years
+IND-JOB-0486,AI Engineer,Zoho,Gurgaon,1120000,1820000,INR,2024-06-08,Full-time,No,5-8 years
+IND-JOB-0487,ML Engineer,Accenture India,Bangalore,1196000,1943500,INR,2024-12-19,Contract,Yes,0-2 years
+IND-JOB-0488,ML Engineer,Byju's,Chennai,1040000,1690000,INR,2024-10-08,Full-time,Yes,2-5 years
+IND-JOB-0489,Senior Data Scientist,Wipro,Mumbai,1760000,2860000,INR,2024-06-11,Full-time,No,0-2 years
+IND-JOB-0490,AI Engineer,Meesho,Remote,1120000,1820000,INR,2024-12-11,Contract,Yes,0-2 years
+IND-JOB-0491,Senior Data Engineer,Amazon India,Mumbai,1520000,2470000,INR,2024-12-03,Full-time,No,0-2 years
+IND-JOB-0492,AI Engineer,TCS,Bangalore,1288000,2092999,INR,2024-07-15,Contract,Yes,8+ years
+IND-JOB-0493,Backend Developer,Zomato,Chennai,720000,1170000,INR,2024-09-13,Full-time,Yes,2-5 years
+IND-JOB-0494,ML Engineer,CRED,Hyderabad,1144000,1859000,INR,2024-01-10,Full-time,No,0-2 years
+IND-JOB-0495,Data Scientist,Paytm,Pune,1056000,1716000,INR,2024-07-06,Full-time,No,0-2 years
+IND-JOB-0496,Senior Data Scientist,Byju's,Gurgaon,1760000,2860000,INR,2024-08-23,Full-time,No,2-5 years
+IND-JOB-0497,DevOps Engineer,PhonePe,Pune,880000,1430000,INR,2024-01-04,Full-time,No,2-5 years
+IND-JOB-0498,Data Analyst,ShareChat,Noida,480000,780000,INR,2024-12-24,Full-time,No,5-8 years
+IND-JOB-0499,Software Engineer,HCL,Bangalore,828000,1345500,INR,2024-07-19,Contract,No,5-8 years
+IND-JOB-0500,Data Engineer,PhonePe,Hyderabad,880000,1430000,INR,2024-05-27,Contract,No,0-2 years

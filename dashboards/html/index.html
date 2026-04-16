@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RunaGen AI - BI Dashboards</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            color: rgba(255,255,255,0.9);
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.2em;
+        }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .dashboard-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        .dashboard-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        .dashboard-title {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .dashboard-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .dashboard-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+        .dashboard-link:hover {
+            opacity: 0.9;
+        }
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 RunaGen AI - BI Dashboards</h1>
+        <p class="subtitle">Interactive Career Analytics & Market Intelligence</p>
+        
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <div class="dashboard-icon">🔄</div>
+                <h2 class="dashboard-title">Career Transitions</h2>
+                <p class="dashboard-description">
+                    Visualize career pathways and transition probabilities using interactive Sankey diagrams.
+                </p>
+                <a href="dashboard_1_career_transitions.html" class="dashboard-link">View Dashboard →</a>
+            </div>
+            
+            <div class="dashboard-card">
+                <div class="dashboard-icon">📊</div>
+                <h2 class="dashboard-title">Skill Gap Analysis</h2>
+                <p class="dashboard-description">
+                    Identify priority skills, analyze demand patterns, and understand salary premiums.
+                </p>
+                <a href="dashboard_2_skill_gaps.html" class="dashboard-link">View Dashboard →</a>
+            </div>
+            
+            <div class="dashboard-card">
+                <div class="dashboard-icon">💰</div>
+                <h2 class="dashboard-title">Salary Insights</h2>
+                <p class="dashboard-description">
+                    Explore salary distributions, trends, and the impact of skills on compensation.
+                </p>
+                <a href="dashboard_3_salary_insights.html" class="dashboard-link">View Dashboard →</a>
+            </div>
+            
+            <div class="dashboard-card">
+                <div class="dashboard-icon">📈</div>
+                <h2 class="dashboard-title">Market Trends</h2>
+                <p class="dashboard-description">
+                    Track job market dynamics, industry distribution, and emerging skill demands.
+                </p>
+                <a href="dashboard_4_market_trends.html" class="dashboard-link">View Dashboard →</a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Generated on 2026-03-01 11:29:53</p>
+            <p>RunaGen AI - ML-Powered Career Intelligence Platform</p>
+        </div>
+    </div>
+</body>
+</html>

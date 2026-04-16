@@ -1,0 +1,149 @@
+role,min_salary,median_salary,max_salary,experience_level,experience_min,experience_max,location,currency
+Junior Data Analyst,300000,450000,600000,Entry,0,2,India,INR
+Junior Data Analyst,345000,517499,690000,Entry,0,2,Bangalore,INR
+Junior Data Analyst,330000,495000,660000,Entry,0,2,Hyderabad,INR
+Junior Data Analyst,330000,495000,660000,Entry,0,2,Pune,INR
+Junior Data Engineer,400000,600000,800000,Entry,0,2,India,INR
+Junior Data Engineer,459999,690000,919999,Entry,0,2,Bangalore,INR
+Junior Data Engineer,440000,660000,880000,Entry,0,2,Hyderabad,INR
+Junior Data Engineer,440000,660000,880000,Entry,0,2,Pune,INR
+Junior Data Scientist,500000,700000,900000,Entry,0,2,India,INR
+Junior Data Scientist,575000,804999,1034999,Entry,0,2,Bangalore,INR
+Junior Data Scientist,550000,770000,990000,Entry,0,2,Hyderabad,INR
+Junior Data Scientist,550000,770000,990000,Entry,0,2,Pune,INR
+Junior Software Engineer,350000,550000,750000,Entry,0,2,India,INR
+Junior Software Engineer,402499,632500,862499,Entry,0,2,Bangalore,INR
+Junior Software Engineer,385000,605000,825000,Entry,0,2,Hyderabad,INR
+Junior Software Engineer,385000,605000,825000,Entry,0,2,Pune,INR
+Data Analyst,400000,600000,800000,Mid,0,3,India,INR
+Data Analyst,459999,690000,919999,Mid,0,3,Bangalore,INR
+Data Analyst,440000,660000,880000,Mid,0,3,Hyderabad,INR
+Data Analyst,440000,660000,880000,Mid,0,3,Pune,INR
+Business Analyst,350000,550000,750000,Mid,0,3,India,INR
+Business Analyst,402499,632500,862499,Mid,0,3,Bangalore,INR
+Business Analyst,385000,605000,825000,Mid,0,3,Hyderabad,INR
+Business Analyst,385000,605000,825000,Mid,0,3,Pune,INR
+QA Engineer,300000,500000,700000,Mid,0,3,India,INR
+QA Engineer,345000,575000,804999,Mid,0,3,Bangalore,INR
+QA Engineer,330000,550000,770000,Mid,0,3,Hyderabad,INR
+QA Engineer,330000,550000,770000,Mid,0,3,Pune,INR
+Data Engineer,700000,1000000,1400000,Mid,2,5,India,INR
+Data Engineer,804999,1150000,1609999,Mid,2,5,Bangalore,INR
+Data Engineer,770000,1100000,1540000,Mid,2,5,Hyderabad,INR
+Data Engineer,770000,1100000,1540000,Mid,2,5,Pune,INR
+Data Scientist,800000,1200000,1600000,Mid,2,5,India,INR
+Data Scientist,919999,1380000,1839999,Mid,2,5,Bangalore,INR
+Data Scientist,880000,1320000,1760000,Mid,2,5,Hyderabad,INR
+Data Scientist,880000,1320000,1760000,Mid,2,5,Pune,INR
+Software Engineer,600000,900000,1300000,Mid,2,5,India,INR
+Software Engineer,690000,1034999,1495000,Mid,2,5,Bangalore,INR
+Software Engineer,660000,990000,1430000,Mid,2,5,Hyderabad,INR
+Software Engineer,660000,990000,1430000,Mid,2,5,Pune,INR
+ML Engineer,900000,1300000,1800000,Mid,2,5,India,INR
+ML Engineer,1034999,1495000,2069999,Mid,2,5,Bangalore,INR
+ML Engineer,990000,1430000,1980000,Mid,2,5,Hyderabad,INR
+ML Engineer,990000,1430000,1980000,Mid,2,5,Pune,INR
+Backend Developer,600000,900000,1200000,Mid,2,5,India,INR
+Backend Developer,690000,1034999,1380000,Mid,2,5,Bangalore,INR
+Backend Developer,660000,990000,1320000,Mid,2,5,Hyderabad,INR
+Backend Developer,660000,990000,1320000,Mid,2,5,Pune,INR
+Frontend Developer,550000,800000,1100000,Mid,2,5,India,INR
+Frontend Developer,632500,919999,1265000,Mid,2,5,Bangalore,INR
+Frontend Developer,605000,880000,1210000,Mid,2,5,Hyderabad,INR
+Frontend Developer,605000,880000,1210000,Mid,2,5,Pune,INR
+Full Stack Developer,650000,950000,1300000,Mid,2,5,India,INR
+Full Stack Developer,747500,1092500,1495000,Mid,2,5,Bangalore,INR
+Full Stack Developer,715000,1045000,1430000,Mid,2,5,Hyderabad,INR
+Full Stack Developer,715000,1045000,1430000,Mid,2,5,Pune,INR
+DevOps Engineer,700000,1000000,1400000,Mid,2,5,India,INR
+DevOps Engineer,804999,1150000,1609999,Mid,2,5,Bangalore,INR
+DevOps Engineer,770000,1100000,1540000,Mid,2,5,Hyderabad,INR
+DevOps Engineer,770000,1100000,1540000,Mid,2,5,Pune,INR
+Cloud Engineer,750000,1100000,1500000,Mid,2,5,India,INR
+Cloud Engineer,862499,1265000,1724999,Mid,2,5,Bangalore,INR
+Cloud Engineer,825000,1210000,1650000,Mid,2,5,Hyderabad,INR
+Cloud Engineer,825000,1210000,1650000,Mid,2,5,Pune,INR
+Business Intelligence Analyst,600000,850000,1100000,Mid,2,5,India,INR
+Business Intelligence Analyst,690000,977499,1265000,Mid,2,5,Bangalore,INR
+Business Intelligence Analyst,660000,935000,1210000,Mid,2,5,Hyderabad,INR
+Business Intelligence Analyst,660000,935000,1210000,Mid,2,5,Pune,INR
+Product Analyst,650000,900000,1200000,Mid,2,5,India,INR
+Product Analyst,747500,1034999,1380000,Mid,2,5,Bangalore,INR
+Product Analyst,715000,990000,1320000,Mid,2,5,Hyderabad,INR
+Product Analyst,715000,990000,1320000,Mid,2,5,Pune,INR
+Senior Data Analyst,900000,1300000,1700000,Senior,5,8,India,INR
+Senior Data Analyst,1034999,1495000,1954999,Senior,5,8,Bangalore,INR
+Senior Data Analyst,990000,1430000,1870000,Senior,5,8,Hyderabad,INR
+Senior Data Analyst,990000,1430000,1870000,Senior,5,8,Pune,INR
+Senior Data Engineer,1400000,1900000,2500000,Senior,5,8,India,INR
+Senior Data Engineer,1609999,2185000,2875000,Senior,5,8,Bangalore,INR
+Senior Data Engineer,1540000,2090000,2750000,Senior,5,8,Hyderabad,INR
+Senior Data Engineer,1540000,2090000,2750000,Senior,5,8,Pune,INR
+Senior Data Scientist,1600000,2200000,3000000,Senior,5,8,India,INR
+Senior Data Scientist,1839999,2530000,3449999,Senior,5,8,Bangalore,INR
+Senior Data Scientist,1760000,2420000,3300000,Senior,5,8,Hyderabad,INR
+Senior Data Scientist,1760000,2420000,3300000,Senior,5,8,Pune,INR
+Senior Software Engineer,1300000,1800000,2400000,Senior,5,8,India,INR
+Senior Software Engineer,1495000,2069999,2760000,Senior,5,8,Bangalore,INR
+Senior Software Engineer,1430000,1980000,2640000,Senior,5,8,Hyderabad,INR
+Senior Software Engineer,1430000,1980000,2640000,Senior,5,8,Pune,INR
+Senior ML Engineer,1700000,2300000,3200000,Senior,5,8,India,INR
+Senior ML Engineer,1954999,2645000,3679999,Senior,5,8,Bangalore,INR
+Senior ML Engineer,1870000,2530000,3520000,Senior,5,8,Hyderabad,INR
+Senior ML Engineer,1870000,2530000,3520000,Senior,5,8,Pune,INR
+Senior DevOps Engineer,1200000,1700000,2300000,Senior,5,8,India,INR
+Senior DevOps Engineer,1380000,1954999,2645000,Senior,5,8,Bangalore,INR
+Senior DevOps Engineer,1320000,1870000,2530000,Senior,5,8,Hyderabad,INR
+Senior DevOps Engineer,1320000,1870000,2530000,Senior,5,8,Pune,INR
+Senior Backend Developer,1300000,1800000,2400000,Senior,5,8,India,INR
+Senior Backend Developer,1495000,2069999,2760000,Senior,5,8,Bangalore,INR
+Senior Backend Developer,1430000,1980000,2640000,Senior,5,8,Hyderabad,INR
+Senior Backend Developer,1430000,1980000,2640000,Senior,5,8,Pune,INR
+Senior Frontend Developer,1100000,1600000,2200000,Senior,5,8,India,INR
+Senior Frontend Developer,1265000,1839999,2530000,Senior,5,8,Bangalore,INR
+Senior Frontend Developer,1210000,1760000,2420000,Senior,5,8,Hyderabad,INR
+Senior Frontend Developer,1210000,1760000,2420000,Senior,5,8,Pune,INR
+Cloud Architect,1500000,2100000,2800000,Senior,5,8,India,INR
+Cloud Architect,1724999,2415000,3219999,Senior,5,8,Bangalore,INR
+Cloud Architect,1650000,2310000,3080000,Senior,5,8,Hyderabad,INR
+Cloud Architect,1650000,2310000,3080000,Senior,5,8,Pune,INR
+Data Architect,1400000,2000000,2700000,Senior,5,8,India,INR
+Data Architect,1609999,2300000,3104999,Senior,5,8,Bangalore,INR
+Data Architect,1540000,2200000,2970000,Senior,5,8,Hyderabad,INR
+Data Architect,1540000,2200000,2970000,Senior,5,8,Pune,INR
+Lead Data Engineer,2000000,2800000,3800000,Lead/Principal,8,12,India,INR
+Lead Data Engineer,2300000,3219999,4370000,Lead/Principal,8,12,Bangalore,INR
+Lead Data Engineer,2200000,3080000,4180000,Lead/Principal,8,12,Hyderabad,INR
+Lead Data Engineer,2200000,3080000,4180000,Lead/Principal,8,12,Pune,INR
+Lead Data Scientist,2200000,3000000,4200000,Lead/Principal,8,12,India,INR
+Lead Data Scientist,2530000,3449999,4830000,Lead/Principal,8,12,Bangalore,INR
+Lead Data Scientist,2420000,3300000,4620000,Lead/Principal,8,12,Hyderabad,INR
+Lead Data Scientist,2420000,3300000,4620000,Lead/Principal,8,12,Pune,INR
+Principal Data Engineer,2500000,3500000,5000000,Lead/Principal,8,15,India,INR
+Principal Data Engineer,2875000,4024999,5750000,Lead/Principal,8,15,Bangalore,INR
+Principal Data Engineer,2750000,3850000,5500000,Lead/Principal,8,15,Hyderabad,INR
+Principal Data Engineer,2750000,3850000,5500000,Lead/Principal,8,15,Pune,INR
+Staff Data Scientist,2700000,3800000,5500000,Lead/Principal,8,15,India,INR
+Staff Data Scientist,3104999,4370000,6324999,Lead/Principal,8,15,Bangalore,INR
+Staff Data Scientist,2970000,4180000,6050000,Lead/Principal,8,15,Hyderabad,INR
+Staff Data Scientist,2970000,4180000,6050000,Lead/Principal,8,15,Pune,INR
+Tech Lead,2000000,2700000,3700000,Lead/Principal,8,12,India,INR
+Tech Lead,2300000,3104999,4255000,Lead/Principal,8,12,Bangalore,INR
+Tech Lead,2200000,2970000,4070000,Lead/Principal,8,12,Hyderabad,INR
+Tech Lead,2200000,2970000,4070000,Lead/Principal,8,12,Pune,INR
+Engineering Manager,2200000,3000000,4000000,Lead/Principal,8,12,India,INR
+Engineering Manager,2530000,3449999,4600000,Lead/Principal,8,12,Bangalore,INR
+Engineering Manager,2420000,3300000,4400000,Lead/Principal,8,12,Hyderabad,INR
+Engineering Manager,2420000,3300000,4400000,Lead/Principal,8,12,Pune,INR
+ML Architect,2400000,3400000,4800000,Lead/Principal,8,15,India,INR
+ML Architect,2760000,3909999,5520000,Lead/Principal,8,15,Bangalore,INR
+ML Architect,2640000,3740000,5280000,Lead/Principal,8,15,Hyderabad,INR
+ML Architect,2640000,3740000,5280000,Lead/Principal,8,15,Pune,INR
+Research Scientist,2100000,3000000,4200000,Lead/Principal,8,15,India,INR
+Research Scientist,2415000,3449999,4830000,Lead/Principal,8,15,Bangalore,INR
+Research Scientist,2310000,3300000,4620000,Lead/Principal,8,15,Hyderabad,INR
+Research Scientist,2310000,3300000,4620000,Lead/Principal,8,15,Pune,INR
+AI Engineer,2200000,3200000,4500000,Lead/Principal,5,10,India,INR
+AI Engineer,2530000,3679999,5175000,Lead/Principal,5,10,Bangalore,INR
+AI Engineer,2420000,3520000,4950000,Lead/Principal,5,10,Hyderabad,INR
+AI Engineer,2420000,3520000,4950000,Lead/Principal,5,10,Pune,INR

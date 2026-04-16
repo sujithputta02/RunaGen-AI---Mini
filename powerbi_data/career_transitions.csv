@@ -1,0 +1,36 @@
+from_role,to_role,transition_count,avg_time_years,success_rate
+Data Analyst,Data Scientist,245,2.8,0.78
+Data Analyst,Data Engineer,189,2.3,0.72
+Data Analyst,Senior Data Analyst,312,3.5,0.85
+Data Analyst,Business Intelligence Analyst,156,2.5,0.68
+Data Analyst,Product Analyst,134,2.7,0.65
+Data Engineer,Senior Data Engineer,298,3.2,0.82
+Data Engineer,Data Architect,167,4.5,0.75
+Data Engineer,ML Engineer,223,3.0,0.7
+Data Engineer,Cloud Data Engineer,145,2.8,0.73
+Data Scientist,Senior Data Scientist,276,3.8,0.88
+Data Scientist,ML Engineer,198,3.2,0.76
+Data Scientist,Research Scientist,134,5.0,0.65
+Data Scientist,AI Engineer,167,3.5,0.72
+Software Engineer,Senior Software Engineer,412,3.5,0.9
+Software Engineer,Tech Lead,234,4.2,0.82
+Software Engineer,ML Engineer,189,3.8,0.68
+Software Engineer,DevOps Engineer,156,3.0,0.75
+ML Engineer,Senior ML Engineer,178,3.5,0.85
+ML Engineer,ML Architect,123,5.0,0.78
+ML Engineer,Research Scientist,98,4.5,0.7
+Business Analyst,Data Analyst,198,2.5,0.75
+Business Analyst,Product Manager,145,3.5,0.68
+Business Analyst,Senior Business Analyst,167,3.0,0.8
+Junior Data Analyst,Data Analyst,289,1.8,0.85
+Junior Data Engineer,Data Engineer,267,2.0,0.82
+Junior Data Scientist,Data Scientist,234,2.5,0.78
+Senior Data Analyst,Lead Data Analyst,156,4.0,0.88
+Senior Data Engineer,Principal Data Engineer,189,4.5,0.85
+Senior Data Scientist,Staff Data Scientist,178,5.0,0.9
+DevOps Engineer,Senior DevOps Engineer,198,3.2,0.82
+Cloud Engineer,Cloud Architect,167,3.8,0.8
+Backend Developer,Senior Backend Developer,234,3.5,0.85
+Frontend Developer,Senior Frontend Developer,245,3.5,0.83
+Full Stack Developer,Engineering Manager,289,3.8,0.87
+QA Engineer,Senior QA Engineer,178,3.0,0.8
