@@ -34,6 +34,19 @@ function setupEventListeners() {
     uploadZone.addEventListener('dragover', handleDragOver);
     uploadZone.addEventListener('dragleave', handleDragLeave);
     uploadZone.addEventListener('drop', handleDrop);
+    
+    // Phase 3: Job Scraping
+    document.getElementById('scrapeJobsBtn')?.addEventListener('click', scrapeJobs);
+    
+    // Phase 4: Learning Path
+    document.getElementById('generatePathBtn')?.addEventListener('click', generateLearningPath);
+    
+    // Phase 5: Skill Trends
+    document.getElementById('trendingSkillsBtn')?.addEventListener('click', getTrendingSkills);
+    document.getElementById('emergingSkillsBtn')?.addEventListener('click', getEmergingSkills);
+    
+    // Phase 6: Resume Optimizer
+    document.getElementById('optimizeResumeBtn')?.addEventListener('click', optimizeResume);
 }
 
 // File Selection
@@ -99,16 +112,24 @@ async function analyzeResume() {
         const formData = new FormData();
         formData.append('file', selectedFile);
         
-        const response = await fetch(`${API_BASE_URL}/api/analyze-resume`, {
+        const response = await fetch(`${API_BASE_URL}/api/upload-resume`, {
             method: 'POST',
             body: formData
         });
         
         if (!response.ok) {
-            throw new Error(`API Error: ${response.status}`);
+            const errorData = await response.json().catch(() => ({ detail: `HTTP ${response.status}` }));
+            throw new Error(errorData.detail || `API Error: ${response.status}`);
         }
         
         const data = await response.json();
+        console.log('✅ API Response:', data);
+        console.log('📊 Skills:', data.skills);
+        console.log('🚀 Career Predictions:', data.career_predictions);
+        console.log('💰 Salary:', data.salary_prediction);
+        console.log('📉 Skill Gaps:', data.skill_gaps);
+        console.log('💼 Suggested Jobs:', data.suggested_jobs);
+        
         displayResults(data);
         
         // Render charts after DOM is updated
@@ -124,12 +145,20 @@ async function analyzeResume() {
         
     } catch (error) {
         loadingCard.style.display = 'none';
-        showError(`Analysis failed: ${error.message}. Make sure the API server is running.`);
+        showError(`⚠️ Analysis failed: ${error.message}. Make sure the API server is running.`);
     }
 }
 
 // Display Results
 function displayResults(data) {
+    console.log('🎨 Displaying results with data:', data);
+    
+    if (!data || typeof data !== 'object') {
+        console.error('❌ Invalid data received:', data);
+        showError('Invalid response from server');
+        return;
+    }
+    
     resultsContainer.innerHTML = `
         ${createInfoCard(data)}
         ${createSkillsCard(data)}
@@ -173,6 +202,18 @@ function createInfoCard(data) {
 
 // Create Skills Card
 function createSkillsCard(data) {
+    if (!data.skills || data.skills.length === 0) {
+        return `
+            <div class="result-card">
+                <div class="card-title">
+                    <span class="card-icon">🛠️</span>
+                    <h2>Your Skills</h2>
+                </div>
+                <p class="card-subtitle">No skills detected in your resume.</p>
+            </div>
+        `;
+    }
+    
     const skillsHTML = data.skills.map(skill => 
         `<div class="skill-badge">${skill}</div>`
     ).join('');
@@ -241,8 +282,18 @@ function createCertificationsCard(data) {
 
 // Create Career Card
 function createCareerCard(data) {
+    console.log('🚀 Creating career card with:', data.career_predictions);
+    
     if (!data.career_predictions || data.career_predictions.length === 0) {
-        return '';
+        return `
+            <div class="result-card">
+                <div class="card-title">
+                    <span class="card-icon">🚀</span>
+                    <h2>Career Predictions</h2>
+                </div>
+                <p class="card-subtitle">No career predictions available</p>
+            </div>
+        `;
     }
     
     const careersHTML = data.career_predictions.map((pred, index) => {
@@ -281,7 +332,19 @@ function createCareerCard(data) {
 
 // Create Salary Card
 function createSalaryCard(data) {
-    if (!data.salary_prediction) return '';
+    console.log('💰 Creating salary card with:', data.salary_prediction);
+    
+    if (!data.salary_prediction || !data.salary_prediction.predicted_salary) {
+        return `
+            <div class="result-card">
+                <div class="card-title">
+                    <span class="card-icon">💰</span>
+                    <h2>Market Valuation</h2>
+                </div>
+                <p class="card-subtitle">Salary prediction not available</p>
+            </div>
+        `;
+    }
     
     const salary = data.salary_prediction;
     const salaryLakhs = (salary.predicted_salary / 100000).toFixed(1);
@@ -316,7 +379,19 @@ function createSalaryCard(data) {
 
 // Create Skill Gap Card
 function createSkillGapCard(data) {
-    if (!data.skill_gaps || data.skill_gaps.length === 0) return '';
+    console.log('📉 Creating skill gap card with:', data.skill_gaps);
+    
+    if (!data.skill_gaps || data.skill_gaps.length === 0) {
+        return `
+            <div class="result-card">
+                <div class="card-title">
+                    <span class="card-icon">📉</span>
+                    <h2>Growth Opportunities</h2>
+                </div>
+                <p class="card-subtitle">No skill gaps identified - you have all required skills!</p>
+            </div>
+        `;
+    }
     
     const gapsHTML = data.skill_gaps.map(gap => {
         const priority = gap.priority_score > 0.8 ? 'High' : 
@@ -361,7 +436,7 @@ function createSuggestedJobsCard(data) {
     if (!data.suggested_jobs || data.suggested_jobs.length === 0) {
         jobsHTML = `
             <div class="recommendation-item" style="display: block; opacity: 0.6; text-align: center; border-left: none;">
-                <div style="font-size: 1.1em; color: var(--text-secondary);">No immediate matches from MongoDB for your top predicted role yet.</div>
+                <div style="font-size: 1.1em; color: var(--text-secondary);">No immediate job matches found for your predicted role. Try uploading your resume again or check back later.</div>
             </div>
         `;
     } else {
@@ -392,7 +467,7 @@ function createSuggestedJobsCard(data) {
                 <span class="card-icon">💼</span>
                 <h2>Real-Time Job Matches</h2>
             </div>
-            <p class="card-subtitle">Live job openings extracted from MongoDB matching your top predicted career path</p>
+            <p class="card-subtitle">Live job openings from BigQuery matching your top predicted career path</p>
             <div class="jobs-container" style="margin-top: 20px;">
                 ${jobsHTML}
             </div>
@@ -402,7 +477,19 @@ function createSuggestedJobsCard(data) {
 
 // Create Recommendations Card
 function createRecommendationsCard(data) {
-    if (!data.recommendations || data.recommendations.length === 0) return '';
+    console.log('💡 Creating recommendations card with:', data.recommendations);
+    
+    if (!data.recommendations || data.recommendations.length === 0) {
+        return `
+            <div class="result-card">
+                <div class="card-title">
+                    <span class="card-icon">💡</span>
+                    <h2>Strategic Career Advice</h2>
+                </div>
+                <p class="card-subtitle">No recommendations available</p>
+            </div>
+        `;
+    }
     
     const recsHTML = data.recommendations.map(rec => 
         `<div class="recommendation-item">
@@ -613,5 +700,257 @@ async function checkAPIHealth() {
     } catch (error) {
         console.warn('⚠ API server is not running');
         showError('API server is not running. Please start it with: python3 src/api/main.py');
+    }
+}
+
+// ===== PHASE 3: JOB SCRAPING =====
+async function scrapeJobs() {
+    const keywords = document.getElementById('jobKeywords').value;
+    if (!keywords) {
+        showError('Please enter job keywords');
+        return;
+    }
+    
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/jobs/scrape?keywords=${keywords}&location=India`);
+        const data = await response.json();
+        
+        if (data.jobs && data.jobs.length > 0) {
+            const jobsHTML = data.jobs.map(job => `
+                <div class="job-card">
+                    <h3>${job.title}</h3>
+                    <p><strong>${job.company}</strong> - ${job.location}</p>
+                    <p>₹${(job.salary_min/100000).toFixed(1)}L - ₹${(job.salary_max/100000).toFixed(1)}L</p>
+                    <a href="${job.url}" target="_blank" class="feature-btn">View Job</a>
+                </div>
+            `).join('');
+            document.getElementById('jobResults').innerHTML = jobsHTML;
+        }
+    } catch (error) {
+        showError(`Job scraping failed: ${error.message}`);
+    }
+}
+
+// ===== PHASE 4: LEARNING PATH =====
+async function generateLearningPath() {
+    const career = document.getElementById('targetCareer').value;
+    if (!career) {
+        showError('Please enter a target career');
+        return;
+    }
+    
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/learning-path`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                career: career,
+                current_skills: [],
+                target_level: 'intermediate'
+            })
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        if (data.learning_path && data.learning_path.phases) {
+            const path = data.learning_path;
+            
+            // Display overview
+            const overviewHTML = `
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 25px; border-radius: 12px; margin-bottom: 20px; color: white;">
+                    <h3 style="margin: 0 0 15px 0;">Learning Path for ${path.career}</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; font-size: 0.95em;">
+                        <div>📚 ${path.phases.length} Phases</div>
+                        <div>⏱️ ${path.total_hours_required} Hours</div>
+                        <div>📅 ~${Math.ceil(path.estimated_weeks)} Weeks</div>
+                    </div>
+                </div>
+            `;
+            
+            // Display phases
+            const phasesHTML = path.phases.map((phase, index) => `
+                <div style="background: #1e293b; padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid ${
+                    index === 0 ? '#ef4444' : index === 1 ? '#f59e0b' : '#3b82f6'
+                };">
+                    <h4 style="margin: 0 0 15px 0; color: #f1f5f9; font-size: 1.3em;">${phase.name}</h4>
+                    <div style="display: flex; gap: 20px; margin-bottom: 15px; color: #94a3b8; font-size: 0.9em;">
+                        <span>⏱️ ${phase.total_hours} hours</span>
+                        <span>💰 $${phase.total_cost}</span>
+                        <span>📊 Priority ${phase.priority}</span>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        ${phase.skills.map(skillEntry => `
+                            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; margin-bottom: 12px;">
+                                <div style="font-weight: 600; color: #f1f5f9; margin-bottom: 8px;">📖 ${skillEntry.skill}</div>
+                                ${skillEntry.resources.map(resource => `
+                                    <div style="color: #cbd5e1; font-size: 0.9em; margin-left: 20px;">
+                                        <div>📚 ${resource.name} (${resource.platform})</div>
+                                        <div style="color: #94a3b8; margin-top: 4px;">
+                                            ⏱️ ${resource.duration_hours}h • 
+                                            ${resource.cost > 0 ? `💰 $${resource.cost}` : '🆓 Free'} • 
+                                            📊 ${resource.difficulty}
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+            
+            // Display recommendations
+            const recsHTML = path.recommendations && path.recommendations.length > 0 ? `
+                <div style="background: #fef3c7; padding: 20px; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                    <h4 style="margin: 0 0 15px 0; color: #92400e;">💡 Recommendations</h4>
+                    <ul style="margin: 0; padding-left: 20px; color: #78350f;">
+                        ${path.recommendations.map(rec => `<li style="margin: 8px 0;">${rec}</li>`).join('')}
+                    </ul>
+                </div>
+            ` : '';
+            
+            document.getElementById('learningResults').innerHTML = overviewHTML + phasesHTML + recsHTML;
+        } else {
+            showError('No learning path data available');
+        }
+    } catch (error) {
+        showError(`Learning path generation failed: ${error.message}`);
+    }
+}
+
+// ===== PHASE 5: SKILL TRENDS =====
+async function getTrendingSkills() {
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/skill-trends/trending?days=30&limit=10`);
+        const data = await response.json();
+        
+        if (data.trending_skills) {
+            const skillsHTML = data.trending_skills.map(skill => `
+                <div class="trend-card">
+                    <h4>${skill.skill_name}</h4>
+                    <p>Demand: ${skill.demand_count} jobs</p>
+                    <p>${skill.demand_percentage}% of market</p>
+                </div>
+            `).join('');
+            document.getElementById('trendResults').innerHTML = skillsHTML;
+        }
+    } catch (error) {
+        showError(`Trending skills failed: ${error.message}`);
+    }
+}
+
+async function getEmergingSkills() {
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/skill-trends/emerging?threshold_days=30`);
+        const data = await response.json();
+        
+        if (data.emerging_skills) {
+            const skillsHTML = data.emerging_skills.map(skill => `
+                <div class="trend-card">
+                    <h4>${skill.skill_name}</h4>
+                    <p>Emergence Score: ${skill.emergence_score}</p>
+                    <p>Recent Count: ${skill.recent_count}</p>
+                </div>
+            `).join('');
+            document.getElementById('trendResults').innerHTML = skillsHTML;
+        }
+    } catch (error) {
+        showError(`Emerging skills failed: ${error.message}`);
+    }
+}
+
+// ===== PHASE 6: RESUME OPTIMIZER =====
+async function optimizeResume() {
+    const targetRole = document.getElementById('targetRole').value;
+    if (!targetRole) {
+        showError('Please enter a target role');
+        return;
+    }
+    
+    if (!selectedFile) {
+        showError('Please upload and analyze a resume first');
+        return;
+    }
+    
+    try {
+        // Use empty resume_text - backend will use cached version
+        const response = await fetch(`${API_BASE_URL}/api/resume/optimize`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                resume_text: 'USE_CACHED',  // Signal to use cached resume
+                target_role: targetRole
+            })
+        });
+        
+        if (!response.ok) {
+            const errorData = await response.json().catch(() => ({}));
+            throw new Error(errorData.detail || `HTTP ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        if (data.optimization && data.optimization.optimization_suggestions) {
+            const opt = data.optimization;
+            
+            // Display ATS Score
+            const atsScoreHTML = opt.ats_score ? `
+                <div class="ats-score-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 12px; margin-bottom: 20px; color: white;">
+                    <h3 style="margin: 0 0 10px 0;">ATS Compatibility Score</h3>
+                    <div style="font-size: 3em; font-weight: bold; margin: 10px 0;">${opt.ats_score.overall_score}/100</div>
+                    <div style="font-size: 1.2em; opacity: 0.9;">${opt.ats_score.rating} - ${opt.ats_score.pass_probability} pass probability</div>
+                    <div style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 0.9em;">
+                        <div>📊 Keyword Match: ${opt.ats_score.keyword_match.toFixed(1)}%</div>
+                        <div>📝 Formatting: ${opt.ats_score.formatting_score}/100</div>
+                    </div>
+                </div>
+            ` : '';
+            
+            // Display Quick Wins
+            const quickWinsHTML = opt.quick_wins && opt.quick_wins.length > 0 ? `
+                <div style="background: #fef3c7; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #f59e0b;">
+                    <h4 style="margin: 0 0 15px 0; color: #92400e;">⚡ Quick Wins (Fix These First)</h4>
+                    ${opt.quick_wins.map(win => `
+                        <div style="margin-bottom: 10px; padding: 10px; background: white; border-radius: 6px;">
+                            <strong>[${win.priority}] ${win.action}</strong>
+                            <p style="margin: 5px 0; color: #666;">${win.details}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            ` : '';
+            
+            // Display all suggestions with how-to-fix
+            const suggestionsHTML = opt.optimization_suggestions.map(sug => `
+                <div class="suggestion-card" style="margin-bottom: 20px; padding: 20px; background: #1e293b; border-radius: 8px; border-left: 4px solid ${
+                    sug.priority === 'CRITICAL' ? '#ef4444' : 
+                    sug.priority === 'HIGH' ? '#f59e0b' : 
+                    sug.priority === 'MEDIUM' ? '#3b82f6' : '#6b7280'
+                };">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 10px;">
+                        <h4 style="margin: 0; color: #f1f5f9;">[${sug.priority}] ${sug.action}</h4>
+                        <span style="background: rgba(255,255,255,0.1); padding: 4px 12px; border-radius: 12px; font-size: 0.85em;">${sug.category}</span>
+                    </div>
+                    <p style="color: #cbd5e1; margin: 10px 0;">${sug.details}</p>
+                    <p style="color: #10b981; font-weight: 600; margin: 10px 0;">💡 ${sug.impact}</p>
+                    ${sug.how_to_fix ? `
+                        <div style="margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 6px;">
+                            <strong style="color: #f1f5f9;">How to Fix:</strong>
+                            <ul style="margin: 10px 0; padding-left: 20px; color: #cbd5e1;">
+                                ${sug.how_to_fix.map(fix => `<li style="margin: 5px 0;">${fix}</li>`).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
+                </div>
+            `).join('');
+            
+            document.getElementById('optimizeResults').innerHTML = atsScoreHTML + quickWinsHTML + suggestionsHTML;
+        } else {
+            showError('No optimization suggestions available');
+        }
+    } catch (error) {
+        showError(`Resume optimization failed: ${error.message}`);
     }
 }

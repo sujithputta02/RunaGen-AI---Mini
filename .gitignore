@@ -1,9 +1,26 @@
 # Environment
 .env
+.env.local
+.env.*.local
 venv/
 env/
 *.pyc
 __pycache__/
+
+# Credentials (IMPORTANT: Never commit!)
+credentials/
+*-key.json
+bigquery-key.json
+service-account*.json
+*.pem
+*.key
+dbt_transforms/profiles.yml
+
+# Allow specific JSON files
+!package.json
+!package-lock.json
+!dbt_project.yml
+!FIGURE_*.json
 
 # Data
 data/bronze/*

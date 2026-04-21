@@ -1,10 +1,5 @@
 import pandas as pd
-import os
-import sys
-
-# Add src to path to find utils
-sys.path.append(os.path.join(os.getcwd(), 'src'))
-from utils.mongodb_client import MongoDBClient
+from src.utils.mongodb_client import MongoDBClient
 from datetime import datetime
 
 def export_to_powerbi():

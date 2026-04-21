@@ -1,7 +1,7 @@
 import sys
 import os
 import joblib
-sys.path.insert(0, os.path.join(os.getcwd(), 'src'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
 from ml.model_2_career_prediction import CareerPredictor
 from ml.model_1_skill_extraction import SkillExtractor

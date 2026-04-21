@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/static/styles.css">
     <!-- Chart.js for Visualizations -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.js"></script>
 </head>
@@ -36,7 +36,7 @@
                     </div>
                     <div class="badge accuracy-badge">
                         <span class="badge-icon">✨</span>
-                        <span class="badge-text">85%+ Accuracy</span>
+                        <span class="badge-text">91.42% Accuracy</span>
                     </div>
                 </div>
             </div>
@@ -74,6 +74,60 @@
             </button>
         </section>
 
+        <!-- Phase 3: Job Scraping -->
+        <section class="feature-card" id="jobScrapingCard">
+            <div class="card-header">
+                <h2>🔍 Phase 3: Job Market</h2>
+                <p>Real-time job opportunities from top platforms</p>
+            </div>
+            <div class="feature-content">
+                <input type="text" id="jobKeywords" placeholder="e.g., Python, Data, ML" class="input-field">
+                <button class="feature-btn" id="scrapeJobsBtn">Search Jobs</button>
+                <div id="jobResults" class="results-grid"></div>
+            </div>
+        </section>
+
+        <!-- Phase 4: Learning Path -->
+        <section class="feature-card" id="learningPathCard">
+            <div class="card-header">
+                <h2>📚 Phase 4: Learning Path</h2>
+                <p>Personalized learning roadmap for your career</p>
+            </div>
+            <div class="feature-content">
+                <input type="text" id="targetCareer" placeholder="e.g., Data Analyst" class="input-field">
+                <button class="feature-btn" id="generatePathBtn">Generate Path</button>
+                <div id="learningResults" class="results-grid"></div>
+            </div>
+        </section>
+
+        <!-- Phase 5: Skill Trends -->
+        <section class="feature-card" id="skillTrendsCard">
+            <div class="card-header">
+                <h2>📈 Phase 5: Skill Trends</h2>
+                <p>Trending and emerging skills in the job market</p>
+            </div>
+            <div class="feature-content">
+                <div class="trend-buttons">
+                    <button class="feature-btn" id="trendingSkillsBtn">Trending Skills</button>
+                    <button class="feature-btn" id="emergingSkillsBtn">Emerging Skills</button>
+                </div>
+                <div id="trendResults" class="results-grid"></div>
+            </div>
+        </section>
+
+        <!-- Phase 6: Resume Optimizer -->
+        <section class="feature-card" id="resumeOptimizerCard">
+            <div class="card-header">
+                <h2>✨ Phase 6: Resume Optimizer</h2>
+                <p>Optimize your resume for target roles</p>
+            </div>
+            <div class="feature-content">
+                <input type="text" id="targetRole" placeholder="e.g., Data Analyst" class="input-field">
+                <button class="feature-btn" id="optimizeResumeBtn">Optimize Resume</button>
+                <div id="optimizeResults" class="results-grid"></div>
+            </div>
+        </section>
+
         <!-- Loading State -->
         <div class="loading-card" id="loadingCard" style="display: none;">
             <div class="loading-spinner"></div>
@@ -96,6 +150,6 @@
         <div class="results-container" id="resultsContainer" style="display: none;"></div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="/static/script.js"></script>
 </body>
 </html>

@@ -1,8 +1,21 @@
 #!/bin/bash
 # RunaGen AI - One-Command Startup Script
+# Version 2.0 - With Phase 3-6 Features
 
 echo "🚀 Starting RunaGen AI Project..."
 echo "======================================"
+echo "Features:"
+echo "  ✅ Core: Resume Analysis (91.42% accuracy)"
+echo "  ✅ Phase 3: Real-time Job Scraping"
+echo "  ✅ Phase 4: Learning Path Generation"
+echo "  ✅ Phase 5: Skill Trend Analysis"
+echo "  ✅ Phase 6: Resume Optimization"
+echo "======================================"
+
+# Install critical dependencies
+echo "📦 Checking dependencies..."
+python3 -m pip install -q db-dtypes==1.1.1 2>/dev/null
+echo "✓ Dependencies checked"
 
 # Kill any existing API process on port 8000
 PORT=8000
@@ -32,12 +45,12 @@ if ! ollama list | grep -q "llama3"; then
     ollama pull llama3
 fi
 
-# Start the unified FastAPI server
-echo "Starting backend and frontend..."
+# Start the unified FastAPI server with Phase 3-6 features
+echo "Starting RunaGen AI API v2 with all features..."
 python3 src/api/main.py &
 API_PID=$!
 
-# Wait for server to be ready (increased to 300s for heavy ML models)
+# Wait for server to be ready
 echo "Waiting for server to initialize..."
 MAX_RETRIES=300
 COUNT=0
@@ -56,6 +69,13 @@ done
 
 echo "✅ Server is healthy!"
 echo "🔗 Access RunaGen AI at: http://localhost:8000"
+echo ""
+echo "Available Features:"
+echo "  📄 Resume Analysis: /api/analyze-resume"
+echo "  🔍 Job Market: /api/jobs/scrape"
+echo "  📚 Learning Path: /api/learning-path"
+echo "  📈 Skill Trends: /api/skill-trends/trending"
+echo "  ✨ Resume Optimizer: /api/resume/optimize"
 echo ""
 
 # Open in browser

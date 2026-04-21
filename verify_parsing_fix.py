@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 
 # Add project src to path
-sys.path.insert(0, str(Path(__file__).parent / "src"))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
 from ml.model_1_skill_extraction import SkillExtractor
 from ml.model_2_career_prediction import CareerPredictor

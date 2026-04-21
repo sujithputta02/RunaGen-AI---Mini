@@ -1,0 +1,27 @@
+# dbt profiles configuration template
+# Copy this file to profiles.yml and fill in your credentials
+
+runagen_transforms:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: your-gcp-project-id
+      dataset: runagen_ml_warehouse
+      threads: 4
+      keyfile: ../credentials/bigquery-key.json
+      location: US
+      timeout_seconds: 300
+      priority: interactive
+      
+    prod:
+      type: bigquery
+      method: service-account
+      project: your-gcp-project-id
+      dataset: runagen_ml_warehouse_prod
+      threads: 8
+      keyfile: ../credentials/bigquery-key.json
+      location: US
+      timeout_seconds: 600
+      priority: batch

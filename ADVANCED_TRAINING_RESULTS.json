@@ -1,0 +1,10 @@
+{
+  "career_accuracy": 0.9142156862745098,
+  "career_f1": 0.9141082795596928,
+  "career_cv_mean": 0.9255054417744223,
+  "salary_r2": 0.9999836562982412,
+  "salary_rmse": 3370.119788447835,
+  "duration_seconds": 122.365285,
+  "data_records": 2717,
+  "timestamp": "2026-04-20T11:22:29.727155"
+}

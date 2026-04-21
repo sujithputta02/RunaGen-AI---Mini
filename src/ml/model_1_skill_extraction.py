@@ -403,7 +403,7 @@ Output (job title only):"""
         return list(titles)
     
     def extract_structured_data_with_ollama(self, resume_text):
-        """Extract all structured data (skills, exp, edu, titles) in one LLM call"""
+        """Extract all structured data (skills, exp, edu, titles, certifications) in one LLM call"""
         prompt = f"""You are an expert resume parser. Extract structured information from the following resume text.
         
         Resume Text:
@@ -411,30 +411,60 @@ Output (job title only):"""
         
         Instructions:
         1. Parse the resume and extract:
-           - "skills": A list of professional technical and soft skills.
+           - "skills": A list of professional technical and soft skills (be comprehensive, include all mentioned skills).
            - "experience_years": Total years of professional experience as an integer.
-           - "education": Highest education level (e.g., "Bachelors", "Masters", "PhD", "MBA").
+           - "education": Highest education level (e.g., "Bachelor's", "Master's", "PhD", "MBA", "Diploma").
            - "job_titles": A list of formal job titles held, most recent first.
-           - "certifications": A list of objects representing professional certifications, each with "name", "issuer", "year", and "verification_id" (if available).
-        2. Format the output as a STRICT JSON object. No conversational text.
-        3. Standardize skill names (e.g., "ReactJS" -> "React", "AWS Services" -> "AWS").
-        4. If a field is not found, use [] for lists or null for strings/numbers.
+           - "certifications": A list of objects representing professional certifications. Each certification should have:
+             * "name": Full certification name
+             * "issuer": Organization that issued it (e.g., "AWS", "Microsoft", "Google", "Coursera")
+             * "year": Year obtained (if mentioned, otherwise null)
+             * "verification_id": Verification/credential ID if mentioned (otherwise null)
+        
+        2. For certifications, look for:
+           - Explicit certification sections
+           - Phrases like "Certified in", "Certification:", "Licensed", "Accredited"
+           - Professional credentials (AWS Certified, Google Cloud Certified, PMP, etc.)
+           - Online course completions with certificates
+        
+        3. For skills, extract:
+           - Programming languages (Python, Java, JavaScript, etc.)
+           - Frameworks and libraries (React, Django, TensorFlow, etc.)
+           - Tools and platforms (Docker, Kubernetes, AWS, Git, etc.)
+           - Databases (MySQL, MongoDB, PostgreSQL, etc.)
+           - Soft skills (Leadership, Communication, Problem Solving, etc.)
+           - Domain knowledge (Machine Learning, Data Analysis, DevOps, etc.)
+        
+        4. Format the output as a STRICT JSON object. No conversational text.
+        5. Standardize names (e.g., "ReactJS" -> "React", "AWS Services" -> "AWS").
+        6. If a field is not found, use [] for lists or null for strings/numbers.
         
         Expected JSON format:
         {{
-          "skills": ["Python", "SQL", "Machine Learning"],
+          "skills": ["Python", "SQL", "Machine Learning", "Docker", "AWS"],
           "experience_years": 5,
-          "education": "Masters",
+          "education": "Master's",
           "job_titles": ["Senior Data Engineer", "Data Analyst"],
           "certifications": [
-            {{"name": "AWS Certified Solutions Architect", "issuer": "Amazon Web Services", "year": "2023", "verification_id": "ABC-123"}}
+            {{
+              "name": "AWS Certified Solutions Architect",
+              "issuer": "Amazon Web Services",
+              "year": "2023",
+              "verification_id": "AWS-SAA-12345"
+            }},
+            {{
+              "name": "Google Cloud Professional Data Engineer",
+              "issuer": "Google",
+              "year": "2022",
+              "verification_id": null
+            }}
           ]
         }}
         
         JSON Output:"""
 
-        # Full token depth restored; efficiency now handled by parallel execution
-        response = self._call_ollama(prompt, max_tokens=800)
+        # Increase token limit for comprehensive extraction
+        response = self._call_ollama(prompt, max_tokens=1000)
         
         if response:
             try:
@@ -449,8 +479,20 @@ Output (job title only):"""
                         'experience_years': data.get('experience_years'),
                         'education': data.get('education'),
                         'job_titles': [t.strip() for t in data.get('job_titles', []) if isinstance(t, str) and len(t) > 2],
-                        'certifications': data.get('certifications', [])
+                        'certifications': []
                     }
+                    
+                    # Process certifications
+                    certs = data.get('certifications', [])
+                    if isinstance(certs, list):
+                        for cert in certs:
+                            if isinstance(cert, dict):
+                                result['certifications'].append({
+                                    'name': cert.get('name', '').strip(),
+                                    'issuer': cert.get('issuer', 'Unknown').strip(),
+                                    'year': cert.get('year'),
+                                    'verification_id': cert.get('verification_id')
+                                })
                     
                     # Ensure experience is a number
                     if result['experience_years'] is not None:
@@ -463,9 +505,11 @@ Output (job title only):"""
                         except:
                             result['experience_years'] = 0
                     
+                    print(f"✓ Ollama extracted {len(result['skills'])} skills, {len(result['certifications'])} certifications")
                     return result
             except Exception as e:
                 print(f"⚠️  Failed to parse Ollama JSON response: {e}")
+                print(f"Response was: {response[:200]}...")
         
         return None
 

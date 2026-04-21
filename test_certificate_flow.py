@@ -1,12 +1,6 @@
-import sys
-import os
 import json
-
-# Add src to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
-
-from ml.model_1_skill_extraction import SkillExtractor
-from ml.certificate_validator import CertificateValidator
+from src.ml.model_1_skill_extraction import SkillExtractor
+from src.ml.certificate_validator import CertificateValidator
 
 def test_full_validation_flow():
     print("🚀 Testing Resume Certificate Validation Flow")
