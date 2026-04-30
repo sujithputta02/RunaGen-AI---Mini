@@ -33,6 +33,7 @@ transformers>=4.33.0
 torch>=2.0.1
 gensim>=4.3.2
 nltk>=3.8.1
+sentence-transformers>=2.2.2
 
 # LLM Integration
 openai>=0.28.0
