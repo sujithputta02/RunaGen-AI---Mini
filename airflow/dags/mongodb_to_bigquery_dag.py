@@ -140,9 +140,16 @@ validate_quality = PythonOperator(
     dag=dag,
 )
 
+# Task 8: Train Advanced ML Model (90%+ Accuracy Target)
+train_model = BashOperator(
+    task_id='train_advanced_ml_model',
+    bash_command='python3 src/ml/train_models_advanced_90pct.py',
+    dag=dag,
+)
+
 # Define task dependencies
 # Extract and load tasks run in parallel
 [extract_load_jobs, extract_load_skills, extract_load_resumes] >> validate_quality
 
 # After validation, run dbt transformations
-validate_quality >> dbt_run_silver >> dbt_run_gold >> dbt_test
+validate_quality >> dbt_run_silver >> dbt_run_gold >> dbt_test >> train_model

@@ -1,0 +1,59 @@
+name: RunaGen Live ML Pipeline
+
+on:
+  schedule:
+    # Run every Sunday at 02:00 AM UTC
+    - cron: '0 2 * * 0'
+  workflow_dispatch:
+    # Allows you to trigger it manually from the GitHub UI for testing
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install apache-airflow-providers-google
+
+      - name: Create Credentials File
+        run: |
+          mkdir -p credentials
+          echo "${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}" > credentials/bigquery-key.json
+
+      - name: "Step 1: Live ETL (Sync API to BigQuery)"
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}
+          GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
+        run: python3 src/etl/mongodb_to_bigquery.py
+
+      - name: "Step 2: Lively Preprocessing & Training"
+        env:
+          GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+        run: python3 src/ml/train_models_advanced_90pct.py
+
+      - name: "Step 3: Verify Accuracy & Save Model"
+        run: |
+          # Ensure accuracy is > 90% before continuing
+          python3 -c "import json; res = json.load(open('ADVANCED_TRAINING_RESULTS.json')); exit(0 if res['career_accuracy'] >= 0.90 else 1)"
+          echo "✅ Accuracy verification passed!"
+
+      - name: Commit Updated Model
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add models/*.pkl ADVANCED_TRAINING_RESULTS.json
+          git commit -m "🤖 [Automated] Retrained model with >90% accuracy" || echo "No changes to commit"
+          git push
