@@ -1,50 +1,44 @@
-# Environment
-.env
-.env.local
-.env.*.local
-venv/
-env/
-*.pyc
-__pycache__/
 
-# Credentials (IMPORTANT: Never commit!)
-credentials/
-*-key.json
-bigquery-key.json
-service-account*.json
-*.pem
-*.key
-dbt_transforms/profiles.yml
-
-# Allow specific JSON files
-!package.json
-!package-lock.json
-!dbt_project.yml
 !FIGURE_*.json
-
-# Data
-data/bronze/*
-data/silver/*
-data/gold/*
 !data/.gitkeep
-
-# Models
-models/*.pkl
-models/*.joblib
-*.h5
-
-# Notebooks
-.ipynb_checkpoints/
-
+!dbt_project.yml
+!package-lock.json
+!package.json
+# Allow specific JSON files
+# Credentials (IMPORTANT: Never commit!)
+# Data
+# Environment
 # IDE
-.vscode/
-.idea/
-*.swp
-
 # Logs
-logs/
-*.log
-
+# Models
+# Notebooks
 # OS
+*-key.json
+*.h5
+*.key
+*.log
+*.pem
+*.pyc
+*.swp
 .DS_Store
+.env
+.env.*.local
+.env.local
+.idea/
+.ipynb_checkpoints/
+.venv/
+.vscode/
 Thumbs.db
+__pycache__/
+bigquery-key.json
+credentials/
+data/bronze/*
+data/gold/*
+data/silver/*
+dbt_transforms/profiles.yml
+env/
+logs/
+models/*.joblib
+models/*.pkl
+service-account*.json
+venv/
