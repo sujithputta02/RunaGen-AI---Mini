@@ -65,9 +65,5 @@ jobs:
           echo "✅ Code Quality: Validated" >> pipeline_report.md
           cat pipeline_report.md
 
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: pipeline-report
-          path: pipeline_report.md
-          retention-days: 30
+      - name: Workflow Complete
+        run: echo "✅ RunaGen AI Pipeline workflow completed successfully!"
