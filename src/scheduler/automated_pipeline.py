@@ -33,11 +33,11 @@ class PipelineScheduler:
             logger.info(f"Mode: {mode}")
             
             # Run Bronze layer (Extract new data)
-            logger.info("Step 1/3: Extracting data (Bronze layer)")
+            logger.info("Step 1/4: Extracting data (Bronze layer)")
             run_bronze_layer(target_count=2000, mode=mode)
             
             # Run Silver layer (Transform)
-            logger.info("Step 2/3: Transforming data (Silver layer)")
+            logger.info("Step 2/4: Transforming data (Silver layer)")
             run_silver_layer()
             
             # Run Gold layer (Load features)
@@ -93,39 +93,21 @@ class PipelineScheduler:
     def start_scheduler(self, mode='production', collection_mode='priority'):
         """
         Start the scheduler
-        
-        Modes:
-        - production: Full pipeline daily, incremental every 6 hours
-        - development: Full pipeline every 12 hours
-        - testing: Full pipeline every hour
-        
-        Collection Modes:
-        - priority: 30 most common roles
-        - full: All 150+ roles
-        - category: Organized by category
         """
         logger.info(f"Starting scheduler in {mode} mode")
         logger.info(f"Collection mode: {collection_mode}")
         
         if mode == 'production':
-            # Full pipeline once daily at 2 AM
             schedule.every().day.at("02:00").do(lambda: self.run_full_pipeline(mode=collection_mode))
-            
-            # Incremental updates every 6 hours
             schedule.every(6).hours.do(lambda: self.run_incremental_update(mode=collection_mode))
-            
             logger.info("Schedule: Full pipeline daily at 2 AM, incremental every 6 hours")
         
         elif mode == 'development':
-            # Full pipeline every 12 hours
             schedule.every(12).hours.do(lambda: self.run_full_pipeline(mode=collection_mode))
-            
             logger.info("Schedule: Full pipeline every 12 hours")
         
         elif mode == 'testing':
-            # Full pipeline every hour (for testing)
             schedule.every(1).hours.do(lambda: self.run_full_pipeline(mode=collection_mode))
-            
             logger.info("Schedule: Full pipeline every hour (testing mode)")
         
         # Run immediately on startup
@@ -137,25 +119,21 @@ class PipelineScheduler:
         try:
             while True:
                 schedule.run_pending()
-                time.sleep(60)  # Check every minute
+                time.sleep(60)
         
         except KeyboardInterrupt:
             logger.info("Scheduler stopped by user")
 
 def main():
     import argparse
-    
     parser = argparse.ArgumentParser(description='Automated ELT Pipeline Scheduler')
     parser.add_argument('--mode', choices=['production', 'development', 'testing'],
                        default='production', help='Scheduler mode')
     parser.add_argument('--collection', choices=['priority', 'full', 'category'],
-                       default='priority', 
-                       help='Collection mode: priority (30 roles), full (150+ roles), category (by category)')
-    parser.add_argument('--run-once', action='store_true',
-                       help='Run pipeline once and exit')
+                       default='priority', help='Collection mode')
+    parser.add_argument('--run-once', action='store_true', help='Run pipeline once and exit')
     
     args = parser.parse_args()
-    
     scheduler = PipelineScheduler()
     
     if args.run_once:
