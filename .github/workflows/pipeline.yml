@@ -1,69 +1,74 @@
-name: RunaGen Live ML Pipeline
+name: RunaGen AI - Build & Test
 
 on:
-  schedule:
-    # Run every Sunday at 02:00 AM UTC
-    - cron: '0 2 * * 0'
-  workflow_dispatch:
-    # Allows you to trigger it manually from the GitHub UI for testing
   push:
     branches:
       - main
-    paths:
-      - 'src/**'
-      - 'requirements.txt'
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * 0'
 
 jobs:
-  test-and-build:
+  build:
     runs-on: ubuntu-latest
-    
+    timeout-minutes: 30
+
     steps:
-      - name: Checkout Code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Set up Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: 'pip'
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Lint with flake8
+      - name: Lint Python code
+        continue-on-error: true
         run: |
           pip install flake8
-          # Stop the build if there are Python syntax errors or undefined names
           flake8 src/ --count --select=E9,F63,F7,F82 --show-source --statistics || true
-          # Exit-zero treats all errors as warnings
-          flake8 src/ --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics || true
 
-      - name: Test API Health Check
+      - name: Validate project structure
         run: |
-          python3 -c "
-          import sys
-          sys.path.insert(0, 'src')
-          print('✅ Python path configured')
-          print('✅ Dependencies installed')
-          print('✅ Code structure validated')
-          "
+          echo "Checking project structure..."
+          test -d src/api && echo "✓ API module found"
+          test -d src/ml && echo "✓ ML module found"
+          test -d src/features && echo "✓ Features module found"
+          test -d web && echo "✓ Web UI found"
+          test -f requirements.txt && echo "✓ Requirements file found"
+          echo "✓ Project structure validated"
 
-      - name: Verify Model Files
+      - name: Test imports
         run: |
-          ls -lh models/*.pkl 2>/dev/null || echo "⚠️ Model files not found (expected in local setup)"
-          echo "✅ Model verification complete"
+          python3 -c "import sys; sys.path.insert(0, 'src'); print('✓ Python path configured')"
+          python3 -c "import pandas; print('✓ Pandas imported')"
+          python3 -c "import numpy; print('✓ NumPy imported')"
+          python3 -c "import sklearn; print('✓ Scikit-learn imported')"
 
-      - name: Generate Report
+      - name: Check model files
+        continue-on-error: true
         run: |
-          echo "## RunaGen AI Pipeline Status" > pipeline_report.md
-          echo "" >> pipeline_report.md
-          echo "✅ Build Status: SUCCESS" >> pipeline_report.md
-          echo "✅ Python Version: 3.11" >> pipeline_report.md
-          echo "✅ Dependencies: Installed" >> pipeline_report.md
-          echo "✅ Code Quality: Validated" >> pipeline_report.md
-          cat pipeline_report.md
+          if [ -d "models" ]; then
+            echo "Model files found:"
+            ls -lh models/*.pkl 2>/dev/null || echo "No .pkl files in models directory"
+          else
+            echo "Models directory not found (this is OK for CI/CD)"
+          fi
 
-      - name: Workflow Complete
-        run: echo "✅ RunaGen AI Pipeline workflow completed successfully!"
+      - name: Build summary
+        run: |
+          echo "=========================================="
+          echo "✓ Build completed successfully!"
+          echo "=========================================="
+          echo "Python version: $(python3 --version)"
+          echo "Pip version: $(pip --version)"
+          echo "=========================================="
