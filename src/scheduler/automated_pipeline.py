@@ -12,6 +12,7 @@ import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 from etl.run_pipeline import run_bronze_layer, run_silver_layer, run_gold_layer, show_pipeline_stats
+from ml.train_models_production import main as train_models
 from utils.logger import setup_logger
 
 logger = setup_logger('scheduler')
@@ -40,8 +41,16 @@ class PipelineScheduler:
             run_silver_layer()
             
             # Run Gold layer (Load features)
-            logger.info("Step 3/3: Creating features (Gold layer)")
+            logger.info("Step 3/4: Creating features (Gold layer)")
             run_gold_layer()
+            
+            # Step 4/4: Retrain Models with fresh data
+            logger.info("Step 4/4: Retraining ML models with fresh data")
+            training_success = train_models()
+            if training_success:
+                logger.info("✅ Models retrained successfully")
+            else:
+                logger.error("❌ Model retraining failed")
             
             # Show stats
             show_pipeline_stats()
@@ -68,6 +77,10 @@ class PipelineScheduler:
             run_bronze_layer(target_count=500, mode=mode)
             run_silver_layer()
             run_gold_layer()
+            
+            # Retrain models even on incremental updates to keep them fresh
+            logger.info("Retraining models after incremental update...")
+            train_models()
             
             logger.info(f"✅ Incremental update completed at {datetime.now()}")
             
