@@ -4,10 +4,12 @@ Generates personalized learning paths based on career goals and skill gaps
 Enhanced with Ollama AI for intelligent learning resource recommendations
 """
 import logging
-from typing import List, Dict, Optional
-from enum import Enum
 import os
 import requests
+import re
+import base64
+from typing import List, Dict, Optional
+from enum import Enum
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -337,7 +339,6 @@ class LearningPathGenerator:
                 res = ai_resources[normalized_skill]
                 # Try to parse cost from string (e.g., "₹500")
                 cost = 0
-                import re
                 cost_match = re.search(r'[₹$](\d+)', res.get('resources', ''))
                 if cost_match:
                     cost = int(cost_match.group(1))
@@ -478,7 +479,6 @@ IMPORTANT: Use Indian Rupees (₹) for all currency mentions. Provide ACTUAL hig
             
             for block in skill_blocks:
                 try:
-                    import re
                     skill_name = block.split('\n')[0].strip()
                     
                     resources_match = re.search(r'RESOURCES:\s*(.+?)(?=STRATEGY:|$)', block, re.DOTALL | re.IGNORECASE)

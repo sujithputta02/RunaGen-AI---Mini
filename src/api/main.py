@@ -13,6 +13,8 @@ import sys
 import os
 import asyncio
 import json
+import re
+import base64
 from pathlib import Path
 from datetime import datetime
 import logging
@@ -680,7 +682,6 @@ async def upload_resume(
         print(f"📦 File size: {len(content)} bytes")
         
         # Store PDF as Base64 for history retrieval
-        import base64
         pdf_base64 = base64.b64encode(content).decode('utf-8') if file.filename.lower().endswith('.pdf') else None
         
         if not content:
