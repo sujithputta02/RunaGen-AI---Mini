@@ -86,6 +86,11 @@ dbt_transforms/target/
 dbt_transforms/logs/
 dbt_packages/
 
+# Google Cloud & Deployment
+.gcloudignore
+*.tar.gz
+runagen_deploy.tar.gz
+
 # Allow specific files
 !FIGURE_*.json
 !package.json
