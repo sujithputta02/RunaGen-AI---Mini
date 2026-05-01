@@ -1209,13 +1209,8 @@ def generate_recommendations(career: str, skills: List[str], missing_skills: Lis
 
 
 # ===== STATIC FILES =====
-# Mount static files for CSS, JS, etc.
-app.mount("/static", StaticFiles(directory="web"), name="static")
-
-@app.get("/")
-async def root():
-    """Serve index.html"""
-    return FileResponse("web/index.html")
+# Mount the entire web directory at the root to serve index.html, styles.css, and script.js
+app.mount("/", StaticFiles(directory="web", html=True), name="static")
 
 
 if __name__ == "__main__":

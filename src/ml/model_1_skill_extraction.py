@@ -122,13 +122,33 @@ class SkillExtractor:
         if not skills: return []
         
         valid_skills = []
-        # Basic noise filter
-        noise = {'experience', 'project', 'years', 'responsibilities', 'summary', 'about', 'skills', 'tools', 'using'}
+        # Expanded noise filter
+        noise = {
+            'experience', 'project', 'years', 'responsibilities', 'summary', 'about', 
+            'skills', 'tools', 'using', 'various', 'including', 'knowledge', 'understanding',
+            'professional', 'work', 'ability', 'across', 'achievements', 'actions', 'apr', 'jan', 'feb'
+        }
         
         for s in skills:
-            s_clean = s.strip('., •*-').strip()
-            if len(s_clean) > 1 and s_clean.lower() not in noise:
-                valid_skills.append(s_clean)
+            # 1. Strip special characters and whitespace
+            s_clean = s.strip('., •*-()[]{}"\'').strip()
+            
+            # 2. Basic quality checks
+            # - Must be longer than 1 character
+            # - Must contain at least one letter
+            # - Should not be just a number (like a year)
+            # - Should not be a common noise word
+            # - Should not be a month or date fragment
+            if (len(s_clean) > 1 and 
+                re.search(r'[a-zA-Z]', s_clean) and 
+                not s_clean.isdigit() and
+                s_clean.lower() not in noise and
+                not re.match(r'^(?:19|20)\d{2}$', s_clean)): # Skip years like 2024
+                
+                # Further cleanup for parenthesized content
+                s_clean = re.sub(r'\(.*?\)', '', s_clean).strip()
+                if s_clean:
+                    valid_skills.append(s_clean)
                 
         return sorted(list(set(valid_skills)))
     
@@ -411,33 +431,16 @@ Output (job title only):"""
         
         Instructions:
         1. Parse the resume and extract:
-           - "skills": A list of professional technical and soft skills (be comprehensive, include all mentioned skills).
+           - "skills": A list of professional technical and soft skills.
+             * ONLY extract recognized industry tools, languages, frameworks, and methodologies.
+             * EXCLUDE generic words, months, dates, years, and fragmented text.
+             * Standardize names (e.g., "AWS Services" -> "AWS", "ReactJS" -> "React").
            - "experience_years": Total years of professional experience as an integer.
            - "education": Highest education level (e.g., "Bachelor's", "Master's", "PhD", "MBA", "Diploma").
            - "job_titles": A list of formal job titles held, most recent first.
-           - "certifications": A list of objects representing professional certifications. Each certification should have:
-             * "name": Full certification name
-             * "issuer": Organization that issued it (e.g., "AWS", "Microsoft", "Google", "Coursera")
-             * "year": Year obtained (if mentioned, otherwise null)
-             * "verification_id": Verification/credential ID if mentioned (otherwise null)
+           - "certifications": A list of professional certifications.
         
-        2. For certifications, look for:
-           - Explicit certification sections
-           - Phrases like "Certified in", "Certification:", "Licensed", "Accredited"
-           - Professional credentials (AWS Certified, Google Cloud Certified, PMP, etc.)
-           - Online course completions with certificates
-        
-        3. For skills, extract:
-           - Programming languages (Python, Java, JavaScript, etc.)
-           - Frameworks and libraries (React, Django, TensorFlow, etc.)
-           - Tools and platforms (Docker, Kubernetes, AWS, Git, etc.)
-           - Databases (MySQL, MongoDB, PostgreSQL, etc.)
-           - Soft skills (Leadership, Communication, Problem Solving, etc.)
-           - Domain knowledge (Machine Learning, Data Analysis, DevOps, etc.)
-        
-        4. Format the output as a STRICT JSON object. No conversational text.
-        5. Standardize names (e.g., "ReactJS" -> "React", "AWS Services" -> "AWS").
-        6. If a field is not found, use [] for lists or null for strings/numbers.
+        2. BE STRICT: Do not return fragments like "(2024", "Ability", "Badge", or common English verbs as skills.
         
         Expected JSON format:
         {{
