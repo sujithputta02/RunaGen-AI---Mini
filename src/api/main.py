@@ -174,50 +174,45 @@ class ResumeAnalysisResponse(BaseModel):
 # ===== LIFESPAN =====
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Lifespan events"""
+    """Lifespan events - Lightweight startup"""
     print("\n" + "="*70)
-    print("🚀 RunaGen AI API v2 - Starting with 91.42% Accurate Models")
+    print("🚀 RunaGen AI API v2 - Starting (Lightweight Mode)")
     print("="*70)
     
     # Load models
     global career_model, salary_model, mongo_provider
     global job_scraper, learning_path_gen, skill_trend_analyzer, resume_optimizer
     
+    # Initialize models (lazy load)
     career_model = AdvancedCareerPredictor()
     salary_model = AdvancedSalaryPredictor()
     
-    career_loaded = career_model.load()
-    salary_loaded = salary_model.load()
-    
-    # Initialize MongoDB
-    mongo_provider = get_data_provider()
-    print("✓ BigQuery data provider initialized")
-    
-    # Initialize Phase 3-6 Features
+    # Try to load models, but don't block startup
     try:
-        job_scraper = JobScraper()
-        print("✓ Phase 3: Job Scraper initialized")
+        career_model.load()
     except Exception as e:
-        print(f"⚠ Phase 3: Job Scraper failed: {e}")
+        print(f"⚠ Career model load deferred: {e}")
     
     try:
-        learning_path_gen = LearningPathGenerator()
-        print("✓ Phase 4: Learning Path Generator initialized")
+        salary_model.load()
     except Exception as e:
-        print(f"⚠ Phase 4: Learning Path Generator failed: {e}")
+        print(f"⚠ Salary model load deferred: {e}")
     
+    # Initialize MongoDB (with timeout)
     try:
-        skill_trend_analyzer = SkillTrendAnalyzer()
-        print("✓ Phase 5: Skill Trend Analyzer initialized")
+        mongo_provider = get_data_provider()
+        print("✓ BigQuery data provider initialized")
     except Exception as e:
-        print(f"⚠ Phase 5: Skill Trend Analyzer failed: {e}")
+        print(f"⚠ BigQuery provider failed: {e}")
+        mongo_provider = None
     
-    try:
-        resume_optimizer = ResumeOptimizer()
-        print("✓ Phase 6: Resume Optimizer initialized")
-    except Exception as e:
-        print(f"⚠ Phase 6: Resume Optimizer failed: {e}")
+    # Initialize Phase 3-6 Features (lazy - don't block startup)
+    job_scraper = None
+    learning_path_gen = None
+    skill_trend_analyzer = None
+    resume_optimizer = None
     
+    print("✓ API ready (features will load on first use)")
     print("="*70 + "\n")
     
     yield
