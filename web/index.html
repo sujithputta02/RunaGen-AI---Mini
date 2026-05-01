@@ -38,6 +38,10 @@
                         <span class="badge-icon">✨</span>
                         <span class="badge-text">91.42% Accuracy</span>
                     </div>
+                    <button class="history-toggle-btn" id="historyToggle">
+                        <span class="btn-icon">🕒</span>
+                        <span>History</span>
+                    </button>
                 </div>
             </div>
         </header>
@@ -170,6 +174,17 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    
+    <!-- History Panel -->
+    <div class="history-panel" id="historyPanel">
+        <div class="history-header">
+            <h3>Your History</h3>
+            <button class="history-close" onclick="toggleHistory()">✕</button>
+        </div>
+        <div class="history-list" id="historyList">
+            <div class="loading-spinner" style="margin: 20px auto; width: 30px; height: 30px;"></div>
         </div>
     </div>
 

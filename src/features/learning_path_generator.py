@@ -21,6 +21,11 @@ class SkillLevel(Enum):
     EXPERT = 4
 
 
+def normalize_skill(s):
+    """Normalize skill name for comparison"""
+    return str(s).lower().strip().replace(' ', '').replace('.', '').replace('-', '')
+
+
 class LearningResource:
     """Learning resource definition"""
     
@@ -51,8 +56,8 @@ class LearningPathGenerator:
     RESOURCES = {
         'Python': [
             LearningResource('Python for Everybody', 'Coursera', 40, SkillLevel.BEGINNER, 0),
-            LearningResource('Complete Python Bootcamp', 'Udemy', 22, SkillLevel.BEGINNER, 15),
-            LearningResource('Advanced Python', 'DataCamp', 30, SkillLevel.ADVANCED, 29),
+            LearningResource('Complete Python Bootcamp', 'Udemy', 22, SkillLevel.BEGINNER, 499),
+            LearningResource('Advanced Python', 'DataCamp', 30, SkillLevel.ADVANCED, 2500),
         ],
         'Machine Learning': [
             LearningResource('ML Specialization', 'Coursera', 60, SkillLevel.BEGINNER, 0),
@@ -61,23 +66,23 @@ class LearningPathGenerator:
         ],
         'SQL': [
             LearningResource('SQL for Data Analysis', 'Udacity', 40, SkillLevel.BEGINNER, 0),
-            LearningResource('Advanced SQL', 'DataCamp', 25, SkillLevel.INTERMEDIATE, 29),
-            LearningResource('SQL Performance Tuning', 'Pluralsight', 20, SkillLevel.ADVANCED, 29),
+            LearningResource('Advanced SQL', 'DataCamp', 25, SkillLevel.INTERMEDIATE, 2500),
+            LearningResource('SQL Performance Tuning', 'Pluralsight', 20, SkillLevel.ADVANCED, 2500),
         ],
         'AWS': [
-            LearningResource('AWS Fundamentals', 'A Cloud Guru', 30, SkillLevel.BEGINNER, 29),
-            LearningResource('AWS Solutions Architect', 'A Cloud Guru', 50, SkillLevel.INTERMEDIATE, 29),
-            LearningResource('AWS Advanced', 'Linux Academy', 60, SkillLevel.ADVANCED, 29),
+            LearningResource('AWS Fundamentals', 'A Cloud Guru', 30, SkillLevel.BEGINNER, 2500),
+            LearningResource('AWS Solutions Architect', 'A Cloud Guru', 50, SkillLevel.INTERMEDIATE, 2500),
+            LearningResource('AWS Advanced', 'Linux Academy', 60, SkillLevel.ADVANCED, 2500),
         ],
         'Docker': [
-            LearningResource('Docker Essentials', 'Linux Academy', 20, SkillLevel.BEGINNER, 29),
-            LearningResource('Docker Deep Dive', 'Pluralsight', 40, SkillLevel.INTERMEDIATE, 29),
-            LearningResource('Kubernetes & Docker', 'Linux Academy', 50, SkillLevel.ADVANCED, 29),
+            LearningResource('Docker Essentials', 'Linux Academy', 20, SkillLevel.BEGINNER, 2500),
+            LearningResource('Docker Deep Dive', 'Pluralsight', 40, SkillLevel.INTERMEDIATE, 2500),
+            LearningResource('Kubernetes & Docker', 'Linux Academy', 50, SkillLevel.ADVANCED, 2500),
         ],
         'React': [
             LearningResource('React Basics', 'Scrimba', 30, SkillLevel.BEGINNER, 0),
-            LearningResource('React Complete Guide', 'Udemy', 40, SkillLevel.INTERMEDIATE, 15),
-            LearningResource('Advanced React Patterns', 'Frontend Masters', 25, SkillLevel.ADVANCED, 39),
+            LearningResource('React Complete Guide', 'Udemy', 40, SkillLevel.INTERMEDIATE, 499),
+            LearningResource('Advanced React Patterns', 'Frontend Masters', 25, SkillLevel.ADVANCED, 3500),
         ],
         'Statistics': [
             LearningResource('Statistics Fundamentals', 'Khan Academy', 50, SkillLevel.BEGINNER, 0),
@@ -109,9 +114,9 @@ class LearningPathGenerator:
             'nice_to_have': ['Kubernetes', 'TypeScript', 'GraphQL']
         },
         'Software Engineer': {
-            'core': ['Python', 'Java', 'SQL', 'Git'],
-            'important': ['Docker', 'AWS', 'Testing'],
-            'nice_to_have': ['Kubernetes', 'Microservices', 'CI/CD']
+            'core': ['Python', 'Java', 'Data Structures', 'Algorithms', 'SQL', 'Git'],
+            'important': ['System Design', 'Docker', 'Kubernetes', 'AWS', 'Testing (PyTest/JUnit)', 'Microservices'],
+            'nice_to_have': ['CI/CD', 'Kafka', 'Redis', 'NoSQL', 'TypeScript', 'GraphQL']
         },
         'Backend Developer': {
             'core': ['Python', 'SQL', 'Docker', 'AWS'],
@@ -167,7 +172,7 @@ class LearningPathGenerator:
                         "temperature": 0.7
                     }
                 },
-                timeout=30
+                timeout=60
             )
             
             if response.status_code == 200:
@@ -188,23 +193,34 @@ class LearningPathGenerator:
         logger.info(f"   Target level: {target_level.name}")
         logger.info(f"   Weeks available: {weeks_available}")
         
-        # Get required skills
-        required_skills = self.CAREER_SKILLS.get(career, {})
+        # Get required skills - Priority 1: Ollama AI
+        required_skills = {}
+        if self.use_ollama:
+            logger.info(f"🔍 Fetching requirements for '{career}' from Ollama...")
+            ai_required = self._get_ai_required_skills(career)
+            if ai_required:
+                required_skills = ai_required
+                logger.info(f"✅ Received dynamic requirements from Ollama for {career}")
         
-        # If career not found, try case-insensitive match
+        # Priority 2: Local registry fallback
         if not required_skills:
-            for key in self.CAREER_SKILLS.keys():
-                if key.lower() == career.lower():
-                    required_skills = self.CAREER_SKILLS[key]
-                    career = key  # Use the correct case
-                    break
+            logger.info(f"📚 Using local registry for '{career}' skills")
+            required_skills = self.CAREER_SKILLS.get(career, {})
+            
+            # If career not found, try case-insensitive match
+            if not required_skills:
+                for key in self.CAREER_SKILLS.keys():
+                    if key.lower() == career.lower():
+                        required_skills = self.CAREER_SKILLS[key]
+                        career = key
+                        break
         
-        # If still not found, use a generic software development path
+        # Priority 3: Generic fallback
         if not required_skills:
-            logger.warning(f"Career '{career}' not found, using generic software development path")
+            logger.warning(f"Career '{career}' not found anywhere, using generic software development path")
             required_skills = {
                 'core': ['Python', 'JavaScript', 'SQL', 'Git'],
-                'important': ['Docker', 'AWS', 'Testing'],
+                'important': ['Docker', 'AWS', 'System Design'],
                 'nice_to_have': ['Kubernetes', 'CI/CD', 'Microservices']
             }
         
@@ -213,11 +229,11 @@ class LearningPathGenerator:
         important_skills = set(required_skills.get('important', []))
         nice_to_have = set(required_skills.get('nice_to_have', []))
         
-        current_skills_set = set(s.title() for s in current_skills)
+        current_skills_normalized = set(normalize_skill(s) for s in current_skills)
         
-        missing_core = list(core_skills - current_skills_set)
-        missing_important = list(important_skills - current_skills_set)
-        missing_nice = list(nice_to_have - current_skills_set)
+        missing_core = [s for s in core_skills if normalize_skill(s) not in current_skills_normalized]
+        missing_important = [s for s in important_skills if normalize_skill(s) not in current_skills_normalized]
+        missing_nice = [s for s in nice_to_have if normalize_skill(s) not in current_skills_normalized]
         
         # Build learning path
         learning_path = {
@@ -230,13 +246,29 @@ class LearningPathGenerator:
             'estimated_weeks': 0
         }
         
+        # Generate AI-powered learning resources for ALL missing skills FIRST
+        all_missing_skills = missing_core + missing_important + missing_nice
+        ai_resources = {}
+        if all_missing_skills and self.use_ollama:
+            logger.info(f"🤖 Generating AI-powered learning resources for {len(all_missing_skills)} skills...")
+            ai_resources = self._generate_ai_learning_resources(
+                career, 
+                all_missing_skills, 
+                target_level,
+                current_skills=current_skills
+            )
+            if ai_resources:
+                learning_path['ai_learning_resources'] = ai_resources
+                logger.info(f"✓ Generated AI resources for {len(ai_resources)} skills")
+
         # Phase 1: Core skills (highest priority)
         if missing_core:
             phase1 = self._create_phase(
                 'Phase 1: Core Skills (Foundation)',
                 missing_core,
                 SkillLevel.INTERMEDIATE,
-                priority=1
+                priority=1,
+                ai_resources=ai_resources
             )
             learning_path['phases'].append(phase1)
             learning_path['total_hours_required'] += phase1['total_hours']
@@ -247,7 +279,8 @@ class LearningPathGenerator:
                 'Phase 2: Important Skills (Intermediate)',
                 missing_important,
                 SkillLevel.INTERMEDIATE,
-                priority=2
+                priority=2,
+                ai_resources=ai_resources
             )
             learning_path['phases'].append(phase2)
             learning_path['total_hours_required'] += phase2['total_hours']
@@ -258,7 +291,8 @@ class LearningPathGenerator:
                 'Phase 3: Advanced Skills (Optional)',
                 missing_nice,
                 SkillLevel.ADVANCED,
-                priority=3
+                priority=3,
+                ai_resources=ai_resources
             )
             learning_path['phases'].append(phase3)
             learning_path['total_hours_required'] += phase3['total_hours']
@@ -274,16 +308,7 @@ class LearningPathGenerator:
             learning_path['total_hours_required']
         )
         
-        # Generate AI-powered learning resources for skill gaps using Ollama
-        all_missing_skills = missing_core + missing_important + missing_nice
-        if all_missing_skills:
-            ai_resources = self._generate_ai_learning_resources(
-                career, 
-                all_missing_skills[:5],  # Top 5 missing skills
-                target_level
-            )
-            if ai_resources:
-                learning_path['ai_learning_resources'] = ai_resources
+        # AI resources are now integrated into phases
         
         logger.info(f"✓ Learning path generated")
         logger.info(f"   Total hours required: {learning_path['total_hours_required']}")
@@ -292,8 +317,8 @@ class LearningPathGenerator:
         return learning_path
     
     def _create_phase(self, phase_name: str, skills: List[str], 
-                     target_level: SkillLevel, priority: int) -> Dict:
-        """Create a learning phase"""
+                     target_level: SkillLevel, priority: int, ai_resources: Dict = None) -> Dict:
+        """Create a learning phase with AI resources as primary"""
         
         phase = {
             'name': phase_name,
@@ -304,28 +329,58 @@ class LearningPathGenerator:
         }
         
         for skill in skills:
-            resources = self.RESOURCES.get(skill, [])
+            skill_entry = None
             
-            # Select appropriate resource based on target level
-            selected_resource = None
-            for resource in resources:
-                if resource.difficulty == target_level:
-                    selected_resource = resource
-                    break
-            
-            if not selected_resource and resources:
-                selected_resource = resources[0]
-            
-            if selected_resource:
+            # Check AI resources first (normalized lookup)
+            normalized_skill = normalize_skill(skill)
+            if ai_resources and normalized_skill in ai_resources:
+                res = ai_resources[normalized_skill]
+                # Try to parse cost from string (e.g., "₹500")
+                cost = 0
+                import re
+                cost_match = re.search(r'[₹$](\d+)', res.get('resources', ''))
+                if cost_match:
+                    cost = int(cost_match.group(1))
+                
                 skill_entry = {
                     'skill': skill,
-                    'resources': [selected_resource.to_dict()],
-                    'hours': selected_resource.duration_hours,
-                    'cost': selected_resource.cost
+                    'resources': [{
+                        'name': res.get('resources', 'Recommended Resource'),
+                        'platform': 'AI Recommended',
+                        'duration_hours': 20, # Default estimate
+                        'difficulty': target_level.name,
+                        'cost': cost,
+                        'link': '#'
+                    }],
+                    'hours': 20,
+                    'cost': cost,
+                    'strategy': res.get('strategy', '')
                 }
+            
+            # Fallback to hardcoded resources
+            if not skill_entry:
+                resources = self.RESOURCES.get(skill, [])
+                selected_resource = None
+                for resource in resources:
+                    if resource.difficulty == target_level:
+                        selected_resource = resource
+                        break
+                
+                if not selected_resource and resources:
+                    selected_resource = resources[0]
+                
+                if selected_resource:
+                    skill_entry = {
+                        'skill': skill,
+                        'resources': [selected_resource.to_dict()],
+                        'hours': selected_resource.duration_hours,
+                        'cost': selected_resource.cost
+                    }
+            
+            if skill_entry:
                 phase['skills'].append(skill_entry)
-                phase['total_hours'] += selected_resource.duration_hours
-                phase['total_cost'] += selected_resource.cost
+                phase['total_hours'] += skill_entry['hours']
+                phase['total_cost'] += skill_entry['cost']
         
         return phase
     
@@ -354,8 +409,35 @@ class LearningPathGenerator:
         
         return recommendations
     
+    def _get_ai_required_skills(self, career: str) -> Optional[Dict]:
+        """Get required skills for a career using Ollama"""
+        prompt = f"""You are an expert technical recruiter. 
+What are the standard technical skill requirements for a {career}?
+ 
+Provide the answer in JSON format ONLY:
+{{
+  "core": ["skill1", "skill2", "skill3", "skill4"],
+  "important": ["skill5", "skill6", "skill7"],
+  "nice_to_have": ["skill8", "skill9"]
+}}
+ 
+Limit to most important industry-standard technical skills. No explanation, just JSON."""
+
+        try:
+            response = self._call_ollama(prompt, max_tokens=300)
+            if response:
+                import json
+                import re
+                # Find JSON in response
+                json_match = re.search(r'\{.*\}', response, re.DOTALL)
+                if json_match:
+                    return json.loads(json_match.group(0))
+        except Exception as e:
+            logger.error(f"❌ Error getting AI required skills: {e}")
+        return None
+    
     def _generate_ai_learning_resources(self, career: str, missing_skills: List[str], 
-                                       target_level: SkillLevel) -> Dict:
+                                       target_level: SkillLevel, current_skills: List[str] = None) -> Dict:
         """Generate AI-powered learning resources for skill gaps using Ollama"""
         if not self.use_ollama or not missing_skills:
             return {}
@@ -363,21 +445,24 @@ class LearningPathGenerator:
         logger.info(f"🤖 Generating AI-powered learning resources for {len(missing_skills)} skills...")
         
         # Create prompt for Ollama
+        current_skills_str = ", ".join(current_skills) if current_skills else "None identified"
+        
         prompt = f"""You are an expert career coach and learning advisor.
-
+ 
 Career Goal: {career}
 Target Level: {target_level.name}
-Missing Skills: {', '.join(missing_skills)}
-
-Task: For each missing skill, recommend specific learning resources and a learning strategy.
-
+User's Current Skills: {current_skills_str}
+Missing Skills to Learn: {', '.join(missing_skills)}
+ 
+Task: For each missing skill, recommend specific learning resources and a learning strategy that builds upon the user's current knowledge.
+ 
 For each skill, provide:
 SKILL: [skill name]
-RESOURCES: [2-3 specific courses, books, or platforms]
-STRATEGY: [How to learn this skill effectively in 2-3 sentences]
+RESOURCES: [2-3 specific real-world courses, books, or platforms. Include estimated cost in Indian Rupees (₹) if applicable]
+STRATEGY: [How to learn this skill effectively, considering their background in {current_skills_str}. Be technical and specific.]
 TIMELINE: [Estimated weeks to learn]
-
-Keep recommendations practical and specific. Focus on popular, high-quality resources."""
+ 
+IMPORTANT: Use Indian Rupees (₹) for all currency mentions. Provide ACTUAL high-quality resources like Udemy, Coursera, official documentation, or top YouTube channels. No mock data. Be very specific to {career}."""
 
         try:
             response = self._call_ollama(prompt, max_tokens=1000)
@@ -385,40 +470,32 @@ Keep recommendations practical and specific. Focus on popular, high-quality reso
             if not response:
                 return {}
             
-            # Parse Ollama response
-            ai_resources = {
-                'generated_by': 'Ollama AI',
-                'skills': []
-            }
+            # Parse Ollama response into a skill-to-resource mapping
+            resource_map = {}
             
             # Split by skill blocks
             skill_blocks = response.split('SKILL:')[1:]  # Skip first empty split
             
-            for block in skill_blocks[:5]:  # Max 5 skills
+            for block in skill_blocks:
                 try:
                     import re
                     skill_name = block.split('\n')[0].strip()
                     
                     resources_match = re.search(r'RESOURCES:\s*(.+?)(?=STRATEGY:|$)', block, re.DOTALL | re.IGNORECASE)
                     strategy_match = re.search(r'STRATEGY:\s*(.+?)(?=TIMELINE:|$)', block, re.DOTALL | re.IGNORECASE)
-                    timeline_match = re.search(r'TIMELINE:\s*(.+?)(?=SKILL:|$)', block, re.DOTALL | re.IGNORECASE)
                     
-                    skill_resource = {
-                        'skill': skill_name,
+                    normalized_name = normalize_skill(skill_name)
+                    resource_map[normalized_name] = {
+                        'skill_original': skill_name,
                         'resources': resources_match.group(1).strip()[:500] if resources_match else 'Check online platforms',
-                        'strategy': strategy_match.group(1).strip()[:300] if strategy_match else 'Practice with projects',
-                        'timeline': timeline_match.group(1).strip()[:100] if timeline_match else '4-6 weeks'
+                        'strategy': strategy_match.group(1).strip()[:300] if strategy_match else 'Practice with projects'
                     }
-                    
-                    ai_resources['skills'].append(skill_resource)
                     
                 except Exception as parse_error:
                     logger.warning(f"⚠️ Failed to parse skill resource: {parse_error}")
                     continue
-            
-            if ai_resources['skills']:
-                logger.info(f"✓ Generated AI resources for {len(ai_resources['skills'])} skills")
-                return ai_resources
+                    
+            return resource_map
             
         except Exception as e:
             logger.error(f"❌ Error generating AI learning resources: {e}")

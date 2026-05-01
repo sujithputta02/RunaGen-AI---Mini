@@ -76,7 +76,7 @@ class ResumeOptimizer:
                         "temperature": 0.7
                     }
                 },
-                timeout=30
+                timeout=60
             )
             
             if response.status_code == 200:

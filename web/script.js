@@ -27,11 +27,28 @@ document.addEventListener('DOMContentLoaded', () => {
     checkAPIHealth();
     setupEventListeners();
     
+    // Initialize Guest ID
+    const guestId = getGuestId();
+    console.log('👤 Guest ID:', guestId);
+    
+    // Fetch history on load
+    fetchHistory();
+    
     // Set PDF.js worker
     if (typeof pdfjsLib !== 'undefined') {
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
     }
 });
+
+// Guest ID Management
+function getGuestId() {
+    let guestId = localStorage.getItem('runagen_guest_id');
+    if (!guestId) {
+        guestId = 'guest_' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+        localStorage.setItem('runagen_guest_id', guestId);
+    }
+    return guestId;
+}
 
 // Setup Event Listeners
 function setupEventListeners() {
@@ -63,6 +80,9 @@ function setupEventListeners() {
     document.getElementById('nextPage')?.addEventListener('click', onNextPage);
     document.getElementById('zoomIn')?.addEventListener('click', onZoomIn);
     document.getElementById('zoomOut')?.addEventListener('click', onZoomOut);
+    
+    // History Toggle
+    document.getElementById('historyToggle')?.addEventListener('click', toggleHistory);
 }
 
 // File Selection
@@ -127,6 +147,7 @@ async function analyzeResume() {
     try {
         const formData = new FormData();
         formData.append('file', selectedFile);
+        formData.append('guest_id', getGuestId());
         
         const response = await fetch(`${API_BASE_URL}/api/upload-resume`, {
             method: 'POST',
@@ -159,6 +180,9 @@ async function analyzeResume() {
             resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 100);
         
+        // Refresh history
+        fetchHistory();
+        
     } catch (error) {
         loadingCard.style.display = 'none';
         showError(`⚠️ Analysis failed: ${error.message}. Make sure the API server is running.`);
@@ -186,8 +210,8 @@ function displayResults(data) {
         ${createRecommendationsCard(data)}
     `;
     
-    // Load PDF viewer if file is selected
-    if (selectedFile) {
+    // Load PDF viewer if file is selected or base64 PDF is present
+    if (selectedFile || data.resume_pdf_base64) {
         // Add PDF viewer card to results
         const pdfViewerHTML = `
             <div class="result-card" id="pdfViewerCard">
@@ -223,7 +247,18 @@ function displayResults(data) {
         document.getElementById('zoomOut')?.addEventListener('click', onZoomOut);
         
         // Load the PDF
-        loadPDF(selectedFile);
+        if (selectedFile) {
+            loadPDF(selectedFile);
+        } else if (data.resume_pdf_base64) {
+            console.log('📄 Loading PDF from history data...');
+            const binaryString = window.atob(data.resume_pdf_base64);
+            const bytes = new Uint8Array(binaryString.length);
+            for (let i = 0; i < binaryString.length; i++) {
+                bytes[i] = binaryString.charCodeAt(i);
+            }
+            const blob = new Blob([bytes], { type: 'application/pdf' });
+            loadPDF(blob);
+        }
     }
 }
 
@@ -556,9 +591,22 @@ function createSuggestedJobsCard(data) {
         `;
     } else {
         jobsHTML = data.suggested_jobs.map(job => {
-            const minLakhs = (job.salary_min / 100000).toFixed(1);
-            const maxLakhs = (job.salary_max / 100000).toFixed(1);
-            const salaryText = job.salary_min > 0 ? `₹${minLakhs}L - ₹${maxLakhs}L` : 'Competitive Salary';
+            const hasRealSalary = job.salary_min && job.salary_min > 10000;
+            const minLakhs = hasRealSalary ? (job.salary_min / 100000).toFixed(1) : (data.salary_prediction?.min_salary / 100000).toFixed(1);
+            const maxLakhs = hasRealSalary ? (job.salary_max / 100000).toFixed(1) : (data.salary_prediction?.max_salary / 100000).toFixed(1);
+            
+            let salaryText = `₹${minLakhs}L`;
+            if (minLakhs !== maxLakhs) {
+                salaryText = `₹${minLakhs}L - ₹${maxLakhs}L`;
+            }
+            
+            if (!hasRealSalary) {
+                if (job.is_actual_bigquery) {
+                    salaryText += ' <span style="font-size: 0.7em; background: #059669; color: white; padding: 2px 6px; border-radius: 4px; vertical-align: middle; margin-left: 5px;">BIGQUERY ACTUAL</span>';
+                } else {
+                    salaryText += ' (Est.)';
+                }
+            }
             
             return `
                 <div class="recommendation-item job-item" style="display: block;">
@@ -831,14 +879,28 @@ async function scrapeJobs() {
         const data = await response.json();
         
         if (data.jobs && data.jobs.length > 0) {
-            const jobsHTML = data.jobs.map(job => `
-                <div class="job-card">
-                    <h3>${job.title}</h3>
-                    <p><strong>${job.company}</strong> - ${job.location}</p>
-                    <p>₹${(job.salary_min/100000).toFixed(1)}L - ₹${(job.salary_max/100000).toFixed(1)}L</p>
-                    <a href="${job.url}" target="_blank" class="feature-btn">View Job</a>
-                </div>
-            `).join('');
+            const jobsHTML = data.jobs.map(job => {
+                const minLakhs = (job.salary_min / 100000).toFixed(1);
+                const maxLakhs = (job.salary_max / 100000).toFixed(1);
+                let salaryText = 'Competitive';
+                
+                if (job.salary_min > 0 && job.salary_max > 0) {
+                    if (minLakhs === maxLakhs) {
+                        salaryText = `₹${minLakhs}L`;
+                    } else {
+                        salaryText = `₹${minLakhs}L - ₹${maxLakhs}L`;
+                    }
+                }
+                
+                return `
+                    <div class="job-card">
+                        <h3>${job.title}</h3>
+                        <p><strong>${job.company}</strong> - ${job.location}</p>
+                        <p style="color: var(--accent-green); font-weight: 600;">💰 ${salaryText}</p>
+                        <a href="${job.url}" target="_blank" class="feature-btn">View Job</a>
+                    </div>
+                `;
+            }).join('');
             document.getElementById('jobResults').innerHTML = jobsHTML;
         }
     } catch (error) {
@@ -894,7 +956,7 @@ async function generateLearningPath() {
                     <h4 style="margin: 0 0 15px 0; color: #f1f5f9; font-size: 1.3em;">${phase.name}</h4>
                     <div style="display: flex; gap: 20px; margin-bottom: 15px; color: #94a3b8; font-size: 0.9em;">
                         <span>⏱️ ${phase.total_hours} hours</span>
-                        <span>💰 $${phase.total_cost}</span>
+                        <span>💰 ₹${phase.total_cost}</span>
                         <span>📊 Priority ${phase.priority}</span>
                     </div>
                     <div style="margin-top: 20px;">
@@ -906,7 +968,7 @@ async function generateLearningPath() {
                                         <div>📚 ${resource.name} (${resource.platform})</div>
                                         <div style="color: #94a3b8; margin-top: 4px;">
                                             ⏱️ ${resource.duration_hours}h • 
-                                            ${resource.cost > 0 ? `💰 $${resource.cost}` : '🆓 Free'} • 
+                                            ${resource.cost > 0 ? `💰 ₹${resource.cost}` : '🆓 Free'} • 
                                             📊 ${resource.difficulty}
                                         </div>
                                     </div>
@@ -938,16 +1000,24 @@ async function generateLearningPath() {
 
 // ===== PHASE 5: SKILL TRENDS =====
 async function getTrendingSkills() {
+    const role = document.getElementById('targetRole').value;
+    const url = role ? 
+        `${API_BASE_URL}/api/skill-trends/trending?days=30&limit=10&role=${encodeURIComponent(role)}` : 
+        `${API_BASE_URL}/api/skill-trends/trending?days=30&limit=10`;
+        
     try {
-        const response = await fetch(`${API_BASE_URL}/api/skill-trends/trending?days=30&limit=10`);
+        const response = await fetch(url);
         const data = await response.json();
         
         if (data.trending_skills) {
             const skillsHTML = data.trending_skills.map(skill => `
-                <div class="trend-card">
-                    <h4>${skill.skill_name}</h4>
-                    <p>Demand: ${skill.demand_count} jobs</p>
-                    <p>${skill.demand_percentage}% of market</p>
+                <div class="trend-card" style="border-left: 4px solid var(--primary);">
+                    <h4 style="color: var(--primary); margin-bottom: 8px;">${skill.skill_name}</h4>
+                    <div style="font-size: 0.9em; color: var(--text-secondary); margin-bottom: 5px;">🔥 Trending in ${role || 'Market'}</div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                        <span style="font-weight: 600; color: var(--accent-green);">${skill.demand_percentage}% Share</span>
+                        <span style="font-size: 0.8em; opacity: 0.7;">${skill.demand_count} jobs</span>
+                    </div>
                 </div>
             `).join('');
             document.getElementById('trendResults').innerHTML = skillsHTML;
@@ -958,16 +1028,24 @@ async function getTrendingSkills() {
 }
 
 async function getEmergingSkills() {
+    const role = document.getElementById('targetRole').value;
+    const url = role ? 
+        `${API_BASE_URL}/api/skill-trends/emerging?threshold_days=30&role=${encodeURIComponent(role)}` : 
+        `${API_BASE_URL}/api/skill-trends/emerging?threshold_days=30`;
+        
     try {
-        const response = await fetch(`${API_BASE_URL}/api/skill-trends/emerging?threshold_days=30`);
+        const response = await fetch(url);
         const data = await response.json();
         
         if (data.emerging_skills) {
             const skillsHTML = data.emerging_skills.map(skill => `
-                <div class="trend-card">
-                    <h4>${skill.skill_name}</h4>
-                    <p>Emergence Score: ${skill.emergence_score}</p>
-                    <p>Recent Count: ${skill.recent_count}</p>
+                <div class="trend-card" style="border-left: 4px solid var(--accent-green);">
+                    <h4 style="color: var(--accent-green); margin-bottom: 8px;">${skill.skill_name}</h4>
+                    <div style="font-size: 0.9em; color: var(--text-secondary); margin-bottom: 5px;">🚀 Emerging for ${role || 'Market'}</div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                        <span style="font-weight: 600; color: var(--primary);">Score: ${skill.emergence_score}</span>
+                        <span style="font-size: 0.8em; opacity: 0.7;">First seen: ${new Date(skill.first_seen).toLocaleDateString()}</span>
+                    </div>
                 </div>
             `).join('');
             document.getElementById('trendResults').innerHTML = skillsHTML;
@@ -1192,4 +1270,84 @@ function onZoomOut() {
     if (scale < 0.5) scale = 0.5;
     document.getElementById('zoomLevel').textContent = Math.round(scale * 100);
     queueRenderPage(pageNum);
+}
+
+// History Management
+async function fetchHistory() {
+    const guestId = getGuestId();
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/history/${guestId}`);
+        if (response.ok) {
+            const data = await response.json();
+            displayHistory(data.history);
+        }
+    } catch (error) {
+        console.error('Error fetching history:', error);
+    }
+}
+
+function displayHistory(history) {
+    const historyContainer = document.getElementById('historyList');
+    if (!historyContainer) return;
+    
+    if (!history || history.length === 0) {
+        historyContainer.innerHTML = '<div class="history-empty">No history found. Upload a resume to start!</div>';
+        return;
+    }
+    
+    historyContainer.innerHTML = history.map(item => `
+        <div class="history-item" onclick="loadHistoryRecord('${item.id}')">
+            <div class="history-item-icon">📄</div>
+            <div class="history-item-info">
+                <div class="history-item-title">${item.filename || 'Resume'}</div>
+                <div class="history-item-role">${item.analysis_results?.career_predictions?.[0]?.role || item.career || 'Analysis'}</div>
+                <div class="history-item-date">${new Date(item.timestamp).toLocaleDateString()}</div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function toggleHistory() {
+    const historyPanel = document.getElementById('historyPanel');
+    if (historyPanel) {
+        historyPanel.classList.toggle('open');
+    }
+}
+
+async function loadHistoryRecord(recordId) {
+    hideError();
+    resultsContainer.style.display = 'none';
+    loadingCard.style.display = 'block';
+    
+    // Toggle history panel closed
+    const historyPanel = document.getElementById('historyPanel');
+    if (historyPanel) historyPanel.classList.remove('open');
+    
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/history/record/${recordId}`);
+        if (!response.ok) throw new Error('Failed to load history record');
+        
+        const data = await response.json();
+        const record = data.record;
+        
+        // Map history record to expected analysis format
+        const analysisData = {
+            ...record.analysis_results,
+            ...record.extracted_data,
+            resume_pdf_base64: record.resume_pdf_base64,
+            analysis_timestamp: record.timestamp,
+            education: record.extracted_data.education
+        };
+        
+        displayResults(analysisData);
+        setTimeout(() => renderCharts(analysisData), 100);
+        
+        loadingCard.style.display = 'none';
+        resultsContainer.style.display = 'block';
+        resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        
+    } catch (error) {
+        loadingCard.style.display = 'none';
+        showError(`⚠️ Failed to load history: ${error.message}`);
+    }
 }

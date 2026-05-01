@@ -2,7 +2,7 @@
 FastAPI Server v2 - Using 91.42% Accurate Models
 Integrates advanced ensemble models with BigQuery data
 """
-from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi import FastAPI, UploadFile, File, HTTPException, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse, JSONResponse
@@ -15,6 +15,11 @@ import asyncio
 import json
 from pathlib import Path
 from datetime import datetime
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # Add parent directory to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
@@ -29,6 +34,7 @@ import io
 from ml.model_1_skill_extraction import SkillExtractor
 from ml.role_skill_matcher import RoleSkillMatcher
 from api.bigquery_data_provider import get_data_provider
+from utils.mongodb_client import MongoDBClient
 
 # Phase 3-6 Features
 from features.job_scraper import JobScraper
@@ -156,6 +162,9 @@ class ResumeAnalysisRequest(BaseModel):
     resume_text: str
     job_title: Optional[str] = None
     experience_years: Optional[int] = None
+    filename: Optional[str] = "unknown"
+    guest_id: Optional[str] = "guest_default"
+    pdf_base64: Optional[str] = None
 
 
 class ResumeAnalysisResponse(BaseModel):
@@ -184,7 +193,7 @@ async def lifespan(app: FastAPI):
     print("="*70)
     
     # Load models
-    global career_model, salary_model, mongo_provider
+    global career_model, salary_model, mongo_provider, mongodb_client
     global job_scraper, learning_path_gen, skill_trend_analyzer, resume_optimizer
     
     # Initialize models (lazy load)
@@ -209,6 +218,17 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         print(f"⚠ BigQuery provider failed: {e}")
         mongo_provider = None
+    
+    # Initialize MongoDB Client for storage
+    try:
+        mongodb_client = MongoDBClient()
+        if mongodb_client.connect():
+            print("✓ MongoDB storage client initialized")
+        else:
+            print("⚠ MongoDB storage client failed to connect")
+    except Exception as e:
+        print(f"⚠ MongoDB client failed: {e}")
+        mongodb_client = None
     
     # Initialize Phase 3-6 Features
     try:
@@ -271,6 +291,7 @@ app.add_middleware(
 career_model: Optional[AdvancedCareerPredictor] = None
 salary_model: Optional[AdvancedSalaryPredictor] = None
 mongo_provider: Optional[object] = None
+mongodb_client: Optional[MongoDBClient] = None
 
 # Initialize skill extractor with environment-aware settings
 import os
@@ -288,6 +309,8 @@ resume_optimizer: Optional[ResumeOptimizer] = None
 
 # Resume cache for phase 6 (store last uploaded resume)
 last_resume_text: str = ""
+last_extracted_skills: List[str] = []
+last_predicted_career: str = ""
 
 
 # ===== ENDPOINTS =====
@@ -346,6 +369,10 @@ async def analyze_resume(request: ResumeAnalysisRequest):
         job_titles = extracted_data.get('job_titles', [])
         projects = extracted_data.get('projects', [])
         
+        # Cache for later use (e.g., learning path)
+        global last_extracted_skills
+        last_extracted_skills = extracted_skills
+        
         # ===== VALIDATE EXPERIENCE YEARS =====
         # If LLM returned suspicious experience, use strict heuristic instead
         if experience_years > 0:
@@ -376,6 +403,11 @@ async def analyze_resume(request: ResumeAnalysisRequest):
         
         # Get primary career for skill gap and salary analysis
         career = career_result.get('primary_career', 'Software Engineer')
+        
+        # Cache for later use
+        global last_predicted_career
+        last_predicted_career = career
+        
         print(f"✓ Career prediction: {career} ({career_result.get('confidence', 0):.1f}%)")
         
         # Convert career predictions to frontend format (array of {role, probability})
@@ -450,6 +482,15 @@ async def analyze_resume(request: ResumeAnalysisRequest):
                                 'description': str(job.get('description', ''))[:200].strip() if job.get('description') else '',
                                 'url': str(job.get('url', '#')).strip() if job.get('url') else '#'
                             }
+                            
+                            # CROSS-REFERENCE: If salary is 0, check BigQuery for this company's historical salary
+                            if formatted_job['salary_min'] == 0 and mongo_provider and hasattr(mongo_provider, 'get_company_salary'):
+                                company_sal = mongo_provider.get_company_salary(formatted_job['company'], career)
+                                if company_sal:
+                                    formatted_job['salary_min'] = company_sal['min']
+                                    formatted_job['salary_max'] = company_sal['max']
+                                    formatted_job['is_actual_bigquery'] = True
+                                    print(f"📊 Filled actual BigQuery salary for {formatted_job['company']}: {company_sal['min']}")
                         else:
                             formatted_job = {
                                 'title': str(getattr(job, 'title', 'Position')).strip(),
@@ -561,6 +602,50 @@ async def analyze_resume(request: ResumeAnalysisRequest):
         )
         
         print(f"✅ Analysis complete")
+        
+        # ===== STORE COMPREHENSIVE RESUME RECORD IN MONGODB =====
+        try:
+            if mongodb_client:
+                # Convert the full response to a dictionary for storage
+                response_data = response.model_dump()
+                
+                resume_record = {
+                    "timestamp": response.analysis_timestamp,
+                    "guest_id": request.guest_id or "guest_default",
+                    "filename": request.filename or "unknown",
+                    "resume_text": request.resume_text, # Store full text for future phases
+                    "resume_pdf_base64": getattr(request, 'pdf_base64', None), # Store PDF for viewer
+                    "resume_text_preview": (request.resume_text[:500] + "...") if request.resume_text else "",
+                    "extracted_data": {
+                        "skills": extracted_skills,
+                        "experience_years": experience_years,
+                        "education": education,
+                        "certifications": processed_certifications,
+                        "projects": projects
+                    },
+                    "analysis_results": {
+                        "career_predictions": career_predictions,
+                        "salary_prediction": salary_prediction,
+                        "suggested_jobs": suggested_jobs, # Persist jobs in history
+                        "skill_gaps": skill_gaps,
+                        "recommendations": recommendations,
+                        "linkedin_verification": {
+                            "social_links": verification_result['social_links'],
+                            "verified_count": linkedin_verified_count
+                        }
+                    },
+                    # Store the complete raw response for future-proofing
+                    "full_response": response_data,
+                    "model_accuracy": 91.42,
+                    "environment": os.getenv("ENVIRONMENT", "local")
+                }
+                
+                # Store in 'resumes' collection
+                mongodb_client.db["resumes"].insert_one(resume_record)
+                print(f"💾 Full resume analysis record stored for guest {request.guest_id}")
+        except Exception as store_error:
+            print(f"⚠️ Failed to store comprehensive resume record: {store_error}")
+            
         print(f"   - Skills: {len(extracted_skills)}")
         print(f"   - Career: {career}")
         print(f"   - Salary: ₹{salary_prediction['predicted_salary']:,.0f}")
@@ -576,12 +661,15 @@ async def analyze_resume(request: ResumeAnalysisRequest):
 
 
 @app.post("/api/upload-resume")
-async def upload_resume(file: UploadFile = File(...)):
+async def upload_resume(
+    file: UploadFile = File(...),
+    guest_id: str = Form("guest_default")
+):
     """Upload and analyze resume from PDF/DOCX"""
     global last_resume_text
     
     try:
-        print(f"📄 Received file upload: {file.filename}")
+        print(f"📄 Received file upload: {file.filename} | Guest ID: {guest_id}")
         
         # Validate file
         if not file.filename:
@@ -590,6 +678,10 @@ async def upload_resume(file: UploadFile = File(...)):
         # Read file content
         content = await file.read()
         print(f"📦 File size: {len(content)} bytes")
+        
+        # Store PDF as Base64 for history retrieval
+        import base64
+        pdf_base64 = base64.b64encode(content).decode('utf-8') if file.filename.lower().endswith('.pdf') else None
         
         if not content:
             raise HTTPException(status_code=400, detail="Empty file")
@@ -626,7 +718,12 @@ async def upload_resume(file: UploadFile = File(...)):
         print(f"🔍 Analyzing resume with {len(resume_text)} characters...")
         
         # Analyze
-        request = ResumeAnalysisRequest(resume_text=resume_text)
+        request = ResumeAnalysisRequest(
+            resume_text=resume_text,
+            filename=file.filename,
+            guest_id=guest_id,
+            pdf_base64=pdf_base64
+        )
         return await analyze_resume(request)
         
     except HTTPException:
@@ -758,8 +855,14 @@ async def generate_learning_path(request: dict):
         
         from features.learning_path_generator import SkillLevel
         
-        career = request.get('career', '')
+        career = request.get('career', last_predicted_career or '')
         current_skills = request.get('current_skills', [])
+        
+        # If no skills provided (or empty list), use cached skills from last resume upload
+        if (not current_skills or len(current_skills) == 0) and last_extracted_skills:
+            current_skills = last_extracted_skills
+            print(f"ℹ Using {len(current_skills)} cached skills from last resume upload")
+        
         target_level_str = request.get('target_level', 'intermediate').lower()
         
         if not career:
@@ -779,6 +882,23 @@ async def generate_learning_path(request: dict):
             target_level=target_level
         )
         
+        # ===== STORE LEARNING PATH IN MONGODB =====
+        try:
+            if mongodb_client:
+                lp_record = {
+                    "timestamp": datetime.now().isoformat(),
+                    "guest_id": request.get('guest_id', 'guest_default'),
+                    "career": career,
+                    "target_level": target_level_str,
+                    "current_skills": current_skills,
+                    "learning_path": learning_path,
+                    "environment": os.getenv("ENVIRONMENT", "local")
+                }
+                mongodb_client.db["learning_paths"].insert_one(lp_record)
+                print(f"💾 Learning path stored in MongoDB (Collection: learning_paths)")
+        except Exception as store_error:
+            print(f"⚠️ Failed to store learning path record: {store_error}")
+            
         return {
             "status": "success",
             "career": career,
@@ -827,7 +947,7 @@ async def get_learning_resources(skill: str, resource_type: str = "all"):
 
 # ===== PHASE 5: SKILL TRENDS =====
 @app.get("/api/skill-trends/trending")
-async def get_trending_skills(days: int = 30, limit: int = 20):
+async def get_trending_skills(days: int = 30, limit: int = 20, role: str = None):
     """
     Phase 5: Get trending skills in the job market
     
@@ -851,7 +971,7 @@ async def get_trending_skills(days: int = 30, limit: int = 20):
                     detail=f"Skill trend analyzer not available: {str(init_error)}"
                 )
         
-        trending = skill_trend_analyzer.get_trending_skills(days, limit)
+        trending = skill_trend_analyzer.get_trending_skills(days, limit, role)
         
         if not trending:
             raise HTTPException(
@@ -875,7 +995,7 @@ async def get_trending_skills(days: int = 30, limit: int = 20):
 
 
 @app.get("/api/skill-trends/emerging")
-async def get_emerging_skills(threshold_days: int = 30):
+async def get_emerging_skills(threshold_days: int = 30, role: str = None):
     """
     Get emerging skills (recently added to job market)
     
@@ -898,7 +1018,7 @@ async def get_emerging_skills(threshold_days: int = 30):
                     detail=f"Skill trend analyzer not available: {str(init_error)}"
                 )
         
-        emerging = skill_trend_analyzer.get_emerging_skills(threshold_days)
+        emerging = skill_trend_analyzer.get_emerging_skills(threshold_days, role)
         
         if not emerging:
             raise HTTPException(
@@ -1080,6 +1200,22 @@ async def optimize_resume(request: dict):
         
         optimization = resume_optimizer.optimize_resume_for_role(resume_text, target_role)
         
+        # ===== STORE OPTIMIZATION IN MONGODB =====
+        try:
+            if mongodb_client:
+                opt_record = {
+                    "timestamp": datetime.now().isoformat(),
+                    "guest_id": request.get('guest_id', 'guest_default'),
+                    "target_role": target_role,
+                    "filename": getattr(request, 'filename', 'cached' if request.get('resume_text') == 'USE_CACHED' else 'direct_text'),
+                    "optimization_results": optimization,
+                    "environment": os.getenv("ENVIRONMENT", "local")
+                }
+                mongodb_client.db["optimizations"].insert_one(opt_record)
+                print(f"💾 Resume optimization stored in MongoDB (Collection: optimizations)")
+        except Exception as store_error:
+            print(f"⚠️ Failed to store optimization record: {store_error}")
+            
         if 'error' in optimization:
             raise HTTPException(status_code=500, detail=optimization['error'])
         
@@ -1526,6 +1662,75 @@ def generate_recommendations(career: str, skills: List[str], missing_skills: Lis
     recommendations.append("Network with professionals in your target career")
     
     return recommendations[:5]  # Return top 5
+
+
+
+# ===== SILENCE CHROME DEVTOOLS 404s =====
+@app.get("/.well-known/appspecific/com.chrome.devtools.json")
+async def silence_devtools():
+    return {"status": "ignored"}
+
+
+# ===== HISTORY ENDPOINTS =====
+@app.get("/api/history/{guest_id}")
+async def get_user_history(guest_id: str):
+    """Retrieve analysis history for a specific guest ID"""
+    try:
+        if not mongodb_client:
+            raise HTTPException(status_code=503, detail="Storage not available")
+        
+        # Get resume history
+        resumes = list(mongodb_client.db["resumes"].find(
+            {"guest_id": guest_id},
+            {"full_response": 0, "resume_text_preview": 0, "_id": 1}
+        ).sort("timestamp", -1))
+        
+        # Convert ObjectId to string
+        for r in resumes:
+            r["id"] = str(r["_id"])
+            del r["_id"]
+            
+        return {
+            "status": "success",
+            "guest_id": guest_id,
+            "count": len(resumes),
+            "history": resumes
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/history/record/{record_id}")
+async def get_history_record(record_id: str):
+    """Retrieve full details of a specific history record and activate it in session"""
+    global last_resume_text, last_extracted_skills, last_predicted_career
+    try:
+        if not mongodb_client:
+            raise HTTPException(status_code=503, detail="Storage not available")
+        
+        from bson import ObjectId
+        record = mongodb_client.db["resumes"].find_one({"_id": ObjectId(record_id)})
+        
+        if not record:
+            raise HTTPException(status_code=404, detail="Record not found")
+        
+        # ACTIVATE this record in global cache so other phases (Optimize, etc) work
+        last_resume_text = record.get("resume_text", "")
+        last_extracted_skills = record.get("extracted_data", {}).get("skills", [])
+        last_predicted_career = record.get("analysis_results", {}).get("career_predictions", [{}])[0].get("role", "")
+        
+        print(f"🔄 Activated history record {record_id} for guest {record.get('guest_id')}")
+        
+        # Convert ObjectId to string
+        record["id"] = str(record["_id"])
+        del record["_id"]
+        
+        return {
+            "status": "success",
+            "record": record
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 # ===== STATIC FILES MOUNT (MUST BE LAST) =====

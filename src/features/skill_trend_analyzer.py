@@ -37,9 +37,11 @@ class SkillTrendAnalyzer:
         self.project_id = os.getenv('GCP_PROJECT_ID', 'runagen-ai')
         self.dataset = 'runagen_gold'
     
-    def get_trending_skills(self, days: int = 30, limit: int = 20) -> List[Dict]:
-        """Get trending skills in the last N days"""
-        logger.info(f"📊 Analyzing trending skills (last {days} days)...")
+    def get_trending_skills(self, days: int = 30, limit: int = 20, role: str = None) -> List[Dict]:
+        """Get trending skills in the last N days, optionally filtered by role"""
+        logger.info(f"📊 Analyzing trending skills (last {days} days) for role: {role or 'All'}...")
+        
+        role_filter = f"AND LOWER(j.title) LIKE LOWER('%{role}%')" if role else ""
         
         query = f"""
         SELECT 
@@ -53,6 +55,7 @@ class SkillTrendAnalyzer:
         LEFT JOIN `{self.project_id}.runagen_bronze.raw_skills` s 
             ON LOWER(TRIM(skill_name)) = LOWER(TRIM(s.skill_name))
         WHERE j.scraped_at >= TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL {days} DAY)
+            {role_filter}
         GROUP BY skill_name, skill_category
         ORDER BY demand_count DESC
         LIMIT {limit}
@@ -222,24 +225,46 @@ class SkillTrendAnalyzer:
             logger.error(f"❌ Error analyzing skills by category: {e}")
             return []
     
-    def get_emerging_skills(self, threshold_days: int = 30) -> List[Dict]:
-        """Identify emerging skills (recently added to job market)"""
-        logger.info(f"🚀 Identifying emerging skills...")
+    def get_emerging_skills(self, threshold_days: int = 30, role: str = None) -> List[Dict]:
+        """Identify emerging skills, optionally filtered by role"""
+        logger.info(f"🚀 Identifying emerging skills for role: {role or 'All'}...")
         
-        query = f"""
-        SELECT 
-            skill_name,
-            skill_category,
-            COUNT(*) as recent_count,
-            MIN(extracted_at) as first_seen,
-            MAX(extracted_at) as last_seen
-        FROM `{self.project_id}.runagen_bronze.raw_skills`
-        WHERE extracted_at >= TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL {threshold_days} DAY)
-        GROUP BY skill_name, skill_category
-        HAVING COUNT(*) >= 5
-        ORDER BY recent_count DESC
-        LIMIT 20
-        """
+        # If role provided, we need to join with raw_jobs to filter
+        if role:
+            query = f"""
+            SELECT 
+                skill_name,
+                skill_category,
+                COUNT(*) as recent_count,
+                MIN(extracted_at) as first_seen,
+                MAX(extracted_at) as last_seen
+            FROM `{self.project_id}.runagen_bronze.raw_skills` rs
+            WHERE rs.extracted_at >= TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL {threshold_days} DAY)
+                AND EXISTS (
+                    SELECT 1 FROM `{self.project_id}.runagen_bronze.raw_jobs` j 
+                    WHERE LOWER(j.title) LIKE LOWER('%{role}%')
+                        AND LOWER(j.requirements) LIKE LOWER(CONCAT('%', rs.skill_name, '%'))
+                )
+            GROUP BY skill_name, skill_category
+            HAVING COUNT(*) >= 2
+            ORDER BY recent_count DESC
+            LIMIT 20
+            """
+        else:
+            query = f"""
+            SELECT 
+                skill_name,
+                skill_category,
+                COUNT(*) as recent_count,
+                MIN(extracted_at) as first_seen,
+                MAX(extracted_at) as last_seen
+            FROM `{self.project_id}.runagen_bronze.raw_skills`
+            WHERE extracted_at >= TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL {threshold_days} DAY)
+            GROUP BY skill_name, skill_category
+            HAVING COUNT(*) >= 5
+            ORDER BY recent_count DESC
+            LIMIT 20
+            """
         
         try:
             results = self.bq_client.query(query).to_dataframe()

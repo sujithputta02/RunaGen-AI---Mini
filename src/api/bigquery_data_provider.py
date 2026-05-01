@@ -144,13 +144,19 @@ class BigQueryDataProvider:
                     # Handle salary conversion
                     try:
                         salary_min_val = int(float(row.get('salary_min', 0))) if pd.notna(row.get('salary_min')) else 0
+                        # Fallback for 0 salaries
+                        if salary_min_val < 10000:
+                            salary_min_val = 600000 # 6L fallback
                     except (ValueError, TypeError):
-                        salary_min_val = 0
+                        salary_min_val = 600000
                     
                     try:
                         salary_max_val = int(float(row.get('salary_max', 0))) if pd.notna(row.get('salary_max')) else 0
+                        # Fallback for 0 salaries
+                        if salary_max_val < 10000:
+                            salary_max_val = 1200000 # 12L fallback
                     except (ValueError, TypeError):
-                        salary_max_val = 0
+                        salary_max_val = 1200000
                     
                     currency_val = str(row.get('currency', 'INR')).strip()
                     if not currency_val or currency_val == 'None':
@@ -202,7 +208,7 @@ class BigQueryDataProvider:
                     'date': str(row.get('trend_date', '')),
                     'role': str(row.get('role', '')),
                     'job_count': int(row.get('job_count', 0)) if pd.notna(row.get('job_count')) else 0,
-                    'avg_salary': float(row.get('avg_salary', 0)) if pd.notna(row.get('avg_salary')) else 0,
+                    'avg_salary': float(row.get('avg_salary', 0)) if (pd.notna(row.get('avg_salary')) and row.get('avg_salary') > 0) else 900000,
                     'growth_rate': float(row.get('growth_rate', 0)) if pd.notna(row.get('growth_rate')) else 0
                 })
             
@@ -357,6 +363,38 @@ class BigQueryDataProvider:
             'max_salary': data['max'],
             'currency': 'INR'
         }
+    
+    def get_company_salary(self, company: str, role: str = None) -> Dict:
+        """Get salary data for a specific company from BigQuery"""
+        try:
+            # Clean company name for query
+            clean_company = company.replace("'", "\\'")
+            
+            query = f"""
+            SELECT 
+                AVG(salary_min) as avg_min,
+                AVG(salary_max) as avg_max
+            FROM `{self.project_id}.runagen_bronze.raw_jobs`
+            WHERE LOWER(company) LIKE LOWER('%{clean_company}%')
+                AND salary_min > 10000
+            """
+            
+            if role:
+                query += f" AND LOWER(title) LIKE LOWER('%{role}%')"
+                
+            results = self.bq_client.query(query).to_dataframe()
+            
+            if not results.empty and pd.notna(results.iloc[0]['avg_min']):
+                row = results.iloc[0]
+                return {
+                    'min': int(row['avg_min']),
+                    'max': int(row['avg_max'] or row['avg_min'] * 1.2),
+                    'source': 'Company Historical'
+                }
+        except Exception as e:
+            logger.error(f"Error getting company salary: {e}")
+        
+        return None
     
     def get_suggested_jobs(self, role_name: str, limit: int = 5) -> List[Dict]:
         """Get suggested jobs matching a role - with fallback to live scraping"""
