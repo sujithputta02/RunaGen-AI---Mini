@@ -1,10 +1,13 @@
 """
 Phase 4: Learning Path Recommendations
 Generates personalized learning paths based on career goals and skill gaps
+Enhanced with Ollama AI for intelligent learning resource recommendations
 """
 import logging
 from typing import List, Dict, Optional
 from enum import Enum
+import os
+import requests
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -42,7 +45,7 @@ class LearningResource:
 
 
 class LearningPathGenerator:
-    """Generate personalized learning paths"""
+    """Generate personalized learning paths with Ollama AI"""
     
     # Learning resources database
     RESOURCES = {
@@ -128,8 +131,52 @@ class LearningPathGenerator:
     }
     
     def __init__(self):
-        """Initialize generator"""
+        """Initialize generator with Ollama support"""
+        # Ollama configuration
+        self.ollama_url = os.getenv('OLLAMA_URL', 'http://localhost:11434')
+        self.ollama_model = os.getenv('OLLAMA_MODEL', 'llama3.2:3b')
+        self.use_ollama = self._check_ollama_available()
+        
         logger.info("✓ Learning Path Generator initialized")
+    
+    def _check_ollama_available(self) -> bool:
+        """Check if Ollama is available"""
+        try:
+            response = requests.get(f"{self.ollama_url}/api/tags", timeout=2)
+            if response.status_code == 200:
+                logger.info(f"✓ Ollama available for learning path generation")
+                return True
+        except Exception as e:
+            logger.warning(f"⚠️ Ollama not available: {e}")
+        return False
+    
+    def _call_ollama(self, prompt: str, max_tokens: int = 500) -> str:
+        """Call Ollama API for text generation"""
+        if not self.use_ollama:
+            return ""
+        
+        try:
+            response = requests.post(
+                f"{self.ollama_url}/api/generate",
+                json={
+                    "model": self.ollama_model,
+                    "prompt": prompt,
+                    "stream": False,
+                    "options": {
+                        "num_predict": max_tokens,
+                        "temperature": 0.7
+                    }
+                },
+                timeout=30
+            )
+            
+            if response.status_code == 200:
+                result = response.json()
+                return result.get('response', '').strip()
+        except Exception as e:
+            logger.error(f"❌ Ollama API error: {e}")
+        
+        return ""
     
     def generate_learning_path(self, career: str, current_skills: List[str], 
                               target_level: SkillLevel = SkillLevel.ADVANCED,
@@ -227,6 +274,17 @@ class LearningPathGenerator:
             learning_path['total_hours_required']
         )
         
+        # Generate AI-powered learning resources for skill gaps using Ollama
+        all_missing_skills = missing_core + missing_important + missing_nice
+        if all_missing_skills:
+            ai_resources = self._generate_ai_learning_resources(
+                career, 
+                all_missing_skills[:5],  # Top 5 missing skills
+                target_level
+            )
+            if ai_resources:
+                learning_path['ai_learning_resources'] = ai_resources
+        
         logger.info(f"✓ Learning path generated")
         logger.info(f"   Total hours required: {learning_path['total_hours_required']}")
         logger.info(f"   Estimated weeks: {learning_path['estimated_weeks']:.1f}")
@@ -295,6 +353,77 @@ class LearningPathGenerator:
         recommendations.append("Consider getting certifications to validate your skills")
         
         return recommendations
+    
+    def _generate_ai_learning_resources(self, career: str, missing_skills: List[str], 
+                                       target_level: SkillLevel) -> Dict:
+        """Generate AI-powered learning resources for skill gaps using Ollama"""
+        if not self.use_ollama or not missing_skills:
+            return {}
+        
+        logger.info(f"🤖 Generating AI-powered learning resources for {len(missing_skills)} skills...")
+        
+        # Create prompt for Ollama
+        prompt = f"""You are an expert career coach and learning advisor.
+
+Career Goal: {career}
+Target Level: {target_level.name}
+Missing Skills: {', '.join(missing_skills)}
+
+Task: For each missing skill, recommend specific learning resources and a learning strategy.
+
+For each skill, provide:
+SKILL: [skill name]
+RESOURCES: [2-3 specific courses, books, or platforms]
+STRATEGY: [How to learn this skill effectively in 2-3 sentences]
+TIMELINE: [Estimated weeks to learn]
+
+Keep recommendations practical and specific. Focus on popular, high-quality resources."""
+
+        try:
+            response = self._call_ollama(prompt, max_tokens=1000)
+            
+            if not response:
+                return {}
+            
+            # Parse Ollama response
+            ai_resources = {
+                'generated_by': 'Ollama AI',
+                'skills': []
+            }
+            
+            # Split by skill blocks
+            skill_blocks = response.split('SKILL:')[1:]  # Skip first empty split
+            
+            for block in skill_blocks[:5]:  # Max 5 skills
+                try:
+                    import re
+                    skill_name = block.split('\n')[0].strip()
+                    
+                    resources_match = re.search(r'RESOURCES:\s*(.+?)(?=STRATEGY:|$)', block, re.DOTALL | re.IGNORECASE)
+                    strategy_match = re.search(r'STRATEGY:\s*(.+?)(?=TIMELINE:|$)', block, re.DOTALL | re.IGNORECASE)
+                    timeline_match = re.search(r'TIMELINE:\s*(.+?)(?=SKILL:|$)', block, re.DOTALL | re.IGNORECASE)
+                    
+                    skill_resource = {
+                        'skill': skill_name,
+                        'resources': resources_match.group(1).strip()[:500] if resources_match else 'Check online platforms',
+                        'strategy': strategy_match.group(1).strip()[:300] if strategy_match else 'Practice with projects',
+                        'timeline': timeline_match.group(1).strip()[:100] if timeline_match else '4-6 weeks'
+                    }
+                    
+                    ai_resources['skills'].append(skill_resource)
+                    
+                except Exception as parse_error:
+                    logger.warning(f"⚠️ Failed to parse skill resource: {parse_error}")
+                    continue
+            
+            if ai_resources['skills']:
+                logger.info(f"✓ Generated AI resources for {len(ai_resources['skills'])} skills")
+                return ai_resources
+            
+        except Exception as e:
+            logger.error(f"❌ Error generating AI learning resources: {e}")
+        
+        return {}
     
     def get_free_resources(self, skill: str) -> List[Dict]:
         """Get free learning resources for a skill"""

@@ -16,11 +16,21 @@ const resultsContainer = document.getElementById('resultsContainer');
 
 let selectedFile = null;
 let loadingStepIndex = 0;
+let pdfDoc = null;
+let pageNum = 1;
+let pageRendering = false;
+let pageNumPending = null;
+let scale = 1.5;
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     checkAPIHealth();
     setupEventListeners();
+    
+    // Set PDF.js worker
+    if (typeof pdfjsLib !== 'undefined') {
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
 });
 
 // Setup Event Listeners
@@ -47,6 +57,12 @@ function setupEventListeners() {
     
     // Phase 6: Resume Optimizer
     document.getElementById('optimizeResumeBtn')?.addEventListener('click', optimizeResume);
+    
+    // PDF Viewer Controls
+    document.getElementById('prevPage')?.addEventListener('click', onPrevPage);
+    document.getElementById('nextPage')?.addEventListener('click', onNextPage);
+    document.getElementById('zoomIn')?.addEventListener('click', onZoomIn);
+    document.getElementById('zoomOut')?.addEventListener('click', onZoomOut);
 }
 
 // File Selection
@@ -169,6 +185,46 @@ function displayResults(data) {
         ${createSuggestedJobsCard(data)}
         ${createRecommendationsCard(data)}
     `;
+    
+    // Load PDF viewer if file is selected
+    if (selectedFile) {
+        // Add PDF viewer card to results
+        const pdfViewerHTML = `
+            <div class="result-card" id="pdfViewerCard">
+                <div class="card-title">
+                    <span class="card-icon">📄</span>
+                    <h2>Your Resume</h2>
+                </div>
+                <div class="pdf-viewer-container">
+                    <div class="pdf-controls">
+                        <button class="pdf-control-btn" id="prevPage">← Previous</button>
+                        <span class="pdf-page-info">
+                            Page <span id="pageNum">1</span> of <span id="pageCount">1</span>
+                        </span>
+                        <button class="pdf-control-btn" id="nextPage">Next →</button>
+                        <button class="pdf-control-btn" id="zoomOut">-</button>
+                        <span class="pdf-zoom-info"><span id="zoomLevel">150</span>%</span>
+                        <button class="pdf-control-btn" id="zoomIn">+</button>
+                    </div>
+                    <div class="pdf-canvas-wrapper">
+                        <canvas id="pdfCanvas"></canvas>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        // Insert PDF viewer at the beginning
+        resultsContainer.insertAdjacentHTML('afterbegin', pdfViewerHTML);
+        
+        // Re-attach event listeners for PDF controls
+        document.getElementById('prevPage')?.addEventListener('click', onPrevPage);
+        document.getElementById('nextPage')?.addEventListener('click', onNextPage);
+        document.getElementById('zoomIn')?.addEventListener('click', onZoomIn);
+        document.getElementById('zoomOut')?.addEventListener('click', onZoomOut);
+        
+        // Load the PDF
+        loadPDF(selectedFile);
+    }
 }
 
 // Create Info Card
@@ -245,17 +301,75 @@ function createCertificationsCard(data) {
         `;
     }
     
+    // Social links section
+    const socialLinksHTML = data.social_links ? `
+        <div style="background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 3px solid var(--accent-blue);">
+            <div style="font-weight: 600; margin-bottom: 10px; color: var(--text-primary);">🔗 Professional Profiles</div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+                ${data.social_links.linkedin ? `
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span style="color: #0077b5;">💼</span>
+                        <a href="${data.social_links.linkedin}" target="_blank" style="color: var(--accent-blue); text-decoration: none;">LinkedIn Profile</a>
+                        <span style="color: var(--accent-green); font-size: 0.8em;">✓ Found</span>
+                    </div>
+                ` : `
+                    <div style="display: flex; align-items: center; gap: 8px; opacity: 0.5;">
+                        <span>💼</span>
+                        <span style="color: var(--text-secondary);">LinkedIn Not Found</span>
+                    </div>
+                `}
+                ${data.social_links.github ? `
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span>💻</span>
+                        <a href="${data.social_links.github}" target="_blank" style="color: var(--accent-blue); text-decoration: none;">GitHub Profile</a>
+                        <span style="color: var(--accent-green); font-size: 0.8em;">✓ Found</span>
+                    </div>
+                ` : `
+                    <div style="display: flex; align-items: center; gap: 8px; opacity: 0.5;">
+                        <span>💻</span>
+                        <span style="color: var(--text-secondary);">GitHub Not Found</span>
+                    </div>
+                `}
+                ${data.social_links.portfolio ? `
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span>🌐</span>
+                        <a href="${data.social_links.portfolio}" target="_blank" style="color: var(--accent-blue); text-decoration: none;">Portfolio</a>
+                        <span style="color: var(--accent-green); font-size: 0.8em;">✓ Found</span>
+                    </div>
+                ` : `
+                    <div style="display: flex; align-items: center; gap: 8px; opacity: 0.5;">
+                        <span>🌐</span>
+                        <span style="color: var(--text-secondary);">Portfolio Not Found</span>
+                    </div>
+                `}
+            </div>
+            ${data.linkedin_verified_count > 0 ? `
+                <div style="margin-top: 10px; padding: 10px; background: rgba(16, 185, 129, 0.1); border-radius: 6px;">
+                    <span style="color: var(--accent-green); font-weight: 600;">✅ ${data.linkedin_verified_count} certification(s) verified via LinkedIn</span>
+                </div>
+            ` : ''}
+        </div>
+    ` : '';
+    
     const certsHTML = data.certifications.map(cert => {
         const statusClass = `status-${cert.status_color}`;
         const scorePct = Math.round(cert.score * 100);
+        const linkedinVerified = cert.linkedin_verified;
+        const verificationSource = cert.verification_source || 'Resume Only';
         
         return `
             <div class="cert-item">
                 <div class="cert-main">
                     <div class="cert-info">
-                        <div class="cert-name">${cert.name}</div>
+                        <div class="cert-name">
+                            ${cert.name}
+                            ${linkedinVerified ? '<span style="color: var(--accent-green); margin-left: 8px; font-size: 0.9em;">✓ LinkedIn</span>' : ''}
+                        </div>
                         <div class="cert-issuer">${cert.issuer} ${cert.year ? `(${cert.year})` : ''}</div>
-                        <div class="cert-id">${cert.verification_id ? `ID: ${cert.verification_id}` : 'No ID Provided'}</div>
+                        <div class="cert-id">
+                            ${cert.verification_id ? `ID: ${cert.verification_id}` : 'No ID Provided'}
+                            <span style="color: var(--text-muted); margin-left: 10px; font-size: 0.85em;">• ${verificationSource}</span>
+                        </div>
                     </div>
                     <div class="cert-status-container">
                         <div class="cert-status ${statusClass}">${cert.status}</div>
@@ -272,7 +386,8 @@ function createCertificationsCard(data) {
                 <span class="card-icon">📜</span>
                 <h2>Verified Certifications</h2>
             </div>
-            <p class="card-subtitle">AI-validated professional credentials and authority analysis</p>
+            <p class="card-subtitle">AI-validated professional credentials with LinkedIn cross-verification</p>
+            ${socialLinksHTML}
             <div class="certs-container">
                 ${certsHTML}
             </div>
@@ -953,4 +1068,128 @@ async function optimizeResume() {
     } catch (error) {
         showError(`Resume optimization failed: ${error.message}`);
     }
+}
+
+
+// ===== PDF VIEWER FUNCTIONS =====
+
+/**
+ * Load and display PDF from file
+ */
+async function loadPDF(file) {
+    if (typeof pdfjsLib === 'undefined') {
+        console.error('PDF.js library not loaded');
+        showError('PDF viewer not available. Please refresh the page.');
+        return;
+    }
+    
+    try {
+        const arrayBuffer = await file.arrayBuffer();
+        const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
+        
+        pdfDoc = await loadingTask.promise;
+        document.getElementById('pageCount').textContent = pdfDoc.numPages;
+        
+        // Show PDF viewer card
+        const pdfViewerCard = document.getElementById('pdfViewerCard');
+        if (pdfViewerCard) {
+            pdfViewerCard.style.display = 'block';
+        }
+        
+        // Render first page
+        renderPage(pageNum);
+        
+        console.log('✅ PDF loaded successfully:', pdfDoc.numPages, 'pages');
+    } catch (error) {
+        console.error('❌ Error loading PDF:', error);
+        showError('Failed to load PDF viewer');
+    }
+}
+
+/**
+ * Render a specific page
+ */
+function renderPage(num) {
+    if (!pdfDoc) return;
+    
+    pageRendering = true;
+    
+    pdfDoc.getPage(num).then(page => {
+        const canvas = document.getElementById('pdfCanvas');
+        const ctx = canvas.getContext('2d');
+        const viewport = page.getViewport({ scale: scale });
+        
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+        
+        const renderContext = {
+            canvasContext: ctx,
+            viewport: viewport
+        };
+        
+        const renderTask = page.render(renderContext);
+        
+        renderTask.promise.then(() => {
+            pageRendering = false;
+            if (pageNumPending !== null) {
+                renderPage(pageNumPending);
+                pageNumPending = null;
+            }
+        });
+    });
+    
+    document.getElementById('pageNum').textContent = num;
+    
+    // Update button states
+    document.getElementById('prevPage').disabled = (num <= 1);
+    document.getElementById('nextPage').disabled = (num >= pdfDoc.numPages);
+}
+
+/**
+ * Queue page rendering
+ */
+function queueRenderPage(num) {
+    if (pageRendering) {
+        pageNumPending = num;
+    } else {
+        renderPage(num);
+    }
+}
+
+/**
+ * Previous page
+ */
+function onPrevPage() {
+    if (pageNum <= 1) return;
+    pageNum--;
+    queueRenderPage(pageNum);
+}
+
+/**
+ * Next page
+ */
+function onNextPage() {
+    if (pageNum >= pdfDoc.numPages) return;
+    pageNum++;
+    queueRenderPage(pageNum);
+}
+
+/**
+ * Zoom in
+ */
+function onZoomIn() {
+    scale += 0.25;
+    if (scale > 3) scale = 3;
+    document.getElementById('zoomLevel').textContent = Math.round(scale * 100);
+    queueRenderPage(pageNum);
+}
+
+/**
+ * Zoom out
+ */
+function onZoomOut() {
+    scale -= 0.25;
+    if (scale < 0.5) scale = 0.5;
+    document.getElementById('zoomLevel').textContent = Math.round(scale * 100);
+    queueRenderPage(pageNum);
 }

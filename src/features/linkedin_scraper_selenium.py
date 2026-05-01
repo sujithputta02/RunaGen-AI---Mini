@@ -1,0 +1,280 @@
+"""
+Free LinkedIn Scraper using Selenium
+Bypasses anti-bot measures with headless browser
+"""
+import time
+import logging
+from typing import List, Dict, Optional
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
+import re
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+
+class LinkedInSeleniumScraper:
+    """Free LinkedIn scraper using Selenium with headless Chrome"""
+    
+    def __init__(self, headless: bool = True):
+        """
+        Initialize Selenium scraper
+        
+        Args:
+            headless: Run browser in headless mode (no GUI)
+        """
+        self.headless = headless
+        self.driver = None
+    
+    def _init_driver(self):
+        """Initialize Chrome driver with anti-detection settings"""
+        if self.driver:
+            return
+        
+        try:
+            from selenium.webdriver.chrome.service import Service
+            from webdriver_manager.chrome import ChromeDriverManager
+            
+            chrome_options = Options()
+            
+            if self.headless:
+                chrome_options.add_argument('--headless')
+            
+            # Anti-detection settings
+            chrome_options.add_argument('--no-sandbox')
+            chrome_options.add_argument('--disable-dev-shm-usage')
+            chrome_options.add_argument('--disable-blink-features=AutomationControlled')
+            chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
+            chrome_options.add_experimental_option('useAutomationExtension', False)
+            
+            # Realistic user agent
+            chrome_options.add_argument('user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36')
+            
+            # Window size
+            chrome_options.add_argument('--window-size=1920,1080')
+            
+            # Disable images for faster loading
+            prefs = {
+                'profile.managed_default_content_settings.images': 2,
+                'disk-cache-size': 4096
+            }
+            chrome_options.add_experimental_option('prefs', prefs)
+            
+            # Use webdriver-manager to auto-download correct ChromeDriver
+            service = Service(ChromeDriverManager().install())
+            self.driver = webdriver.Chrome(service=service, options=chrome_options)
+            
+            # Execute CDP commands to hide automation
+            self.driver.execute_cdp_cmd('Network.setUserAgentOverride', {
+                "userAgent": 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+            })
+            self.driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
+            
+            logger.info("✅ Chrome driver initialized successfully")
+        
+        except Exception as e:
+            logger.error(f"❌ Failed to initialize Chrome driver: {e}")
+            logger.info("💡 Install ChromeDriver: brew install chromedriver (Mac) or apt-get install chromium-chromedriver (Linux)")
+            raise
+    
+    def scrape_public_profile(self, linkedin_url: str) -> Dict:
+        """
+        Scrape public LinkedIn profile (no login required)
+        
+        Args:
+            linkedin_url: LinkedIn profile URL
+        
+        Returns:
+            Dict with name, headline, certifications, skills, experience
+        """
+        try:
+            self._init_driver()
+            
+            logger.info(f"🔍 Scraping LinkedIn profile: {linkedin_url}")
+            
+            # Navigate to profile
+            self.driver.get(linkedin_url)
+            time.sleep(3)  # Wait for page load
+            
+            profile_data = {
+                'name': None,
+                'headline': None,
+                'certifications': [],
+                'skills': [],
+                'experience': [],
+                'education': []
+            }
+            
+            # Extract name
+            try:
+                name_elem = WebDriverWait(self.driver, 10).until(
+                    EC.presence_of_element_located((By.CSS_SELECTOR, 'h1.text-heading-xlarge'))
+                )
+                profile_data['name'] = name_elem.text.strip()
+                logger.info(f"✅ Found name: {profile_data['name']}")
+            except TimeoutException:
+                logger.warning("⚠️ Could not find name element")
+            
+            # Extract headline
+            try:
+                headline_elem = self.driver.find_element(By.CSS_SELECTOR, 'div.text-body-medium')
+                profile_data['headline'] = headline_elem.text.strip()
+                logger.info(f"✅ Found headline: {profile_data['headline'][:50]}...")
+            except NoSuchElementException:
+                logger.warning("⚠️ Could not find headline")
+            
+            # Scroll to load more content
+            self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            time.sleep(2)
+            
+            # Extract certifications
+            profile_data['certifications'] = self._extract_certifications()
+            
+            # Extract skills
+            profile_data['skills'] = self._extract_skills()
+            
+            # Extract experience
+            profile_data['experience'] = self._extract_experience()
+            
+            logger.info(f"✅ Scraped profile: {len(profile_data['certifications'])} certs, "
+                       f"{len(profile_data['skills'])} skills, {len(profile_data['experience'])} experiences")
+            
+            return profile_data
+        
+        except Exception as e:
+            logger.error(f"❌ Error scraping profile: {e}")
+            import traceback
+            traceback.print_exc()
+            return {
+                'name': None,
+                'headline': None,
+                'certifications': [],
+                'skills': [],
+                'experience': [],
+                'education': []
+            }
+    
+    def _extract_certifications(self) -> List[Dict]:
+        """Extract certifications from profile"""
+        certifications = []
+        
+        try:
+            # Look for certification section
+            cert_sections = self.driver.find_elements(By.XPATH, 
+                "//section[contains(@id, 'licenses_and_certifications')]//li")
+            
+            for cert_elem in cert_sections[:10]:  # Limit to 10
+                try:
+                    # Extract certification name
+                    name_elem = cert_elem.find_element(By.CSS_SELECTOR, 'div.mr1 span[aria-hidden="true"]')
+                    name = name_elem.text.strip()
+                    
+                    # Extract issuer
+                    issuer_elem = cert_elem.find_element(By.CSS_SELECTOR, 'span.t-14.t-normal span[aria-hidden="true"]')
+                    issuer = issuer_elem.text.strip()
+                    
+                    # Extract date (if available)
+                    date = None
+                    try:
+                        date_elem = cert_elem.find_element(By.CSS_SELECTOR, 'span.t-14.t-normal.t-black--light span[aria-hidden="true"]')
+                        date = date_elem.text.strip()
+                    except NoSuchElementException:
+                        pass
+                    
+                    if name and issuer:
+                        certifications.append({
+                            'name': name,
+                            'issuer': issuer,
+                            'date': date,
+                            'source': 'LinkedIn (Selenium)'
+                        })
+                        logger.info(f"  ✓ Found cert: {name}")
+                
+                except Exception as e:
+                    logger.debug(f"Error parsing certification: {e}")
+                    continue
+        
+        except Exception as e:
+            logger.warning(f"⚠️ Could not extract certifications: {e}")
+        
+        return certifications
+    
+    def _extract_skills(self) -> List[str]:
+        """Extract skills from profile"""
+        skills = []
+        
+        try:
+            skill_elements = self.driver.find_elements(By.XPATH, 
+                "//section[contains(@id, 'skills')]//span[@aria-hidden='true']")
+            
+            for skill_elem in skill_elements[:20]:  # Limit to 20
+                skill = skill_elem.text.strip()
+                if skill and len(skill) > 2 and skill not in skills:
+                    skills.append(skill)
+        
+        except Exception as e:
+            logger.warning(f"⚠️ Could not extract skills: {e}")
+        
+        return skills
+    
+    def _extract_experience(self) -> List[Dict]:
+        """Extract work experience from profile"""
+        experiences = []
+        
+        try:
+            exp_sections = self.driver.find_elements(By.XPATH, 
+                "//section[contains(@id, 'experience')]//li")
+            
+            for exp_elem in exp_sections[:5]:  # Limit to 5
+                try:
+                    title_elem = exp_elem.find_element(By.CSS_SELECTOR, 'div.mr1 span[aria-hidden="true"]')
+                    title = title_elem.text.strip()
+                    
+                    company_elem = exp_elem.find_element(By.CSS_SELECTOR, 'span.t-14.t-normal span[aria-hidden="true"]')
+                    company = company_elem.text.strip()
+                    
+                    if title and company:
+                        experiences.append({
+                            'title': title,
+                            'company': company
+                        })
+                
+                except Exception as e:
+                    logger.debug(f"Error parsing experience: {e}")
+                    continue
+        
+        except Exception as e:
+            logger.warning(f"⚠️ Could not extract experience: {e}")
+        
+        return experiences
+    
+    def close(self):
+        """Close browser"""
+        if self.driver:
+            try:
+                self.driver.quit()
+                logger.info("✅ Browser closed")
+            except Exception as e:
+                logger.error(f"Error closing browser: {e}")
+            finally:
+                self.driver = None
+    
+    def __del__(self):
+        """Cleanup on deletion"""
+        self.close()
+
+
+# Global instance
+_selenium_scraper = None
+
+def get_selenium_scraper(headless: bool = True):
+    """Get or create global Selenium scraper instance"""
+    global _selenium_scraper
+    if _selenium_scraper is None:
+        _selenium_scraper = LinkedInSeleniumScraper(headless=headless)
+    return _selenium_scraper

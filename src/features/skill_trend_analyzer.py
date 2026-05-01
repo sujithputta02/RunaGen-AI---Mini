@@ -1,6 +1,6 @@
 """
 Phase 5: Skill Trend Analysis
-Analyze skill demand trends from BigQuery data
+Analyze skill demand trends from BigQuery data with role-based insights and graph data
 """
 import os
 from dotenv import load_dotenv
@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 
 
 class SkillTrendAnalyzer:
-    """Analyze skill trends from job market data"""
+    """Analyze skill trends from job market data with role-based insights"""
     
     def __init__(self):
         """Initialize BigQuery client"""
@@ -322,6 +322,206 @@ class SkillTrendAnalyzer:
         
         logger.info("✅ Trend report generated")
         return report
+    
+    def get_role_based_trends(self, role: str, days: int = 30) -> Dict:
+        """Get comprehensive skill trends for a specific role with graph data"""
+        logger.info(f"📊 Analyzing trends for {role}...")
+        
+        try:
+            # Get top skills for this role
+            skill_demand = self.get_skill_demand_by_role(role)
+            
+            # Get jobs for this role
+            jobs = self._get_jobs_for_role(role, limit=20)
+            
+            # Get skill growth over time (for graph)
+            top_skills = [s['skill'] for s in skill_demand.get('top_skills', [])[:5]]
+            skill_timeline = self._get_skill_timeline(role, top_skills, days)
+            
+            # Get salary trends for this role
+            salary_trends = self._get_role_salary_trends(role, days)
+            
+            # Prepare graph data
+            graph_data = {
+                'skill_demand_chart': {
+                    'type': 'bar',
+                    'labels': [s['skill'] for s in skill_demand.get('top_skills', [])[:10]],
+                    'data': [s['demand_count'] for s in skill_demand.get('top_skills', [])[:10]],
+                    'title': f'Top Skills for {role}',
+                    'xlabel': 'Skills',
+                    'ylabel': 'Job Postings'
+                },
+                'skill_timeline_chart': skill_timeline,
+                'salary_trend_chart': salary_trends
+            }
+            
+            return {
+                'role': role,
+                'analysis_period_days': days,
+                'skill_demand': skill_demand,
+                'available_jobs': jobs,
+                'graph_data': graph_data,
+                'summary': {
+                    'total_jobs': len(jobs),
+                    'top_skills_count': len(skill_demand.get('top_skills', [])),
+                    'avg_salary': salary_trends.get('avg_salary', 0)
+                }
+            }
+            
+        except Exception as e:
+            logger.error(f"❌ Error analyzing role-based trends: {e}")
+            return {'role': role, 'error': str(e)}
+    
+    def _get_jobs_for_role(self, role: str, limit: int = 20) -> List[Dict]:
+        """Get recent job postings for a specific role"""
+        logger.info(f"🔍 Fetching jobs for {role}...")
+        
+        query = f"""
+        SELECT 
+            title,
+            company,
+            location,
+            salary_min,
+            salary_max,
+            requirements,
+            scraped_at
+        FROM `{self.project_id}.runagen_bronze.raw_jobs`
+        WHERE LOWER(title) LIKE LOWER('%{role}%')
+        ORDER BY scraped_at DESC
+        LIMIT {limit}
+        """
+        
+        try:
+            results = self.bq_client.query(query).to_dataframe()
+            
+            jobs = []
+            for _, row in results.iterrows():
+                jobs.append({
+                    'title': str(row['title']),
+                    'company': str(row['company']) if not pd.isna(row['company']) else 'N/A',
+                    'location': str(row['location']) if not pd.isna(row['location']) else 'N/A',
+                    'salary_min': int(row['salary_min']) if not pd.isna(row['salary_min']) and row['salary_min'] > 0 else None,
+                    'salary_max': int(row['salary_max']) if not pd.isna(row['salary_max']) and row['salary_max'] > 0 else None,
+                    'requirements': str(row['requirements'])[:200] if not pd.isna(row['requirements']) else '',
+                    'posted_date': str(row['scraped_at'])
+                })
+            
+            logger.info(f"✅ Found {len(jobs)} jobs for {role}")
+            return jobs
+            
+        except Exception as e:
+            logger.error(f"❌ Error fetching jobs: {e}")
+            return []
+    
+    def _get_skill_timeline(self, role: str, skills: List[str], days: int = 30) -> Dict:
+        """Get skill demand over time for graph visualization"""
+        logger.info(f"📈 Generating skill timeline for {role}...")
+        
+        if not skills:
+            return {}
+        
+        # Create timeline for last N days
+        timeline_data = {
+            'type': 'line',
+            'title': f'Skill Demand Timeline for {role}',
+            'xlabel': 'Date',
+            'ylabel': 'Job Postings',
+            'datasets': []
+        }
+        
+        try:
+            for skill in skills[:5]:  # Max 5 skills for readability
+                query = f"""
+                SELECT 
+                    DATE(scraped_at) as date,
+                    COUNT(*) as job_count
+                FROM `{self.project_id}.runagen_bronze.raw_jobs`
+                WHERE LOWER(title) LIKE LOWER('%{role}%')
+                    AND LOWER(requirements) LIKE LOWER('%{skill}%')
+                    AND scraped_at >= TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL {days} DAY)
+                GROUP BY DATE(scraped_at)
+                ORDER BY date
+                """
+                
+                results = self.bq_client.query(query).to_dataframe()
+                
+                if not results.empty:
+                    timeline_data['datasets'].append({
+                        'label': skill,
+                        'data': [int(row['job_count']) for _, row in results.iterrows()],
+                        'dates': [str(row['date']) for _, row in results.iterrows()]
+                    })
+            
+            return timeline_data
+            
+        except Exception as e:
+            logger.error(f"❌ Error generating skill timeline: {e}")
+            return {}
+    
+    def _get_role_salary_trends(self, role: str, days: int = 30) -> Dict:
+        """Get salary trends for a role"""
+        logger.info(f"💰 Analyzing salary trends for {role}...")
+        
+        query = f"""
+        SELECT 
+            DATE(scraped_at) as date,
+            AVG(salary_min) as avg_min_salary,
+            AVG(salary_max) as avg_max_salary,
+            AVG((salary_min + salary_max) / 2) as avg_salary,
+            COUNT(*) as job_count
+        FROM `{self.project_id}.runagen_bronze.raw_jobs`
+        WHERE LOWER(title) LIKE LOWER('%{role}%')
+            AND salary_min > 0
+            AND salary_max > 0
+            AND scraped_at >= TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL {days} DAY)
+        GROUP BY DATE(scraped_at)
+        ORDER BY date
+        """
+        
+        try:
+            results = self.bq_client.query(query).to_dataframe()
+            
+            if results.empty:
+                return {'avg_salary': 0, 'chart': {}}
+            
+            # Calculate overall average
+            overall_avg = results['avg_salary'].mean()
+            
+            # Prepare chart data
+            chart_data = {
+                'type': 'line',
+                'title': f'Salary Trends for {role}',
+                'xlabel': 'Date',
+                'ylabel': 'Salary (INR)',
+                'datasets': [
+                    {
+                        'label': 'Average Salary',
+                        'data': [float(row['avg_salary']) for _, row in results.iterrows()],
+                        'dates': [str(row['date']) for _, row in results.iterrows()]
+                    },
+                    {
+                        'label': 'Min Salary',
+                        'data': [float(row['avg_min_salary']) for _, row in results.iterrows()],
+                        'dates': [str(row['date']) for _, row in results.iterrows()]
+                    },
+                    {
+                        'label': 'Max Salary',
+                        'data': [float(row['avg_max_salary']) for _, row in results.iterrows()],
+                        'dates': [str(row['date']) for _, row in results.iterrows()]
+                    }
+                ]
+            }
+            
+            return {
+                'avg_salary': float(overall_avg),
+                'min_salary': float(results['avg_min_salary'].min()),
+                'max_salary': float(results['avg_max_salary'].max()),
+                'chart': chart_data
+            }
+            
+        except Exception as e:
+            logger.error(f"❌ Error analyzing salary trends: {e}")
+            return {'avg_salary': 0, 'chart': {}}
 
 
 def main():

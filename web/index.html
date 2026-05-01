@@ -147,9 +147,34 @@
         </div>
 
         <!-- Results Section -->
-        <div class="results-container" id="resultsContainer" style="display: none;"></div>
+        <div class="results-container" id="resultsContainer" style="display: none;">
+            <!-- PDF Viewer Section -->
+            <div class="result-card" id="pdfViewerCard" style="display: none;">
+                <div class="card-title">
+                    <span class="card-icon">📄</span>
+                    <h2>Your Resume</h2>
+                </div>
+                <div class="pdf-viewer-container">
+                    <div class="pdf-controls">
+                        <button class="pdf-control-btn" id="prevPage">← Previous</button>
+                        <span class="pdf-page-info">
+                            Page <span id="pageNum">1</span> of <span id="pageCount">1</span>
+                        </span>
+                        <button class="pdf-control-btn" id="nextPage">Next →</button>
+                        <button class="pdf-control-btn" id="zoomOut">-</button>
+                        <span class="pdf-zoom-info"><span id="zoomLevel">100</span>%</span>
+                        <button class="pdf-control-btn" id="zoomIn">+</button>
+                    </div>
+                    <div class="pdf-canvas-wrapper">
+                        <canvas id="pdfCanvas"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- PDF.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     <script src="script.js?v=2.0.1"></script>
 </body>
 </html>

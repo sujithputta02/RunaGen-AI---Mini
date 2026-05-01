@@ -1,5 +1,6 @@
 # Environment & Virtual Environments
 .env
+.env.cloud
 .env.local
 .env.*.local
 venv/
@@ -8,6 +9,9 @@ env/
 venv_runagen/
 venv_*
 ENV/
+
+# Scratch files
+scratch/
 
 # Python
 *.pyc

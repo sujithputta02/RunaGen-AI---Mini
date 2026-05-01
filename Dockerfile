@@ -1,30 +1,26 @@
-# RunaGen AI - Minimal Production Dockerfile
 FROM python:3.11-slim
-
 WORKDIR /app
 
-# Install only runtime dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    libgomp1 \
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    gcc \
+    g++ \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy only essential files
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# Pre-install heavy dependencies with caching
+# We copy ONLY the requirements file first so this layer is cached
+COPY requirements-prod.txt .
+RUN pip install --no-cache-dir -r requirements-prod.txt
 
-# Copy source code
-COPY src/ ./src/
-COPY models/ ./models/
-COPY .env .env.example ./
+# Copy application code (changes frequently)
+COPY . .
 
-# Create non-root user
-RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /app
-USER appuser
-
-EXPOSE 8000
-
+# Set environment variables
 ENV PYTHONUNBUFFERED=1
-ENV PORT=8000
 ENV PYTHONPATH=/app/src
+ENV PORT=8080
 
-CMD ["python", "-m", "uvicorn", "src.api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Run the application
+CMD ["python", "-m", "uvicorn", "src.api.main_v2_90pct:app", "--host", "0.0.0.0", "--port", "8080"]
+
+

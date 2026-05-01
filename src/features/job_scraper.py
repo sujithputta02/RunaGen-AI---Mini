@@ -97,7 +97,7 @@ class JobScraper:
         logger.info(f"✓ Found {len(jobs)} Indeed jobs")
         return jobs
     
-    def scrape_adzuna_jobs(self, keywords: List[str], location: str = "India") -> List[Dict]:
+    def scrape_adzuna_jobs(self, keywords: List[str], location: str = "India", limit: int = 10) -> List[Dict]:
         """Scrape Adzuna jobs using API"""
         logger.info(f"🔍 Scraping Adzuna jobs for {keywords} in {location}...")
         
@@ -111,20 +111,21 @@ class JobScraper:
                 logger.warning("⚠️  Adzuna API credentials not configured, returning mock data")
                 # Return mock data for testing
                 for keyword in keywords[:2]:  # Limit to 2 keywords
-                    for i in range(5):  # 5 jobs per keyword
+                    for i in range(min(5, limit)):  # 5 jobs per keyword or limit
                         jobs.append({
                             'title': f"{keyword} - Position {i+1}",
                             'company': f"Tech Company {i+1}",
                             'location': location,
-                            'description': f"Looking for {keyword} with 3+ years experience",
+                            'description': f"Looking for {keyword} with 3+ years experience. Great opportunity to work with cutting-edge technologies.",
                             'salary_min': 600000 + (i * 100000),
                             'salary_max': 1200000 + (i * 100000),
+                            'currency': 'INR',
                             'source': 'Adzuna (Mock)',
                             'url': f"https://example.com/job/{i}",
                             'scraped_at': datetime.now().isoformat(),
                             'keyword': keyword
                         })
-                logger.info(f"✓ Returned {len(jobs)} mock jobs")
+                logger.info(f"✅ Returned {len(jobs)} mock jobs")
                 return jobs
             
             for keyword in keywords:
@@ -134,36 +135,40 @@ class JobScraper:
                     'app_key': api_key,
                     'what': keyword,
                     'where': location,
-                    'results_per_page': 10
+                    'results_per_page': min(limit, 10)
                 }
                 
                 response = requests.get(url, params=params, timeout=10)
                 
                 if response.status_code != 200:
-                    logger.warning(f"Adzuna API returned status {response.status_code}")
+                    logger.warning(f"⚠️ Adzuna API returned status {response.status_code}")
                     continue
                 
                 data = response.json()
                 
                 for result in data.get('results', []):
+                    # Safely extract all fields with proper defaults
                     job = {
-                        'title': result.get('title'),
-                        'company': result.get('company', {}).get('display_name'),
-                        'location': result.get('location', {}).get('display_name'),
-                        'description': result.get('description'),
-                        'salary_min': result.get('salary_min'),
-                        'salary_max': result.get('salary_max'),
+                        'title': str(result.get('title', 'Position')).strip() if result.get('title') else 'Position',
+                        'company': str(result.get('company', {}).get('display_name', 'Company')).strip() if result.get('company') else 'Company',
+                        'location': str(result.get('location', {}).get('display_name', location)).strip() if result.get('location') else location,
+                        'description': str(result.get('description', ''))[:200].strip() if result.get('description') else '',
+                        'salary_min': int(result.get('salary_min', 0)) if result.get('salary_min') else 0,
+                        'salary_max': int(result.get('salary_max', 0)) if result.get('salary_max') else 0,
+                        'currency': 'INR',
                         'source': 'Adzuna',
-                        'url': result.get('redirect_url'),
+                        'url': str(result.get('redirect_url', '#')).strip() if result.get('redirect_url') else '#',
                         'scraped_at': datetime.now().isoformat(),
                         'keyword': keyword
                     }
                     jobs.append(job)
         
         except Exception as e:
-            logger.error(f"Error scraping Adzuna: {e}")
+            logger.error(f"❌ Error scraping Adzuna: {e}")
+            import traceback
+            traceback.print_exc()
         
-        logger.info(f"✓ Found {len(jobs)} Adzuna jobs")
+        logger.info(f"✅ Found {len(jobs)} Adzuna jobs")
         return jobs
     
     def scrape_github_jobs(self, keywords: List[str], location: str = "India") -> List[Dict]:

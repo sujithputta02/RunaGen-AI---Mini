@@ -1,0 +1,55 @@
+# Git
+.git
+.gitignore
+.github
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+venv_*
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache
+.coverage
+htmlcov/
+
+# Data
+data/
+notebooks/
+logs/
+
+# Documentation
+*.md
+docs/
+
+# Deployment
+*.tar.gz
+.gcloudignore
+runagen_deploy.tar.gz
+
+# Virtual environments
+venv_runagen/
+
+# Credentials (should use secrets)
+.env
+credentials/

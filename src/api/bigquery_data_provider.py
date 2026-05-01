@@ -8,6 +8,7 @@ from google.cloud import bigquery
 from google.oauth2 import service_account
 from typing import List, Dict, Optional
 import logging
+import pandas as pd
 
 load_dotenv()
 
@@ -66,53 +67,121 @@ class BigQueryDataProvider:
             return []
     
     def search_jobs(self, title: str, location: str = "India", limit: int = 10) -> List[Dict]:
-        """Search jobs from BigQuery"""
+        """Search jobs from BigQuery - properly parse Adzuna JSON data"""
         try:
+            # First, check if the table exists and has data
+            check_query = f"""
+            SELECT COUNT(*) as count
+            FROM `{self.project_id}.runagen_bronze.raw_jobs`
+            """
+            
+            try:
+                count_result = self.bq_client.query(check_query).to_dataframe()
+                total_count = count_result.iloc[0]['count'] if not count_result.empty else 0
+                logger.info(f"📊 Total jobs in BigQuery: {total_count}")
+                
+                if total_count == 0:
+                    logger.warning(f"⚠️ BigQuery table is empty. No jobs available.")
+                    return []
+            except Exception as check_error:
+                logger.error(f"❌ Error checking table: {check_error}")
+                return []
+            
+            # Build the query with proper JSON parsing for nested fields
             query = f"""
             SELECT 
-                job_id,
-                title,
-                company,
-                location,
-                description,
-                salary_min,
-                salary_max,
-                currency,
-                employment_type,
-                experience_level,
-                url,
-                posted_date
+                CAST(job_id AS STRING) as job_id,
+                CAST(title AS STRING) as title,
+                -- Parse company from JSON if it's a JSON string
+                CASE 
+                    WHEN company LIKE '%display_name%' THEN 
+                        REGEXP_EXTRACT(company, r"'display_name':\\s*'([^']+)'")
+                    ELSE CAST(company AS STRING)
+                END as company,
+                -- Parse location from JSON if it's a JSON string
+                CASE 
+                    WHEN location LIKE '%display_name%' THEN 
+                        REGEXP_EXTRACT(location, r"'display_name':\\s*'([^']+)'")
+                    ELSE CAST(location AS STRING)
+                END as location,
+                CAST(description AS STRING) as description,
+                CAST(salary_min AS INT64) as salary_min,
+                CAST(salary_max AS INT64) as salary_max,
+                CASE 
+                    WHEN currency IS NULL OR currency = '' THEN 'INR'
+                    ELSE CAST(currency AS STRING)
+                END as currency,
+                CAST(employment_type AS STRING) as employment_type,
+                CAST(experience_level AS STRING) as experience_level,
+                CAST(url AS STRING) as url
             FROM `{self.project_id}.runagen_bronze.raw_jobs`
-            WHERE LOWER(title) LIKE LOWER('%{title}%')
-                AND LOWER(location) LIKE LOWER('%{location}%')
-            ORDER BY posted_date DESC
+            WHERE title IS NOT NULL
+                AND company IS NOT NULL
+                AND (
+                    LOWER(title) LIKE LOWER('%{title}%')
+                    OR LOWER(description) LIKE LOWER('%{title}%')
+                )
+            ORDER BY scraped_at DESC
             LIMIT {limit}
             """
             
+            logger.info(f"🔍 Searching for jobs with title: '{title}'")
             results = self.bq_client.query(query).to_dataframe()
             
-            jobs = []
-            for _, row in results.iterrows():
-                # Convert all values to native Python types
-                jobs.append({
-                    'job_id': str(row['job_id']) if row['job_id'] else '',
-                    'title': str(row['title']) if row['title'] else 'Position',
-                    'company': str(row['company']) if row['company'] else 'Company',
-                    'location': str(row['location']) if row['location'] else 'Location',
-                    'description': str(row['description'])[:200] if row['description'] else '',
-                    'salary_min': int(row['salary_min']) if pd.notna(row['salary_min']) and row['salary_min'] else 0,
-                    'salary_max': int(row['salary_max']) if pd.notna(row['salary_max']) and row['salary_max'] else 0,
-                    'currency': str(row['currency']) if row['currency'] else 'INR',
-                    'employment_type': str(row['employment_type']) if row['employment_type'] else 'Full-time',
-                    'experience_level': str(row['experience_level']) if row['experience_level'] else 'Mid-level',
-                    'url': str(row['url']) if row['url'] else '#'
-                })
+            if results.empty:
+                logger.warning(f"⚠️ No jobs found for '{title}' in BigQuery")
+                return []
             
-            logger.info(f"✓ Found {len(jobs)} jobs matching '{title}' in '{location}'")
+            jobs = []
+            for idx, row in results.iterrows():
+                try:
+                    # Safely extract and convert each field
+                    title_val = str(row.get('title', '')).strip()
+                    company_val = str(row.get('company', '')).strip()
+                    location_val = str(row.get('location', '')).strip()
+                    description_val = str(row.get('description', '')).strip()[:200]
+                    
+                    # Handle salary conversion
+                    try:
+                        salary_min_val = int(float(row.get('salary_min', 0))) if pd.notna(row.get('salary_min')) else 0
+                    except (ValueError, TypeError):
+                        salary_min_val = 0
+                    
+                    try:
+                        salary_max_val = int(float(row.get('salary_max', 0))) if pd.notna(row.get('salary_max')) else 0
+                    except (ValueError, TypeError):
+                        salary_max_val = 0
+                    
+                    currency_val = str(row.get('currency', 'INR')).strip()
+                    if not currency_val or currency_val == 'None':
+                        currency_val = 'INR'
+                    
+                    url_val = str(row.get('url', '#')).strip()
+                    
+                    # Only add if we have title and company
+                    if title_val and company_val and company_val != 'None':
+                        job_dict = {
+                            'title': title_val,
+                            'company': company_val,
+                            'location': location_val or location,
+                            'description': description_val,
+                            'salary_min': salary_min_val,
+                            'salary_max': salary_max_val,
+                            'currency': currency_val,
+                            'url': url_val
+                        }
+                        jobs.append(job_dict)
+                except Exception as row_error:
+                    logger.warning(f"⚠️ Error processing row {idx}: {row_error}")
+                    continue
+            
+            logger.info(f"✅ Found {len(jobs)} clean jobs matching '{title}'")
             return jobs
         
         except Exception as e:
-            logger.error(f"Error searching jobs: {e}")
+            logger.error(f"❌ Error searching jobs from BigQuery: {e}")
+            import traceback
+            traceback.print_exc()
             return []
     
     def get_job_market_trends(self) -> Dict:
@@ -290,10 +359,15 @@ class BigQueryDataProvider:
         }
     
     def get_suggested_jobs(self, role_name: str, limit: int = 5) -> List[Dict]:
-        """Get suggested jobs matching a role"""
+        """Get suggested jobs matching a role - with fallback to live scraping"""
         logger.info(f"🔍 Searching for jobs matching role: {role_name}")
         jobs = self.search_jobs(role_name, location="India", limit=limit)
-        logger.info(f"✓ Found {len(jobs)} jobs for {role_name}")
+        
+        if not jobs:
+            logger.warning(f"⚠️ No jobs found in BigQuery for {role_name}. Consider running ETL pipeline to populate data.")
+        else:
+            logger.info(f"✅ Found {len(jobs)} jobs for {role_name}")
+        
         return jobs
     
     def close(self):

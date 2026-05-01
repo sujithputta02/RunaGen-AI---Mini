@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  # Ollama Service - LLM for skill extraction
+  ollama:
+    image: ollama/ollama:latest
+    container_name: runagen-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_HOST=0.0.0.0:11434
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - runagen-network
+    restart: unless-stopped
+
+  # RunaGen API Service
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.cloud
+    container_name: runagen-api
+    ports:
+      - "8080:8080"
+    environment:
+      - ENVIRONMENT=cloud
+      - OLLAMA_URL=http://ollama:11434
+      - OLLAMA_MODEL=llama3
+      - PYTHONUNBUFFERED=1
+      - PYTHONPATH=/app/src
+      - GCP_PROJECT_ID=runagen-ai
+      - MONGO_URI=${MONGO_URI}
+      - MONGO_DB=runagen_ml_warehouse
+      - ADZUNA_APP_ID=${ADZUNA_APP_ID}
+      - ADZUNA_APP_KEY=${ADZUNA_APP_KEY}
+    depends_on:
+      ollama:
+        condition: service_healthy
+    networks:
+      - runagen-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  ollama_data:
+    driver: local
+
+networks:
+  runagen-network:
+    driver: bridge
