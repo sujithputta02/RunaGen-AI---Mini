@@ -59,7 +59,7 @@ GEMINI_API_KEY=your_gemini_api_key
 ENVIRONMENT=cloud
 GEMINI_API_KEY=your_gemini_api_key
 ADZUNA_APP_ID=42cf8c86
-ADZUNA_APP_KEY=1706dc3ca402aab909d9b8ba7f57092a
+ADZUNA_APP_KEY=<YOUR_ADZUNA_APP_KEY>
 MONGO_URI=your_mongodb_uri
 ```
 

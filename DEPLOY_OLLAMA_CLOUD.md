@@ -135,12 +135,12 @@ OLLAMA_URL=http://$OLLAMA_EXTERNAL_IP:11434
 OLLAMA_MODEL=llama3
 
 # MongoDB Configuration
-MONGO_URI=mongodb+srv://nasasujith265_db_user:z9d9cSbDedbyA1aA@cluster0runagen.dbw0rxl.mongodb.net/runagen_ml_warehouse?retryWrites=true&w=majority&appName=Cluster0runagen
+MONGO_URI=mongodb+srv://<USERNAME>:<PASSWORD>@<CLUSTER>.mongodb.net/<DB_NAME>?retryWrites=true&w=majority
 MONGO_DB=runagen_ml_warehouse
 
 # Adzuna API
-ADZUNA_APP_ID=42cf8c86
-ADZUNA_APP_KEY=1706dc3ca402aab909d9b8ba7f57092a
+ADZUNA_APP_ID=<YOUR_ADZUNA_APP_ID>
+ADZUNA_APP_KEY=<YOUR_ADZUNA_APP_KEY>
 
 # GCP
 GCP_PROJECT_ID=runagen-ai
